@@ -6,13 +6,13 @@ require('../../all/header.php')
 	<div class="container">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h2 class="text-center">Danh sách sản phẩm</h2>
+				<h2 class="text-center">Danh sách khuyến mãi</h2>
 			</div>
-			<div class="panel-body">
-			<div class="row">
+			<div class="panel-body" >
+				<div class="row">
 					<div class="col-lg-6">
 						<a href="insert.php">
-						<button  class="btn btn-success" style="margin-bottom: 15px;background-color: #FDF5E6;"><font color="black"><b>Thêm sản phẩm</b> </font>  </button>
+						<button  class="btn btn-success" style="margin-bottom: 15px;background-color: #FDF5E6;"><font color="black"><b>Thêm khuyến mãi</b> </font>  </button>
 						</a>
 					</div>
 					<div class="col-lg-6">
@@ -27,9 +27,12 @@ require('../../all/header.php')
 				<table class="table table-bordered table-hover">
 					<thead>
 						<tr>
-							<th width="50px">Mã sản phẩm</th>
-							<th>Tên sản phẩm</th>
-							<th>Giá</th>
+							<th width="70px">Mã khuyến mãi</th>
+							<th>Ngày bắt đầu</th>
+							<th>Ngày kết thúc</th>
+							<th>Phần trăm</th>
+							<th>Poster</th>
+							<th>Mô tả</th>
 							<th width="125px">Tác vụ</th>
 						</tr>
 					</thead>
@@ -42,6 +45,7 @@ if (isset($_GET['page'])) {
 	$page = $_GET['page'];
 }
 $firstIndex=($page-1) * $limit;
+
 $number=0;
 $s='';
 if (isset($_GET['s'])) {
@@ -50,12 +54,13 @@ if (isset($_GET['s'])) {
 $add= '';
 if (!empty($s))
 {
-	$add= " and tensp like '%$s%'";
+	$add= " and makm like '%$s%'";
 }
-$sql          = "select * from sanpham where 1 $add limit $firstIndex,".$limit;
+
+$sql          = "select * from khuyenmai where 1 $add limit $firstIndex,".$limit;
 $result = executeResult($sql);
 
-$sql          = "select count(masp) from sanpham where 1 $add";
+$sql          = "select count(makm) from khuyenmai where 1 $add";
 $countResult = executeSingleResult($sql);
 if ($countResult !=null)
 {
@@ -69,9 +74,11 @@ foreach ($result as $row)
 				<td>$row[0]</td>
 				<td>$row[1]</td>
 				<td>$row[2]</td>
-				
+				<td>$row[3]</td>
+				<td><img src='$row[4]' style='max-width: 100px;' ></td>
+				<td>$row[5]</td>
 				<td>
-					<a href='update.php?masp=$row[0]'><button style='background-color: #FFE4E1;' class='btn btn-warning'><img src='../img/edit.png'></button></a>
+					<a href='update.php?makm=$row[0]'><button style='background-color: #FFE4E1;' class='btn btn-warning'><img src='../img/edit.png'></button></a>
 					<button style='background-color: pink;' class='btn btn-danger' onclick='deleteCategory($row[0])'><img src='../img/garbage.png'></button>
 				</td>
 		</tr>";
@@ -88,16 +95,16 @@ require ('../dashboard/page.php');
 	</div>
 
 	<script type="text/javascript">
-		function deleteCategory(masp) {
-			var option = confirm('Bạn có chắc chắn muốn xoá sản phẩm này không?')
+		function deleteCategory(makm) {
+			var option = confirm('Bạn có chắc chắn muốn xoá khuyến mãi này không?')
 			if(!option) {
 				return;
 			}
 
-			console.log(masp)
+			console.log(makm)
 			//ajax - lenh post
 			$.post('ajax.php', {
-				'masp': masp,
+				'makm': makm,
 				'action': 'delete'
 			}, function(data) {
 				location.reload()

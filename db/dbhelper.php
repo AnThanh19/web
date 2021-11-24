@@ -35,7 +35,11 @@ function executeSingleResult($sql) {
 	$con = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
 	//insert, update, delete
 	$result = mysqli_query($con, $sql);
-	$row    = mysqli_fetch_array($result);
+	$row =null;
+	if ($result !=null)
+	{
+		$row    = mysqli_fetch_array($result);
+	}
 
 	//close connection
 	mysqli_close($con);

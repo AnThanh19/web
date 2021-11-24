@@ -1,69 +1,30 @@
 <?php
 require_once ('../../db/dbhelper.php');
+require('../../all/header.php')
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Admin</title>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-	<!-- Popper JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-</head>
-<body>
-	<header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ADMIN</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-					<ul class="nav nav-tabs">
-						<li class="nav-item">
-							<a class="nav-link active" href="#">Quản lý phim</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="../sanpham/">Quản lý lịch chiếu</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="../sanpham/">Quản lý sản phẩm</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="../product/">Quản lý khuyến mãi</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="../product/">Quản lý nhân viên</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="../product/">Quản lý thành viên</a>
-						</li>
-					</ul>
-				</div>
-            </div>
-        </nav>
-    </header>
 	<div class="container">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h2 class="text-center">Danh sách phim</h2>
 			</div>
 			<div class="panel-body">
-				<a href="insert.php">
-					<button class="btn btn-success" style="margin-bottom: 15px;">Thêm Phim</button>
-				</a>
-				<table class="table table-bordered table-hover">
+			<div class="row">
+					<div class="col-lg-6">
+						<a href="insert.php">
+						<button  class="btn btn-success" style="margin-bottom: 15px;background-color: #FDF5E6;"><font color="black"><b>Thêm phim</b> </font>  </button>
+						</a>
+					</div>
+					<div class="col-lg-6">
+						<form method="get">
+						<div class="form-group" style="width: 300px; float: right;" >
+							<input type="text" class="form-control" placeholder="Searching..." id="s" name="s">
+						</div>
+						</form>
+					</div>
+				</div>
+				
+				<table class="table table-bordered table-hover" >
 					<thead>
 						<tr>
 							<th width="50px">Mã phim</th>
@@ -72,19 +33,43 @@ require_once ('../../db/dbhelper.php');
 							<th>Ngôn ngữ</th>
 							<th>Thể loại</th>
 							<th>Đạo diễn</th>
-							<th>Diễn viên</th>
+							<th >Diễn viên</th>
 							<th>Mô tả</th>
 							<th>Độ tuổi</th>
-							<th>Trailer</th>
-							<th width="50px"></th>
-							<th width="50px"></th>
+							<th width="150px">Trailer</th>
+							<th>Poster</th>
+							<th width="125px">Tác vụ</th>
 						</tr>
 					</thead>
 					<tbody>
 <?php
 //Lay danh sach danh muc tu database
-$sql          = "select * from phim";
+$limit =10;
+$page=1;
+if (isset($_GET['page'])) {
+	$page = $_GET['page'];
+}
+$firstIndex=($page-1) * $limit;
+$number=0;
+$s='';
+if (isset($_GET['s'])) {
+	$s = $_GET['s'];
+}
+$add= '';
+if (!empty($s))
+{
+	$add= " and tenphim like '%$s%'";
+}
+$sql          = "select * from phim where 1 $add limit $firstIndex,".$limit;
 $result = executeResult($sql);
+
+$sql          = "select count(maphim) from phim where 1 $add";
+$countResult = executeSingleResult($sql);
+if ($countResult !=null)
+{
+	$count= $countResult[0];
+	$number= ceil($count/$limit);
+}
 foreach ($result as $row) 
 {
 	echo "<tr>
@@ -98,11 +83,11 @@ foreach ($result as $row)
 				<td>$row[7]</td>
 				<td>$row[8]</td>
 				<td>$row[9]</td>
+				
+				<td><img src='$row[10]' style='max-width: 100px;' ></td>
 				<td>
-					<a href='update.php?maphim=$row[0]'><button class='btn btn-warning'>Sửa</button></a>
-				</td>
-				<td>
-					<button class='btn btn-danger' onclick='deleteCategory($row[0])'>Xoá</button>
+					<a href='update.php?maphim=$row[0]'><button style='background-color: #FFE4E1;' class='btn btn-warning'><img src='../img/edit.png'></button></a>
+					<button style='background-color: pink;' class='btn btn-danger' onclick='deleteCategory($row[0])'><img src='../img/garbage.png'></button>
 				</td>
 		</tr>";
 					
@@ -110,6 +95,10 @@ foreach ($result as $row)
 ?>
 					</tbody>
 				</table>
+<?php
+require ('../dashboard/page.php');
+?>
+
 			</div>
 		</div>
 	</div>
