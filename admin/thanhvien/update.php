@@ -91,7 +91,7 @@ require('../../all/header.php')
 					</div>
 					<div class="form-group">
 					  <label for="diemtichluy">Điểm tích lũy:</label>
-					  <input required="true" type="number" min="0" class="form-control" id="diemtichluy" name="diemtichluy" value="<?=$diemtichluy?>">
+					  <input type="number" min="0" class="form-control" id="diemtichluy" name="diemtichluy" value="<?=$diemtichluy?>">
                     </div>
 					<div class="form-group">
 					  <label for="loaitk">Loại tài khoản:</label>
@@ -99,7 +99,7 @@ require('../../all/header.php')
 					</div>
 					<div class="form-group">
 					  <label for="email">Email:</label>
-					  <input required="true" type="text" class="form-control" id="email" name="email" value="<?=$email?>">
+					  <input required="true" type="email" class="form-control" id="email" name="email" value="<?=$email?>">
 					</div>
 					
 					<button class="btn btn-success">Lưu</button>

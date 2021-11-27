@@ -2,7 +2,8 @@
 	if ($number>1)
 	{
 ?>
-				<ul class="pagination justify-content-end" style="margin:20px 0">
+
+				<ul class="pagination justify-content-end" style="margin:20px ; ">
 					<?php
 						if ($page>1)
 						{

@@ -70,6 +70,7 @@ require('../../all/header.php')
 					<div class="form-group">
 					  <label for="ngonngu">Ngôn ngữ:</label>
 					  <select class="form-control" id="ngonngu" name="ngonngu" >
+					  		<option selected value="<?=$ngonngu?>"><?=$ngonngu?></option>
                             <option value="Tiếng Anh - Phụ đề Tiếng Việt">Tiếng Anh - Phụ đề Tiếng Việt</option>
                             <option value="Tiếng Hàn - Phụ đề Tiếng Việt">Tiếng Hàn - Phụ đề Tiếng Việt</option>
                             <option value="Tiếng Trung - Phụ đề Tiếng Việt">Tiếng Trung - Phụ đề Tiếng Việt</option>
@@ -91,7 +92,7 @@ require('../../all/header.php')
 					</div>
 					<div class="form-group">
 					  <label for="mota">Mô tả:</label>
-					  <input  type="text" class="form-control" id="mota" name="mota" value="<?=$mota?>">
+					  <textarea class="form-control" name="mota" id="mota" rows="5" ><?=$mota?></textarea>
 					</div>
 					<div class="form-group">
 					  <label for="dotuoi">Độ tuổi:</label>

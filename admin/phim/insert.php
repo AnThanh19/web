@@ -1,6 +1,5 @@
 <?php
 require_once ('../../db/dbhelper.php');
-require('../../header.php');
 $maphim = $tenphim = '';
 if (!empty($_POST)) {
 	if (isset($_POST['tenphim'])) {
@@ -52,6 +51,7 @@ require('../../all/header.php')
 					<div class="form-group">
 					  <label for="ngonngu">Ngôn ngữ:</label><br>
                         <select class="form-control" id="ngonngu" name="ngonngu">
+							<option selected value="">---Chọn ngôn ngữ---</option>
                             <option value="Tiếng Anh - Phụ đề Tiếng Việt">Tiếng Anh - Phụ đề Tiếng Việt</option>
                             <option value="Tiếng Hàn - Phụ đề Tiếng Việt">Tiếng Hàn - Phụ đề Tiếng Việt</option>
                             <option value="Tiếng Trung - Phụ đề Tiếng Việt">Tiếng Trung - Phụ đề Tiếng Việt</option>
@@ -72,7 +72,7 @@ require('../../all/header.php')
 					</div>
 					<div class="form-group">
 					  <label for="mota">Mô tả:</label>
-					  <input  type="text" class="form-control" id="mota" name="mota" >
+					  <textarea class="form-control" name="mota" id="mota" rows="5"></textarea>
 					</div>
 					<div class="form-group">
 					  <label for="dotuoi">Độ tuổi:</label>

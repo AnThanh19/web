@@ -66,7 +66,7 @@ require('../../all/header.php')
 					</div>
 					<div class="form-group">
 					  <label for="cccd">Căn cước công dân:</label>
-					  <input required="true" type="number" class="form-control" id="cccd" name="cccd"><br>
+					  <input required="true" type="number" class="form-control" id="cccd" name="cccd">
                     </div>
 					<div class="form-group">
 					  <label for="ngaydk">Ngày đăng ký:</label>
@@ -74,7 +74,7 @@ require('../../all/header.php')
 					</div>
 					<div class="form-group">
 					  <label for="diemtichluy">Điểm tích lũy:</label>
-					  <input required="true" type="number" min="0" class="form-control" id="diemtichluy" name="diemtichluy"><br>
+					  <input type="number" min="0" class="form-control" id="diemtichluy" name="diemtichluy">
                     </div>
 					<div class="form-group">
 					  <label for="loaitk">Loại tài khoản:</label>
@@ -87,7 +87,7 @@ require('../../all/header.php')
 					</div>
 					<div class="form-group">
 					  <label for="email">Email:</label>
-					  <input required="true" type="text" class="form-control" id="email" name="email">
+					  <input required="true" type="email" class="form-control" id="email" name="email">
 					</div>
 					
 					<button class="btn btn-success">Lưu</button>

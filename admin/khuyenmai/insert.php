@@ -56,7 +56,7 @@ require('../../all/header.php')
 					</div>
 					<div class="form-group">
 					  <label for="mota">Mô tả:</label>
-					  <input required="true" type="text"class="form-control" id="mota" name="mota" >
+					  <textarea class="form-control" name="mota" id="mota" rows="5" ></textarea>
 					</div>
 					
 					<button class="btn btn-success">Lưu</button>
