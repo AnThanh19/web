@@ -51,7 +51,7 @@ require('../../all/header.php')
 					<div class="form-group">
 					  <label for="ngonngu">Ngôn ngữ:</label><br>
                         <select class="form-control" id="ngonngu" name="ngonngu">
-							<option selected value="">---Chọn ngôn ngữ---</option>
+							<option selected disabled>---Chọn ngôn ngữ---</option>
                             <option value="Tiếng Anh - Phụ đề Tiếng Việt">Tiếng Anh - Phụ đề Tiếng Việt</option>
                             <option value="Tiếng Hàn - Phụ đề Tiếng Việt">Tiếng Hàn - Phụ đề Tiếng Việt</option>
                             <option value="Tiếng Trung - Phụ đề Tiếng Việt">Tiếng Trung - Phụ đề Tiếng Việt</option>
@@ -83,8 +83,9 @@ require('../../all/header.php')
 					  <input type="text" class="form-control" id="trailer" name="trailer"><br>
                     </div>
 					<div class="form-group">
-					  <label for="poster">Poster:</label>
-					  <input  type="text" class="form-control" id="poster" name="poster"><br>
+					  <label for="poster">Poster:</label><br>
+					  <input type="file" name="poster" id="poster"><br>
+					  <!-- <input  type="text" class="form-control" id="poster" name="poster"><br> -->
                     </div>
 					<button class="btn btn-success">Lưu</button>
 				</form>

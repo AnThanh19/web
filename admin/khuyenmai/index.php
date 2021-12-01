@@ -2,7 +2,6 @@
 require_once ('../../db/dbhelper.php');
 require('../../all/header.php')
 ?>
-
 	<div class="container">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
@@ -75,7 +74,7 @@ foreach ($result as $row)
 				<td>$row[1]</td>
 				<td>$row[2]</td>
 				<td>$row[3]</td>
-				<td><img src='$row[4]' style='max-width: 100px;' ></td>
+				<td><img src='../img/khuyenmai/$row[4]' style='max-width: 100px;' ></td>
 				<td>$row[5]</td>
 				<td>
 					<a href='update.php?makm=$row[0]'><button style='background-color: #FFE4E1;' class='btn btn-warning'><img src='../img/edit.png'></button></a>

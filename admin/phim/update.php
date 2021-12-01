@@ -17,6 +17,7 @@ if (isset($_GET['maphim'])) {
 		$dotuoi=$result[8];
 		$trailer=$result[9];
 		$poster=$result[10];
+		$temp=$result[10];
 	}
 
 }
@@ -36,6 +37,9 @@ if (!empty($_POST)) {
 	if (isset($_POST['maphim'])) {
 		$maphim = $_POST['maphim'];
 	}
+	if (empty($poster)) {
+		$poster= $temp;
+	}
 
 	if (!empty($tenphim)) {
 		$sql = "UPDATE `phim` SET `TENPHIM`='$tenphim',`THOILUONG`='$thoiluong',`NGONNGU`='$ngonngu',
@@ -43,6 +47,16 @@ if (!empty($_POST)) {
 		`DOTUOI`='$dotuoi',`TRAILER`='$trailer',`poster`='$poster' WHERE `MAPHIM`='$maphim' ";
 		
         execute($sql);
+		
+		$tmpFile = basename($_FILES['poster']['tmp_name']);
+		$newFile = 'imp/'.basename($_FILES['poster']['name']);
+		$result = move_uploaded_file($tmpFile, $newFile);
+		echo $_FILES['poster']['name'];
+		if ($result) {
+			 echo ' was uploaded<br />';
+		} else {
+			 echo ' failed to upload<br />';
+		}
 
 		header('Location: index.php');
 		die();
@@ -70,7 +84,7 @@ require('../../all/header.php')
 					<div class="form-group">
 					  <label for="ngonngu">Ngôn ngữ:</label>
 					  <select class="form-control" id="ngonngu" name="ngonngu" >
-					  		<option selected value="<?=$ngonngu?>"><?=$ngonngu?></option>
+					  		<option selected disabled value="<?=$ngonngu?>"><?=$ngonngu?></option>
                             <option value="Tiếng Anh - Phụ đề Tiếng Việt">Tiếng Anh - Phụ đề Tiếng Việt</option>
                             <option value="Tiếng Hàn - Phụ đề Tiếng Việt">Tiếng Hàn - Phụ đề Tiếng Việt</option>
                             <option value="Tiếng Trung - Phụ đề Tiếng Việt">Tiếng Trung - Phụ đề Tiếng Việt</option>
@@ -103,8 +117,9 @@ require('../../all/header.php')
 					  <input  type="text" class="form-control" id="trailer" name="trailer" value="<?=$trailer?>">
 					</div>
 					<div class="form-group">
-					  <label for="poster">Poster:</label>
-					  <input  type="text" class="form-control" id="poster" name="poster" value="<?=$poster?>">
+					<label for="poster">Poster:</label><br>
+					  <input class="inputfile"  type="file" name="poster" id="poster" value="<?=$poster?>"><br>
+					  <br><img src="../img/phim/<?=$poster?>" style="max-width: 200px;" id="img_poster" alt="">
 					</div>
 					<button class="btn btn-success">Lưu</button>
 				</form>

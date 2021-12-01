@@ -51,9 +51,10 @@ require('../../all/header.php')
 					  <input required="true" type="number" min="0" max="50" step ="5" class="form-control" id="phantram" name="phantram" >
 					</div>
 					<div class="form-group">
-					  <label for="poster">Poster:</label>
-					  <input required="true" type="text" class="form-control" id="poster" name="poster" >
-					</div>
+					  <label for="poster">Poster:</label><br>
+					  <input type="file" name="poster" id="poster"><br>
+					  <!-- <input  type="text" class="form-control" id="poster" name="poster"><br> -->
+                    </div>
 					<div class="form-group">
 					  <label for="mota">Mô tả:</label>
 					  <textarea class="form-control" name="mota" id="mota" rows="5" ></textarea>

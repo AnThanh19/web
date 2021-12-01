@@ -14,6 +14,7 @@ if (isset($_GET['makm'])) {
 		$phantram= $result[3];
 		$poster= $result[4];
 		$mota= $result[5];
+		$temp=$result[4];
 	}
 
 }
@@ -27,6 +28,9 @@ if (!empty($_POST)) {
 	}
 	if (isset($_POST['makm'])) {
 		$makm = $_POST['makm'];
+	}
+	if (empty($poster)) {
+		$poster= $temp;
 	}
 	if (!empty($ngaybatdau)) {
 		$sql = "UPDATE `khuyenmai` SET `ngaybatdau`='$ngaybatdau',`ngayketthuc`='$ngayketthuc',
@@ -61,8 +65,9 @@ require('../../all/header.php')
 					  <input required="true" type="number" min="0" max="50" step ="5" class="form-control" id="phantram" name="phantram" value="<?=$phantram?>">
 					</div>	
 					<div class="form-group">
-					  <label for="poster">Poster:</label>
-					  <input required="false" type="text" class="form-control" id="poster" name="poster" value="<?=$poster?>">
+					<label for="poster">Poster:</label><br>
+					<input class="inputfile"  type="file" name="poster" id="poster" value="<?=$poster?>"><br>
+					  <br><img src="../img/khuyenmai/<?=$poster?>" style="max-width: 200px;" id="img_poster" alt="">
 					</div>
 					<div class="form-group">
 					  <label for="mota">Mô tả:</label>
@@ -73,5 +78,6 @@ require('../../all/header.php')
 			</div>
 		</div>
 	</div>
+	
 </body>
 </html>

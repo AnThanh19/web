@@ -7,7 +7,7 @@ require_once ('../../db/dbhelper.php');
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="../admin//img/edit.png" rel="shorcut icon"/>
+	<link href="../admin/img/edit.png" rel="shorcut icon"/>
     <title>CineSV Cinema</title>
     <link rel="stylesheet" href="https://pagecdn.io/lib/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/fontawesome-free-5.15.4-web/css/all.min.css">
@@ -39,25 +39,25 @@ require_once ('../../db/dbhelper.php');
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
 					<ul class="nav nav-tabs">
                     <li class="nav-item">
-							<a class="nav-link " href="../dashboard/"><font color="#9C8CDB"><b>ADMIN</b> </font></a>
+							<a class="nav-link " href="./index.php"><font color="#9C8CDB"><b>ADMIN</b> </font></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="../phim/"><font color="9C8CDB"><b>Quản lý Phim</b> </font></a>
+							<a class="nav-link " href="phim/"><font color="9C8CDB"><b>Quản lý Phim</b> </font></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="../lichchieu/"><font color="9C8CDB"><b>Quản lý Lịch Chiếu</b> </font></a>
+							<a class="nav-link " href="lichchieu/"><font color="9C8CDB"><b>Quản lý Lịch Chiếu</b> </font></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="../sanpham/"><font color="9C8CDB"><b>Quản lý Sản Phẩm</b> </font></a>
+							<a class="nav-link" href="sanpham/"><font color="9C8CDB"><b>Quản lý Sản Phẩm</b> </font></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="../khuyenmai/"><font color="9C8CDB"><b>Quản lý Khuyến Mãi</b> </font></a>
+							<a class="nav-link" href="khuyenmai/"><font color="9C8CDB"><b>Quản lý Khuyến Mãi</b> </font></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="../nhanvien/"><font color="9C8CDB"><b>Quản lý Nhân Viên</b> </font></a>
+							<a class="nav-link " href="nhanvien/"><font color="9C8CDB"><b>Quản lý Nhân Viên</b> </font></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="../thanhvien/"><font color="9C8CDB"><b>Quản lý Thành Viên</b> </font></a>
+							<a class="nav-link" href="thanhvien/"><font color="9C8CDB"><b>Quản lý Thành Viên</b> </font></a>
 						</li>
 					</ul>
 				</div>
@@ -133,11 +133,9 @@ require_once ('../../db/dbhelper.php');
                         </div>
                     </div>
                 </div>
-            </div>
-            
+            </div> 
+        </div>
     </div>
-    
-</div>
 
 </body>
 </html>

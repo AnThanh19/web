@@ -72,6 +72,7 @@ if ($countResult !=null)
 }
 foreach ($result as $row) 
 {
+
 	echo "<tr>
 				<td>$row[0]</td>
 				<td>$row[1]</td>
@@ -84,7 +85,7 @@ foreach ($result as $row)
 				<td>$row[8]</td>
 				<td>$row[9]</td>
 				
-				<td><img src='$row[10]' style='max-width: 100px;' ></td>
+				<td><img src='../img/phim/$row[10]' style='max-width: 100px;' ></td>
 				<td>
 					<a href='update.php?maphim=$row[0]'><button style='background-color: #FFE4E1;' class='btn btn-warning'><img src='../img/edit.png'></button></a>
 					<button style='background-color: pink;' class='btn btn-danger' onclick='deleteCategory($row[0])'><img src='../img/garbage.png'></button>
