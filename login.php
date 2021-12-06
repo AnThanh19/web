@@ -23,7 +23,7 @@ if (isset($_POST['username'])) {
         // Đăng nhập đúng
     } else {
         // Lấy tên người dùng
-        $sqlcmd = "Select TENNV, position from users u join nhanvien t on u.user=t.sdt where (user=? and pass=?)";
+        $sqlcmd = "Select TENTV, position from users u join thanhvien t on u.user=t.sdt where (user=? and pass=?)";
         $stmt = $connect->prepare($sqlcmd);
         $stmt->bind_param("ss", $username, $password);
         $stmt->execute();

@@ -17,7 +17,9 @@ if (isset($_GET['maphim'])) {
 		$dotuoi=$result[8];
 		$trailer=$result[9];
 		$poster=$result[10];
-		$temp=$result[10];
+		$khoichieu=$result[11];
+		$temp1=$result[10];
+		$temp2=$result[3];
 	}
 
 }
@@ -33,31 +35,24 @@ if (!empty($_POST)) {
 		$dotuoi = $_POST['dotuoi'];
 		$trailer = $_POST['trailer'];
 		$poster = $_POST['poster'];
+		$khoichieu= $_POST['khoichieu'];
 	}
 	if (isset($_POST['maphim'])) {
 		$maphim = $_POST['maphim'];
 	}
 	if (empty($poster)) {
-		$poster= $temp;
+		$poster= $temp1;
+	}
+	if (empty($ngonngu)) {
+		$ngonngu= $temp2;
 	}
 
 	if (!empty($tenphim)) {
 		$sql = "UPDATE `phim` SET `TENPHIM`='$tenphim',`THOILUONG`='$thoiluong',`NGONNGU`='$ngonngu',
 		`THELOAI`='$theloai',`DAODIEN`='$daodien',`DIENVIEN`='$dienvien',`MOTA`='$mota',
-		`DOTUOI`='$dotuoi',`TRAILER`='$trailer',`poster`='$poster' WHERE `MAPHIM`='$maphim' ";
+		`DOTUOI`='$dotuoi',`TRAILER`='$trailer',`poster`='$poster',`khoichieu`='$khoichieu' WHERE `MAPHIM`='$maphim' ";
 		
         execute($sql);
-		
-		$tmpFile = basename($_FILES['poster']['tmp_name']);
-		$newFile = 'imp/'.basename($_FILES['poster']['name']);
-		$result = move_uploaded_file($tmpFile, $newFile);
-		echo $_FILES['poster']['name'];
-		if ($result) {
-			 echo ' was uploaded<br />';
-		} else {
-			 echo ' failed to upload<br />';
-		}
-
 		header('Location: index.php');
 		die();
 	}
@@ -121,6 +116,10 @@ require('../../all/header.php')
 					  <input class="inputfile"  type="file" name="poster" id="poster" value="<?=$poster?>"><br>
 					  <br><img src="../img/phim/<?=$poster?>" style="max-width: 200px;" id="img_poster" alt="">
 					</div>
+					<div class="form-group">
+					  <label for="khoichieu">Khởi chiếu:</label>
+					  <input type="date" class="form-control" id="khoichieu" name="khoichieu" value="<?=$khoichieu?>"><br>
+                    </div>
 					<button class="btn btn-success">Lưu</button>
 				</form>
 			</div>

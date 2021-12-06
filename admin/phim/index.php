@@ -33,10 +33,9 @@ require('../../all/header.php')
 							<th>Ngôn ngữ</th>
 							<th>Thể loại</th>
 							<th>Đạo diễn</th>
-							<th >Diễn viên</th>
-							<th>Mô tả</th>
+							<th>Diễn viên</th>
+							<th>Khởi chiếu</th>
 							<th>Độ tuổi</th>
-							<th width="150px">Trailer</th>
 							<th>Poster</th>
 							<th width="125px">Tác vụ</th>
 						</tr>
@@ -72,7 +71,7 @@ if ($countResult !=null)
 }
 foreach ($result as $row) 
 {
-
+	
 	echo "<tr>
 				<td>$row[0]</td>
 				<td>$row[1]</td>
@@ -81,9 +80,8 @@ foreach ($result as $row)
 				<td>$row[4]</td>
 				<td>$row[5]</td>
 				<td>$row[6]</td>
-				<td>$row[7]</td>
+				<td>$row[11]</td>
 				<td>$row[8]</td>
-				<td>$row[9]</td>
 				
 				<td><img src='../img/phim/$row[10]' style='max-width: 100px;' ></td>
 				<td>

@@ -13,6 +13,7 @@ if (!empty($_POST)) {
 		$dotuoi = $_POST['dotuoi'];
 		$trailer = $_POST['trailer'];
 		$poster = $_POST['poster'];
+		$khoichieu= $_POST['khoichieu'];
 	}
 	if (isset($_POST['maphim'])) {
 		$maphim = $_POST['maphim'];
@@ -21,8 +22,8 @@ if (!empty($_POST)) {
 	if (!empty($tenphim)) {
 		//Luu vao database
 		if ($maphim == '') {
-			$sql = 'insert into phim(`TENPHIM`, `THOILUONG`, `NGONNGU`, `THELOAI`, `DAODIEN`, `DIENVIEN`,`MOTA` ,  `DOTUOI`, `TRAILER`, `poster`) 
-				values ("'.$tenphim.'","'.$thoiluong.'","'.$ngonngu.'","'.$theloai.'","'.$daodien.'","'.$dienvien.'","'.$mota.'","'.$dotuoi.'","'.$trailer.'","'.$poster.'")';
+			$sql = 'insert into phim(`TENPHIM`, `THOILUONG`, `NGONNGU`, `THELOAI`, `DAODIEN`, `DIENVIEN`,`MOTA` ,  `DOTUOI`, `TRAILER`, `poster`, `khoichieu`) 
+				values ("'.$tenphim.'","'.$thoiluong.'","'.$ngonngu.'","'.$theloai.'","'.$daodien.'","'.$dienvien.'","'.$mota.'","'.$dotuoi.'","'.$trailer.'","'.$poster.'","'.$khoichieu.'")';
 		} 
         execute($sql);
 
@@ -86,6 +87,10 @@ require('../../all/header.php')
 					  <label for="poster">Poster:</label><br>
 					  <input type="file" name="poster" id="poster"><br>
 					  <!-- <input  type="text" class="form-control" id="poster" name="poster"><br> -->
+                    </div>
+					<div class="form-group">
+					  <label for="khoichieu">Khởi chiếu:</label>
+					  <input type="date" class="form-control" id="khoichieu" name="khoichieu"><br>
                     </div>
 					<button class="btn btn-success">Lưu</button>
 				</form>

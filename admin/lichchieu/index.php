@@ -32,7 +32,7 @@ require('../../all/header.php')
 							<th>Tên rạp</th>
 							<th>Địa chỉ</th>
 							<th>Ngày chiếu</th>
-							<th>Thời gian</th>
+							<th>Khởi chiếu</th>
 							<th>Tác vụ</th>
 						</tr>
 					</thead>
@@ -56,7 +56,7 @@ if (!empty($s))
 	$add= " and tenphim like '%$s%'";
 }
 
-$sql          = "select sc.MASC,p.tenphim,sc.PHONG,rc.TENRAP,rc.DIACHI,sc.NGAYCHIEU,p.thoiluong
+$sql          = "select sc.MASC,p.tenphim,sc.PHONG,rc.TENRAP,rc.DIACHI,sc.NGAYCHIEU,p.khoichieu
 from phim p join suatchieu sc on p.MAPHIM=sc.MAPHIM JOIN rapchieu rc ON rc.MARAP=sc.MARAP 
 where sc.MAGHE='0'  $add ORDER by sc.MASC limit $firstIndex,$limit";
 $result = executeResult($sql);
