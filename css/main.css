@@ -1,0 +1,411 @@
+/* Header CSS */
+
+.header{
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white-color);
+    border-bottom: 1px solid #e0dedc;
+}
+
+.header__logo{
+    padding-left: 36px;
+}
+
+
+.header__bars-icon{
+    font-size: 2rem;
+    padding: 20px 36px;
+    display: none;
+}
+
+.header__navbar-bars-checkbox:checked ~ .navbar{
+    display: block;
+}
+
+.navbar{
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 150px;
+}
+
+.nav__overlay{
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.header__navbar-bars-checkbox:checked ~ .nav__overlay{
+    display: block;
+}
+
+.navbar-list{
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding-left: 0;
+}
+
+.navbar-item{ 
+    width: 110px;
+    height: 100%;   
+    position: relative;
+    margin: 0 24px;
+}
+
+
+.navbar-link:hover,
+.login-link:hover{
+    color: var(--primary-color);
+
+    cursor: pointer;
+}
+
+.navbar-link{
+    text-align: center;
+    display: block;
+    max-width: 100%;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black-color);
+    line-height: 80px;
+}
+
+/* USER --- LOGIN */
+.header__user{
+    position: relative;
+    align-items: center;
+    cursor: pointer;
+    display: none;
+}
+
+.header__user:hover{
+    color: var(--primary-color);
+}
+
+.header__user:hover .header__user-options{
+    display: block;
+}
+
+.header__user::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 30px;
+}
+
+.header__user-info{
+    align-items: center;
+    margin-right: 36px;
+    height: 100%;
+}
+
+.header__user-icon{
+    font-size: 2.2rem;
+    margin-right: 8px;
+}
+
+.header__user-name{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.header__user-options{
+    position: absolute;
+    top: calc(100% + 30px);
+    left: 0;
+    background-color: var(--white-color);
+    border-radius: 3px;
+    display: none;
+}
+
+.user-options-list{
+    list-style: none;
+    padding-left: 0;
+}
+
+.user-options-item{
+    padding: 8px 40px;
+}
+
+.user-options-item:hover .user-option-link{
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.user-option-link{
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+
+.login{
+    height: 100%;
+    /* margin-right: 36px; */
+    display: block;
+}
+
+.login-list{
+    height: 100%;
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.login-item{
+    text-align: center;
+    width: 120px;
+    height: 100%;
+    position: relative;
+}
+
+.login-item-register::before{
+    content: "";
+    position: absolute;
+    top: calc(0px + 28px);
+    left: 0;
+    width: 2px;
+    height: 24px;
+    background-color: var(--primary-color);
+}
+
+
+.login-link{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--black-color);
+    line-height: 80px;
+    cursor: pointer;
+
+}
+
+/* Slider CSS */
+
+.slider{
+    position: relative;
+    height: 448px;
+    background-image: linear-gradient(0, #FDFCF0, rgba(223, 50, 50, 0.8));  
+    top: var(--header-height);
+    margin-bottom: var(--header-height);
+}
+
+.slider-img{
+    width: 980px;
+    width: 100%;
+}
+
+/* CONTENT CSS */
+
+.content{
+    padding-top: 10px;
+}
+
+.home-film-item{
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 160px;
+}
+
+
+
+
+.home-film-item-link{
+    display: block;
+    height: 338px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.film-item-img{
+    background-repeat: no-repeat;
+}
+
+.home-film-item-link:hover{
+    opacity: 0.7;
+}
+
+
+
+.home-film-item-link::after{
+    content: "";
+    position: absolute;
+    top: calc(100% - 20px);
+    width: px;
+    height: 20px;
+    background-color: red;
+}
+
+.home-movie-selection{
+    margin-top: 10px;
+}
+
+.movie-selection-title{
+    background: url(../img/Slider/bg_h3_line.jpg) repeat-x scroll center center rgba(0, 0, 0, 0);
+    height: 60px;
+    text-align: center;
+    width: 100%;
+}
+
+.movie-selection-title h2{ 
+    background: url(../img/Slider/h3_movie_selection.gif) no-repeat scroll center center / 406px 41px #FDFCF0;
+    display: inline-block;
+    width: 425px;
+    height: 60px;
+    text-indent: -9999px;
+    margin: 0;
+}
+
+
+
+/* EVENTS SELECTION CSS */
+
+.events-item{
+    overflow: hidden;
+    padding: 36px 0 60px;
+}
+
+.home-events-selection{
+    background: url(../img/Slider/bg_h3_line.jpg) repeat-x scroll center center rgba(0, 0, 0, 0);
+    height: 60px;
+    text-align: center;
+    width: 100%;
+}
+
+.events-selection-title h2{
+    background: url(../img/Slider/h3_event.gif) no-repeat scroll center center / 142px 41px #FDFCF0;
+    display: inline-block;
+    width: 25%;
+    text-indent: -9999px;
+    height: 60px;
+    margin: 0;
+}
+
+.home-event-link{
+    display: block;
+    height: 338px;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER CSS */
+
+.footer{
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(223, 50, 50,0.7));
+    padding-bottom: 10px;
+}
+
+.footer-row{
+    margin: 20px 0;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+
+.footer-title{
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.footer-list{
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.footer-socials{
+    text-align: center;
+}
+
+.footer-link{
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin: 6px 0;
+    text-align: center;
+}
+
+.footer-icon-socials{
+    font-size: 4rem;
+    padding: 0 6px;
+}
+
+.footer-link-socials{
+    text-decoration: none;
+}
+
+.footer-link-socials:hover i{
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+}
+
+.bo-cong-thuong{
+    display: inline-block;
+    width: 200px;
+    height: 70px;
+    position: relative;
+    text-indent: -9999px;
+    background: url(../img/Slider/Bo-cong-thuong.png) no-repeat scroll top left transparent;
+    margin-top: 24px;
+}
+
+.footer-logo{
+    background-position: -145px -319px;
+    float: left;
+    height: 43px;
+    width: 120px;
+    margin-top: 30px;
+}
+
+.footer__about{
+    text-align: left;
+}
+
+.footer-name{
+    font-size: 1.4rem;
+}
+
+.footer-sub{
+    margin: 4px;
+    font-size: 1.2rem;
+    font-weight: 400;
+}

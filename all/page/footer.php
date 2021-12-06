@@ -43,9 +43,9 @@
                     <div class="col l-3 m-4 c-6 hide-on-tablet">
                         <h3 class="footer-title">Chăm sóc khách hàng</h3>
                         <ul class="footer-list">
-                            <h4 href="" class="footer-link">Hotline: 0978827442</h4>
+                            <h4 href="" class="footer-link">Hotline: 1900 6017</h4>
                             <h4 href="" class="footer-link">Giờ làm việc: 8:00 - 22:00 (Tất cả các ngày bao gồm cả Lễ Tết)</h4>
-                            <h4 href="" class="footer-link">Email hỗ trợ: thanlonglua97@gmail.com</h4>
+                            <h4 href="" class="footer-link">Email hỗ trợ: hoidap@cinesv.vn</h4>
                         </ul>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                         <h3 class="footer-name">CÔNG TY TNHH MTV CineSV</h3>
                         <h4 class="footer-sub">Giấy CNĐKDN: 0303675393, đăng ký lần đầu ngày 31/7/2008, đăng ký thay đổi lần thứ 5 ngày 14/10/2015, cấp bởi Sở KHĐT thành phố Hồ Chí Minh.</h4>
                         <h4 class="footer-sub">Địa Chỉ: Khu phố 6, Phường Linh Trung, Thành Phố Thủ Đức, TPHCM.</h4>
-                        <h4 class="footer-sub">COPYRIGHT 2021 CJ CGV. All RIGHTS RESERVED</h4>
+                        <h4 class="footer-sub">COPYRIGHT 2021 CJ CINESV. All RIGHTS RESERVED</h4>
                     </div>
 
                 </div>

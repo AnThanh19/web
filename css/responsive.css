@@ -1,0 +1,134 @@
+
+
+/* Hide register button */
+
+@media (max-width: 1370px){
+    .login-item-register{
+        display: none;
+    }
+
+    .login{
+        margin-right: 18px;
+    }
+
+    .header__user-name{
+        display: none;
+    }
+
+    .header__user-icon{
+        font-size: 4rem;
+        color: var(--primary-color);
+    }
+
+    .header__user-options{
+        left: calc(0px - 80px);
+        right: unset;
+    }
+
+    .navbar{
+        margin-right: -100px;
+    }
+
+    .navbar-item{
+        margin: 0 14px;
+    }
+
+}
+
+/* Mobile and tablet */
+
+@media(max-width: 1023px){
+    
+
+    .hide-on-tablet-mobile{
+        display: none;
+    }
+
+
+    .header__bars-icon{
+        display: block;
+    }
+
+    .slider-img{
+        margin-top: 40px;
+    }
+
+    .navbar{
+        z-index: 1;
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        display: none;
+        background-color: var(--white-color); 
+
+        height: unset;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    .navbar-list{
+        display: block;
+        height: unset;
+    }
+
+    .navbar-item{
+        width: 100%;
+        margin: 0;
+        padding-left: 24px;
+        border-bottom: 1px solid rgb(238, 237, 237);
+    }
+    
+    .navbar-link{
+        text-align: left;
+        display: block;
+    }
+
+
+    .subnav-list{
+        width: 100%;
+        top: 100%;
+        right: 0;
+        left: 0;
+
+    }
+
+    .subnav-item{
+        width: 100%;
+    }
+
+    .suvnav-checkbox:checked ~ .subnav-list{
+        display: block;
+    }
+
+}
+
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px){
+    .hide-on-tablet{
+        display: none;
+    }
+}
+
+
+/* Mobile */
+@media(max-width: 739px){
+    .hide-on-mobile{
+        display: none;
+    }
+
+    .footer{
+        padding: 0 10px;
+    }
+    .content{
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    .events-item,
+    .home-film-item{
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .events-selection-title h2{
+        width: 32%;
+    }
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/img/title-icon.png">
+    <link rel="icon" href="../../img/header__logo.png">
     <title>CGV Cinemas VietNam</title>
     <link rel="stylesheet" href="https://pagecdn.io/lib/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="../../fontawesome-free-5.15.4-web/css/all.min.css">
@@ -17,7 +17,7 @@
 <body>
     <div class="app">
     <header class="header">
-            <a href="../../../index.html" class="header__logo hide-on-tablet-mobile">
+            <a href="../../../index.php" class="header__logo hide-on-tablet-mobile">
                 <img src="../../img/logo-sv" alt="" class="header__logo-img">
             </a>
             
@@ -34,7 +34,7 @@
                         
                             <ul class="subnav-list">
                                 <li class="subnav-item">
-                                    <a href="../../pages/phimDangChieu.html" class="subnav-link">Phim đang chiếu</a>
+                                    <a href="../../pages/Phim/phimDangChieu.php" class="subnav-link">Phim đang chiếu</a>
                                 </li>
                                 <li class="subnav-item">
                                     <a href="../../pages/Phim/phimSapChieu.html" class="subnav-link">Phim sắp chiếu</a>
@@ -49,21 +49,7 @@
                         <a href="../../pages/tintuc/tinTuc.php" class="navbar-link">Tin tức</a>
                         
                     </li>
-                    <li class="navbar-item noHover">
-                        <label for="subnav-cultural-checkbox" class="navbar-link">Cultureplex</label>
-                            <input type="checkbox" hidden id="subnav-cultural-checkbox" class="suvnav-checkbox">
-    
-                        
-                            <ul class="subnav-list">
-                                <li class="subnav-item">
-                                    <a href="" class="subnav-link">Sự kiện</a>
-                                </li>
-                                <li class="subnav-item">
-                                    <a href="" class="subnav-link">Thẻ quà tặng</a>
-                                </li>
-                            </ul>
-                        
-                    </li>
+                    
                 </ul>
                 
             </nav>
@@ -86,7 +72,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="login">
+            <div class="login" id="block_login_register">
                 <ul class="login-list">
                     <li class="login-item login-item-sign-in">
                         <label href="" class="login-link js-login-form">Đăng nhập</label>
