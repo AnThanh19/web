@@ -13,6 +13,8 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
     <link rel="stylesheet" href="../../fontawesome-free-5.15.4-web/css/all.min.css">
     <link rel="stylesheet" href="./phimDangChieu.css">
     <link rel="stylesheet" href="../../css/base.css">
+    
+    <link rel="stylesheet" href="../../css/main.css">
 </head>
 <body>
     <div class="app">
@@ -48,6 +50,25 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
     
             </nav>
     
+            <div class="header__user" id="block_info_user">
+                <div class="header__user-info">
+                    <i class="header__user-icon fas fa-user-circle"></i>
+                    <span id="usernameCineSV" class="header__user-name"></span>
+                </div>
+                <div class="header__user-options">
+                    <ul class="user-options-list">
+                        <li class="user-options-item">
+                            <a href="" class="user-option-link">Tài khoản</a>
+                        </li>
+                        <li class="user-options-item">
+                            <a href="" class="user-option-link">Cài đặt</a>
+                        </li>
+                        <li class="user-options-item">
+                            <a href="../../../logout.php" class="user-option-link">Đăng xuất</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <div class="login" id="block_login_register">
                 <ul class="login-list">
                     <li class="login-item login-item-sign-in">
@@ -116,7 +137,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                             <a href="" class="footer-link">Tiện ích Online</a>
                             <a href="" class="footer-link">Thẻ quà tặng</a>
                             <a href="" class="footer-link">Tuyển dụng</a>
-                            <a href="" class="footer-link">Liên hệ quảng cáo CGV</a>
+                            <a href="" class="footer-link">Liên hệ quảng cáo</a>
                         </ul>
                     </div>
 
@@ -133,10 +154,10 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
 
                     <div class="grid__column-fourth-home">
                         <h3 class="footer-title">CineSV</h3>
-                        <a href="https://www.facebook.com/cgvcinemavietnam" target="_blank" class="footer-link-socials">
+                        <a href="https://www.facebook.com/Tins.Grace.vl/" target="_blank" class="footer-link-socials">
                             <i class="footer-icon-socials fab fa-facebook-square" style="color: rgb(12, 55, 150); padding-left: 0;"></i>
                         </a>
-                        <a href="https://www.instagram.com/cgvcinemasvietnam/" target="_blank" class="footer-link-socials">
+                        <a href="https://www.instagram.com/lethanhtin____/" target="_blank" class="footer-link-socials">
                             <i class="footer-icon-socials fab fa-instagram-square"  style="color: rgb(219, 58, 152);"></i>
                         </a>
                         <a href="https://www.youtube.com/cgvvietnam" target="_blank" class="footer-link-socials">
@@ -256,58 +277,115 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
     
     
         <script>
-            var loginForm = document.querySelector('.js-login-form');
-            var registerForm = document.querySelector('.js-register-form');
-            var modal = document.querySelector('.js-modal');
-            var modalBodyLogin = document.querySelector('.js-modal__body--login');
-            var modalBodyRegister = document.querySelector('.js-modal__body--register');
-    
-            var switchFormLogin = document.querySelector('.js-login');
-            var switchFormRegister = document.querySelector('.js-register');
-    
-            // Hàm mở gogin Form
-            function openLoginForm(){
-                modal.classList.add('open__modal');
-                modalBodyRegister.classList.remove('modal-body__open');
-                modalBodyLogin.classList.add('modal-body__open');
+             var loginForm = document.querySelector('.js-login-form');
+        var registerForm = document.querySelector('.js-register-form');
+        var modal = document.querySelector('.js-modal');
+        var modalBodyLogin = document.querySelector('.js-modal__body--login');
+        var modalBodyRegister = document.querySelector('.js-modal__body--register');
+        var switchFormLogin = document.querySelector('.js-login');
+        var switchFormRegister = document.querySelector('.js-register');
+        if (getCookie("fullName") != "") {
+            block_login_register.innerHTML = "";
+            usernameCineSV.innerHTML = getCookie("fullName");
+        } else {
+            block_info_user.innerHTML = "";
+        }
+        // Hàm mở gogin Form
+        function openLoginForm() {
+            modal.classList.add('open__modal');
+            modalBodyRegister.classList.remove('modal-body__open');
+            modalBodyLogin.classList.add('modal-body__open');
+        }
+        // Hàm mở register Form
+        function openRegisterForm() {
+            modal.classList.add('open__modal');
+            modalBodyLogin.classList.remove('modal-body__open');
+            modalBodyRegister.classList.add('modal-body__open');
+        }
+        // Hàm ẩn modal 
+        function closeModal() {
+            modal.classList.remove('open__modal');
+        }
+        // Hàm chuyển form login-regisrer
+        function switchToLogin() {
+            modalBodyRegister.classList.remove('modal-body__open');
+            modalBodyLogin.classList.add('modal-body__open');
+        }
+        function switchToRegister() {
+            modalBodyLogin.classList.remove('modal-body__open');
+            modalBodyRegister.classList.add('modal-body__open');
+        }
+        loginForm.addEventListener('click', openLoginForm);
+        registerForm.addEventListener('click', openRegisterForm);
+        switchFormRegister.addEventListener('click', switchToRegister);
+        switchFormLogin.addEventListener('click', switchToLogin);
+        //Đóng modal
+        modal.addEventListener('click', closeModal);
+        modalBodyLogin.addEventListener('click', function(event) {
+            event.stopPropagation();
+        })
+        modalBodyRegister.addEventListener('click', function(event) {
+            event.stopPropagation();
+        })
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
             }
-            // Hàm mở register Form
-            function openRegisterForm(){
-                modal.classList.add('open__modal');
-                modalBodyLogin.classList.remove('modal-body__open');
-                modalBodyRegister.classList.add('modal-body__open');
+            return "";
+        }
+        function Login() {
+            var xmlHttp = new XMLHttpRequest();
+            var obj = document.getElementById("notificationLogin");
+            var url = "../../login.php";
+            var param = "username=" + username.value + "&password=" + password.value;
+            xmlHttp.open("POST", url, true);
+            xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlHttp.send(param);
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    if (xmlHttp.responseText == "ok") {
+                        location.replace("./");
+                    } else {
+                        obj.innerHTML = xmlHttp.responseText;
+                    }
+                }
             }
-            // Hàm ẩn modal 
-            function closeModal(){
-                modal.classList.remove('open__modal');
-            }
-    
-            // Hàm chuyển form login-regisrer
-            function switchToLogin(){
-                modalBodyRegister.classList.remove('modal-body__open');
-                modalBodyLogin.classList.add('modal-body__open');
-            }
-    
-            function switchToRegister(){
-                modalBodyLogin.classList.remove('modal-body__open');
-                modalBodyRegister.classList.add('modal-body__open');
-            }
-    
-            loginForm.addEventListener('click', openLoginForm);
-    
-            registerForm.addEventListener('click', openRegisterForm);
-    
-            switchFormRegister.addEventListener('click', switchToRegister);
-            switchFormLogin.addEventListener('click', switchToLogin);
-            //Đóng modal
-            modal.addEventListener('click', closeModal);
-            modalBodyLogin.addEventListener('click', function(event){
-                event.stopPropagation();
-            })
-    
-            modalBodyRegister.addEventListener('click', function(event){
-                event.stopPropagation();
-            })
+        }
+        function Register() {
+            var xmlHttp = new XMLHttpRequest();
+            var obj = document.getElementById("notificationRegister");
+            if (reg_password.value != reg_password_confirm.value) {
+                obj.innerHTML = "Mật khẩu không khớp";
+                // location.replace("https://www.fb.com");
+            } else {
+                var url = "../../register.php";
+                var param = "fullname=" + reg_fullname.value + "&email=" + reg_email.value + "&telephone=" + reg_telephone.value + "&password=" + reg_password.value;
+                xmlHttp.open("POST", url, true);
+                xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xmlHttp.send(param);
+                xmlHttp.onreadystatechange = function() {
+                    if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                        if (xmlHttp.responseText == "ok") {                        
+                            window.alert("Đăng kí thành công");
+                            location.replace("./");
+                        } else {
+                            obj.innerHTML = xmlHttp.responseText;
+                        }
+                    }
+                }
+            }  
+        }
+
+
     
         </script>
     </div>

@@ -40,6 +40,7 @@ if (isset($_GET['masc'])) {
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/responsive.css">
     <link rel="stylesheet" href="./chitietphim.css">
+    <link rel="stylesheet" href="../../css/datGhe.css">
 </head>
 <body>
     <div class="app">
@@ -77,31 +78,14 @@ if (isset($_GET['masc'])) {
                         <a href="../tintuc/tinTuc.php" class="navbar-link">Tin tức</a>
                             
                     </li>
-                    <li class="navbar-item noHover">
-                        <label for="subnav-cultural-checkbox" class="navbar-link">Cultureplex</label>
-                            <input type="checkbox" hidden id="subnav-cultural-checkbox" class="suvnav-checkbox">
-    
-                        
-                            <ul class="subnav-list">
-                                <li class="subnav-item">
-                                    <a href="" class="subnav-link">Quầy Online</a>
-                                </li>
-                                <li class="subnav-item">
-                                    <a href="#" class="subnav-link">Sự kiện và vé nhóm</a>
-                                </li>
-                                <li class="subnav-item">
-                                    <a href="/assets/pages/Gift/theQuaTang.html" class="subnav-link">Thẻ quà tặng</a>
-                                </li>
-                            </ul>
-                        
-                    </li>
+                  
                 </ul>
                 
             </nav>
-            <div class="header__user">
+            <div class="header__user" id="block_info_user">
                 <div class="header__user-info">
                     <i class="header__user-icon fas fa-user-circle"></i>
-                    <span class="header__user-name">Le Thanh Tin</span>
+                    <span id="usernameCineSV" class="header__user-name"></span>
                 </div>
                 <div class="header__user-options">
                     <ul class="user-options-list">
@@ -112,22 +96,22 @@ if (isset($_GET['masc'])) {
                             <a href="" class="user-option-link">Cài đặt</a>
                         </li>
                         <li class="user-options-item">
-                            <a href="" class="user-option-link">Đăng xuất</a>
+                            <a href="../../../logout.php" class="user-option-link">Đăng xuất</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="login">
+            <div class="login" id="block_login_register">
                 <ul class="login-list">
                     <li class="login-item login-item-sign-in">
-                        <label href="" class="login-link js-login-form">Đăng nhập</label>
+                        <label class="login-link js-login-form">Đăng nhập</label>
                     </li>
                     <li class="login-item login-item-register">
-                        <label href="" class="login-link js-register-form">Đăng ký</label>
+                        <label class="login-link js-register-form">Đăng ký</label>
                     </li>
                 </ul>
             </div>
-    
+
         </header>
         
         <div class="content">
@@ -200,7 +184,7 @@ if (isset($_GET['masc'])) {
                             <a href="" class="footer-link">Tiện ích Online</a>
                             <a href="" class="footer-link">Thẻ quà tặng</a>
                             <a href="" class="footer-link">Tuyển dụng</a>
-                            <a href="" class="footer-link">Liên hệ quảng cáo CGV</a>
+                            <a href="" class="footer-link">Liên hệ quảng cáo</a>
                         </ul>
                     </div>
 
@@ -336,12 +320,14 @@ if (isset($_GET['masc'])) {
     </div>
     
 
+    
     <!-- MODAL TiCKET -->
-    <div class="modal-ticket">
+    <div class="modal-ticket js-modal-ticket">
         <div class="modal-content">
           <i class="fa fa-times modal-close js-modal-close"></i>
           <h1 class="premiere-title">CHỌN SUẤT CHIẾU</h1>
           <form action="" class="premiere-form">
+          
               <div class="form-item">
                   <label for="city">Thành Phố:</label>
                   <select name="city" id="city" class="form-control">
@@ -364,79 +350,302 @@ if (isset($_GET['masc'])) {
                       
                   </select>
               </div>
-              <button class="btn btn-primary" style="width: 30%; border-radius: 5px; font-weight: 600;">Đăng ký</button>
+              <div class="btn btn-primary premiere-sub-btn" style="width: 30%; border-radius: 5px; font-weight: 600; text-align: center; padding-top: 10px;">Đăng ký</div>
           </form>
 
           <div class="noPremiere">Xin Lỗi Không Có Suất Chiếu!</div>
+
         </div>
-      </div>
+    </div>
+
+    <div class="modal-ticket js-datghe-modal">
+        <div class="modal-content">
+          <i class="fa fa-times modal-close js-modal-close"></i>
 
 
+          
+          <div class="film-infomation film-info">
+                <div>Phim: <span>Bo Gia</span></div>
+                <div>Suat chieu: <span>2020-05-12 19:00:00</span></div>
+                <div>Rap: <span>CGV Parkson Đồng Khởi</span></div>
+                <div>Phong: <span>1</span></div>
+                <div>Ghe: <span></span></div>
+          </div>
+          
+          <div class="modal-content-main">
+              <span class="screen">SCREEN</span>
+              <div class="grid seat-select">
+                <div class="seat-row">
+                      
+                    <div class="seat seat-standard empty"></div>
+                    <div class="seat seat-standard empty">A10</div>
+                    <div class="seat seat-standard empty">A9</div>
+                    <div class="seat seat-standard empty">A8</div>
+                    <div class="seat seat-standard empty">A7</div>
+                    <div class="seat seat-standard empty">A6</div>
+                    <div class="seat seat-standard empty">A5</div>
+                    <div class="seat seat-standard empty">A4</div>
+                    <div class="seat seat-standard empty">A3</div>
+                    <div class="seat seat-standard empty">A2</div>
+                    <div class="seat">
+                        <i class="fas fa-angle-double-right door-arrow-icon"></i>
+                    </div>
+                    <div class="seat" style="font-size: 1.2rem; font-weight: 600; line-height: 3.4;">Exit</div>
+                </div>
+                  <div class="seat-row">
+                      
+                      <div class="seat seat-standard empty"></div>
+                      <div class="seat seat-standard active seat-unavailable disabled">A10</div>
+                      <div class="seat seat-standard active">A9</div>
+                      <div class="seat seat-standard active">A8</div>
+                      <div class="seat seat-standard active">A7</div>
+                      <div class="seat seat-standard active">A6</div>
+                      <div class="seat seat-standard active">A5</div>
+                      <div class="seat seat-standard active">A4</div>
+                      <div class="seat seat-standard active">A3</div>
+                      <div class="seat seat-standard active">A2</div>
+                      <div class="seat seat-standard active">A1</div>
+                      <div class="seat seat-standard empty"></div>
+                  </div>
+                  <div class="seat-row">
+                    
+                    <div class="seat seat-standard empty"></div>
+                    <div class="seat seat-standard active">B10</div>
+                    <div class="seat seat-standard active">B9</div>
+                    <div class="seat seat-standard active">B8</div>
+                    <div class="seat seat-standard active">B7</div>
+                    <div class="seat seat-standard active">B6</div>
+                    <div class="seat seat-standard active">B5</div>
+                    <div class="seat seat-standard active">B4</div>
+                    <div class="seat seat-standard active">B3</div>
+                    <div class="seat seat-standard active">B2</div>
+                    <div class="seat seat-standard active">B1</div>
+                    <div class="seat seat-standard empty"></div>
+                </div>
+                <div class="seat-row">
+                    
+                    <div class="seat seat-standard empty"></div>
+                    <div class="seat seat-standard active">C10</div>
+                    <div class="seat seat-standard active">C9</div>
+                    <div class="seat seat-standard active">C8</div>
+                    <div class="seat seat-standard active">C7</div>
+                    <div class="seat seat-standard active">C6</div>
+                    <div class="seat seat-standard active">C5</div>
+                    <div class="seat seat-standard active">C4</div>
+                    <div class="seat seat-standard active">C3</div>
+                    <div class="seat seat-standard active">C2</div>
+                    <div class="seat seat-standard active">C1</div>
+                    <div class="seat seat-standard empty"></div>
+                </div>
+                <div class="seat-row">
+                    
+                    <div class="seat seat-standard empty"></div>
+                    <div class="seat seat-standard active">D10</div>
+                    <div class="seat seat-standard active">D9</div>
+                    <div class="seat seat-standard active">D8</div>
+                    <div class="seat seat-standard active">D7</div>
+                    <div class="seat seat-standard active">D6</div>
+                    <div class="seat seat-standard active">D5</div>
+                    <div class="seat seat-standard active">D4</div>
+                    <div class="seat seat-standard active">D3</div>
+                    <div class="seat seat-standard active">D2</div>
+                    <div class="seat seat-standard active">D1</div>
+                    <div class="seat seat-standard empty"></div>
+                </div>
+                <div class="seat-row">
+                    
+                    <div class="seat seat-standard empty"></div>
+                    <div class="seat seat-standard active">E10</div>
+                    <div class="seat seat-standard active">E9</div>
+                    <div class="seat seat-standard active">E8</div>
+                    <div class="seat seat-standard active">E7</div>
+                    <div class="seat seat-standard active">E6</div>
+                    <div class="seat seat-standard active">E5</div>
+                    <div class="seat seat-standard active">E4</div>
+                    <div class="seat seat-standard active">E3</div>
+                    <div class="seat seat-standard active">E2</div>
+                    <div class="seat seat-standard active">E1</div>
+                    <div class="seat seat-standard empty"></div>
+                </div>
+                <div class="seat-row">
+                    
+                    <div class="seat seat-standard empty"></div>
+                    <div class="seat seat-standard active">F10</div>
+                    <div class="seat seat-standard active">F9</div>
+                    <div class="seat seat-standard active">F8</div>
+                    <div class="seat seat-standard active">F7</div>
+                    <div class="seat seat-standard active">F6</div>
+                    <div class="seat seat-standard active">F5</div>
+                    <div class="seat seat-standard active">F4</div>
+                    <div class="seat seat-standard active">F3</div>
+                    <div class="seat seat-standard active">F2</div>
+                    <div class="seat seat-standard active">F1</div>
+                    <div class="seat seat-standard empty"></div>
+                </div>
+                <div class="seat-row">
+                    
+                    <div class="seat seat-standard empty"></div>
+                    <div class="seat seat-standard active">G10</div>
+                    <div class="seat seat-standard active">G9</div>
+                    <div class="seat seat-standard active">G8</div>
+                    <div class="seat seat-standard active">G7</div>
+                    <div class="seat seat-standard active">G6</div>
+                    <div class="seat seat-standard active">G5</div>
+                    <div class="seat seat-standard active">G4</div>
+                    <div class="seat seat-standard active">G3</div>
+                    <div class="seat seat-standard active">G2</div>
+                    <div class="seat seat-standard active">G1</div>
+                    <div class="seat seat-standard empty"></div>
+                </div>
+                <div class="seat-row">
+                   
+                    <div class="seat">
+                        <i class="fas fa-angle-double-up door-arrow-icon"></i>
+                    </div>
+                    <div class="seat seat-standard active">H10</div>
+                    <div class="seat seat-standard active">H9</div>
+                    <div class="seat seat-standard active">H8</div>
+                    <div class="seat seat-standard active">H7</div>
+                    <div class="seat seat-standard active">H6</div>
+                    <div class="seat seat-standard active">H5</div>
+                    <div class="seat seat-standard active">H4</div>
+                    <div class="seat seat-standard active">H3</div>
+                    <div class="seat seat-standard active">H2</div>
+                    <div class="seat seat-standard active">H1</div>
+                    <div class="seat seat-standard empty"></div>
+                </div>
+                <div class="seat-row">
+                    
+                    
+                    <div class="seat" style="font-size: 1.2rem;font-weight: 600;">Lối vào</div>
+                    <div class="seat active seat-couple">I10</div>
+                    <div class="seat active seat-couple">I9</div>
+                    <div class="seat active seat-couple">I8</div>
+                    <div class="seat active seat-couple">I7</div>
+                    <div class="seat active seat-couple">I6</div>
+                    <div class="seat active seat-couple">I5</div>
+                    <div class="seat active seat-couple">I4</div>
+                    <div class="seat active seat-couple">I3</div>
+                    <div class="seat active seat-couple">I2</div>
+                    <div class="seat active seat-couple">I1</div>
+                    <div class="seat seat-standard empty"></div>
+                </div>
+          </div>
+          
+          <input type="submit" class="btn primary-btn" value="Đặt vé" style="float: right; width: 200px; margin-top: 24px;"></input>
+        </div>
 
-
-
-
-
-
+    </div>
 
 
     <script>
-       
-
         var loginForm = document.querySelector('.js-login-form');
         var registerForm = document.querySelector('.js-register-form');
         var modal = document.querySelector('.js-modal');
         var modalBodyLogin = document.querySelector('.js-modal__body--login');
         var modalBodyRegister = document.querySelector('.js-modal__body--register');
-
         var switchFormLogin = document.querySelector('.js-login');
         var switchFormRegister = document.querySelector('.js-register');
-
+        if (getCookie("fullName") != "") {
+            block_login_register.innerHTML = "";
+            usernameCineSV.innerHTML = getCookie("fullName");
+        } else {
+            block_info_user.innerHTML = "";
+        }
         // Hàm mở gogin Form
-        function openLoginForm(){
+        function openLoginForm() {
             modal.classList.add('open__modal');
             modalBodyRegister.classList.remove('modal-body__open');
             modalBodyLogin.classList.add('modal-body__open');
         }
         // Hàm mở register Form
-        function openRegisterForm(){
+        function openRegisterForm() {
             modal.classList.add('open__modal');
             modalBodyLogin.classList.remove('modal-body__open');
             modalBodyRegister.classList.add('modal-body__open');
         }
         // Hàm ẩn modal 
-        function closeModal(){
+        function closeModal() {
             modal.classList.remove('open__modal');
         }
-
         // Hàm chuyển form login-regisrer
-        function switchToLogin(){
+        function switchToLogin() {
             modalBodyRegister.classList.remove('modal-body__open');
             modalBodyLogin.classList.add('modal-body__open');
         }
-
-        function switchToRegister(){
+        function switchToRegister() {
             modalBodyLogin.classList.remove('modal-body__open');
             modalBodyRegister.classList.add('modal-body__open');
         }
-
         loginForm.addEventListener('click', openLoginForm);
-
         registerForm.addEventListener('click', openRegisterForm);
-
         switchFormRegister.addEventListener('click', switchToRegister);
         switchFormLogin.addEventListener('click', switchToLogin);
         //Đóng modal
         modal.addEventListener('click', closeModal);
-        modalBodyLogin.addEventListener('click', function(event){
+        modalBodyLogin.addEventListener('click', function(event) {
             event.stopPropagation();
         })
-
-        modalBodyRegister.addEventListener('click', function(event){
+        modalBodyRegister.addEventListener('click', function(event) {
             event.stopPropagation();
         })
-
-        
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function Login() {
+            var xmlHttp = new XMLHttpRequest();
+            var obj = document.getElementById("notificationLogin");
+            var url = "../../login.php";
+            var param = "username=" + username.value + "&password=" + password.value;
+            xmlHttp.open("POST", url, true);
+            xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlHttp.send(param);
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    if (xmlHttp.responseText == "ok") {
+                        location.replace("./");
+                    } else {
+                        obj.innerHTML = xmlHttp.responseText;
+                    }
+                }
+            }
+        }
+        function Register() {
+            var xmlHttp = new XMLHttpRequest();
+            var obj = document.getElementById("notificationRegister");
+            if (reg_password.value != reg_password_confirm.value) {
+                obj.innerHTML = "Mật khẩu không khớp";
+                // location.replace("https://www.fb.com");
+            } else {
+                var url = "../../register.php";
+                var param = "fullname=" + reg_fullname.value + "&email=" + reg_email.value + "&telephone=" + reg_telephone.value + "&password=" + reg_password.value;
+                xmlHttp.open("POST", url, true);
+                xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xmlHttp.send(param);
+                xmlHttp.onreadystatechange = function() {
+                    if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                        if (xmlHttp.responseText == "ok") {                        
+                            window.alert("Đăng kí thành công");
+                            location.replace("./");
+                        } else {
+                            obj.innerHTML = xmlHttp.responseText;
+                        }
+                    }
+                }
+            }  
+        }
         
     </script>
     <script src="/assets/js/modalTickets.js"></script>

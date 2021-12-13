@@ -1,10 +1,25 @@
-<!-- <?php
-//require "/xampp/htdocs/WebCinema/assets/all/page/header.php"
-?> -->                      
+<?php
+require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
+$makm='';
+if (isset($_GET['makm'])) {
+	$makm   = $_GET['makm'];
+	$sql    = "SELECT MAKM, DATE_FORMAT(NGAYBATDAU,'%d-%m-%Y') ,  DATE_FORMAT(NGAYKETTHUC,'%d-%m-%Y') , PHANTRAM, POSTER, MOTA FROM KHUYENMAI where makm='$makm'";
+	$result = executeSingleResult($sql);
+	if ($result != null) {
+		$ngaybatdau=  $result[1];
+        $ngaykethuc= $result[2];
+		$phantram=$result[3];
+		$poster=$result[4];
+		$mota=$result[5];
+	}
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../img/header__logo.png">
@@ -15,12 +30,11 @@
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/grid.css">
     <link rel="stylesheet" href="../../css/responsive.css">
-    <link rel="stylesheet" href="../../pages/Rap/allRap.css">
-    
+    <link rel="stylesheet" href="./chiTietTinTuc.css">
 </head>
 <body>
-    <div class="app">
-    <header class="header">
+<div class="app">
+        <header class="header">
             <a href="../../../index.php" class="header__logo hide-on-tablet-mobile">
                 <img src="../../img/logo-sv" alt="" class="header__logo-img">
             </a>
@@ -86,64 +100,28 @@
                 </ul>
             </div>
 
-        </header>
-         
+        </header> 
         <div class="content">
             <div class="grid wide">
-                <h1 class="content-header">RẠP CHIẾU PHIM</h1>
-                <div class="content-body">
-                <form method="get" action="#">
-                    <label for="">Tỉnh Thành:</label>
-                    <select  class="content-form-control" name="diachi">
-                        <option selected disabled hidden value="<?=$diachi?>">---Chọn Tỉnh thành---</option>
-                        <option value="TP HCM">Hồ Chí Minh</option>
-                        <option value="Bình Dương">Bình Dương</option>
-                        <option value="Lâm Đồng">Lâm Đồng</option>
-                    </select>
-                    <!-- <button class="btn btn-form-control" type="Submit" name="Submit" >Chi tiết</button> -->
-                    <input class="btn btn-form-control" type="Submit" value="Chi tiết" name="Submit">
-                    <br><br>
-                    <br><br>
-                </form>
-                </div>
+                <h1 class="content-title-header">CHƯƠNG TRÌNH KHUYẾN MÃI <?=$phantram?> %</h1>
                 
-                            <?php
-if(isset($_GET['diachi'])&&($_GET['Submit']=="Chi tiết"))
-        {
-            //require_once "/xampp/htdocs/WebCinema/db/dbhelper.php";
-            include "/xampp/htdocs/WebCinema/db/dbhelper.php";
-            $diachi= $_GET['diachi'];
-            $sql    = "select * from rapchieu where diachi='$diachi'";
-            $result = executeResult($sql);
-            echo "<div class='content-form-table'>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th>Tên rạp</th>
-                                <th>Địa Chỉ</th>
-                                <th>Email</th>
-                                <th>Số Điện Thoại</th>
-                            </tr>";
-            foreach ($result as $row) 
-            {
-                echo "<tr>
-                            <td>$row[1]</td>
-                            <td>$row[2]</td>
-                            <td>$row[3]</td>
-                            <td>$row[4]</td>
-                            
-                    </tr>";
-                                
-            }
-        }
-?>                           
-                        </tbody>
-                    </table>
+                <div class="grid__row content-body">
+                    <div class="col l-4 m-4 c-12">
+                        <img src="../../../admin/img/khuyenmai/<?=$poster?>" style="max-height: 300px;max-width:250px" alt="" class="content-img">
+                    </div>
+                    <div class="col l-8 m-8 c-12">
+                        <div class="content-info">
+                            <h2 class="content-info-name">Áp dụng:</h2>
+                            <p><?=$mota?></p>
+                            <h2 style="margin-top:36px" class="content-info-name">Thời gian khuyến mãi:</h2>
+                            Thời gian diễn ra từ: ngày <span class="event-time"><?=$ngaybatdau?> đến hết ngày <?=$ngaykethuc?></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <footer class="footer">
+    
+        <footer class="footer">
             <div class="grid wide">
                 <div class="row footer-row">
                     <div class="col l-3 m-4 c-6">
@@ -207,7 +185,7 @@ if(isset($_GET['diachi'])&&($_GET['Submit']=="Chi tiết"))
                 </div>
             </div>
         </footer>
-        
+    </div>
     <!-- MODAL-LOGIN -->
     <div class="modal js-modal">
         <div class="modal__overlay"></div>
@@ -233,9 +211,7 @@ if(isset($_GET['diachi'])&&($_GET['Submit']=="Chi tiết"))
                         <!-- <input type="submit" value="Login" name="Login"> -->
                         <button class="btn btn--primary" onclick="Login()">ĐĂNG NHẬP</button>
                     </div>
-                    <div class="auth-form__help">
-                        <a href="#" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu?</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -390,16 +366,6 @@ if(isset($_GET['diachi'])&&($_GET['Submit']=="Chi tiết"))
                 }
             }  
         }
-
-        // FORM CONTROL BUTTON HIDE AND SHOW
-        var formControlBtn = document.querySelector('.btn-form-control');
-        var tableFormContent = document.querySelector('.content-form-table');
-
-        function showTableContent(){
-            tableFormContent.classList.add('open');
-        }
-
-        formControlBtn.addEventListener('click', showTableContent);
     </script>
 </body>
 

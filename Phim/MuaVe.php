@@ -14,7 +14,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
     <link rel="stylesheet" href="./phimDangChieu.css">
     <link rel="stylesheet" href="../../css/base.css">
     <link rel="stylesheet" href="../../css/main.css">
-    <link rel="stylesheet" href="../../css/datGhe.css">
+    <!-- <link rel="stylesheet" href="../../css/datGhe.css"> -->
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <!-- <script src="ajax.js"></script> -->
@@ -109,201 +109,17 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
 
             <div class="grid">
                 <div class="content-title">
-                    <h1 class="content-title-name">Phim Đang Chiếu</h1>
+                    <h1 class="content-title-name">Đặt vé</h1>
                 </div>
                 <div class="grid__row">
 
 
-                <?php
-                        $sql          = "SELECT DISTINCT p.TENPHIM,p.POSTER, p.MAPHIM,sc.MASC,p.THOILUONG,sc.NGAYCHIEU,p.THELOAI,p.trailer FROM `phim` p JOIN `suatchieu` sc 
-                        WHERE p.MAPHIM=sc.MAPHIM and sc.MAGHE='0' and p.KHOICHIEU<= now() and DATEDIFF(sc.NGAYCHIEU,CURDATE())<=5 GROUP BY p.TENPHIM  ORDER BY sc.NGAYCHIEU ";
-                        $result = executeResult($sql);
-                        foreach ($result as $row) 
-                        {
-                            echo"
-                                    <div class='grid__column-fourth film-items'>
-                                        <div class='film-item'>
-                                            <a href='./chitietPhim.php?masc=$row[3]' class='film-item-link'>
-                                                <img src='../../../admin/img/phim/$row[1]' class='film-item-img'>
-                                            </a>
-                                        </div>
-                                        <div class='film-book-titket'>
-                                            <a href='MuaVe.php?maphim=$row[2]'><button  class='btn btn-book-tickets js-btn-book-tickets' value='Mua vé' name='Submit'>Mua vé</button></a>
-                                            <a href='$row[7]'><button class='btn btn-book-tickets js-trailer-btn' >Trailer</button></a>
-                                        </div>
-                                    </div>
-                                 ";
-                        }
-                ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- MODAL TRAILER -->
-        <!-- <div class="modal modal-trailer js-modal-trailer" id="myModal">
-                    <div class="modal__overlay"></div>
-                    <div class="modal__body js-modal__body">
-                        <iframe width="800" height="540" class="embed-responsive-item" src="<?=$view?>" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
-                    </div>
-                </div>
-        
-         -->
-
-       
-        <footer class="footer">
-            <div class="grid">
-                <div class="grid__row-home footer-row">
-                    <div class="grid__column-fourth-home">
-                        <h3 class="footer-title">CineSV</h3>
-                        <ul class="footer-list">
-                            <a href="" class="footer-link">Giới thiệu</a>
-                            <a href="" class="footer-link">Tiện ích Online</a>
-                            <a href="" class="footer-link">Thẻ quà tặng</a>
-                            <a href="" class="footer-link">Tuyển dụng</a>
-                            <a href="" class="footer-link">Liên hệ quảng cáo</a>
-                        </ul>
-                    </div>
-
-                    <div class="grid__column-fourth-home">
-                        <h3 class="footer-title">Điều khoản sử dụng</h3>
-                        <ul class="footer-list">
-                            <a href="" class="footer-link">Điều khoản chung</a>
-                            <a href="" class="footer-link">Điều khoản giao dịch</a>
-                            <a href="" class="footer-link">Chính sách thanh toán</a>
-                            <a href="" class="footer-link">Chính sách bảo mật</a>
-                            <a href="" class="footer-link">Câu hỏi thường gặp</a>
-                        </ul>
-                    </div>
-
-                    <div class="grid__column-fourth-home">
-                        <h3 class="footer-title">CineSV</h3>
-                        <a href="https://www.facebook.com/Tins.Grace.vl/" target="_blank" class="footer-link-socials">
-                            <i class="footer-icon-socials fab fa-facebook-square" style="color: rgb(12, 55, 150); padding-left: 0;"></i>
-                        </a>
-                        <a href="https://www.instagram.com/lethanhtin____/" target="_blank" class="footer-link-socials">
-                            <i class="footer-icon-socials fab fa-instagram-square"  style="color: rgb(219, 58, 152);"></i>
-                        </a>
-                        <a href="https://www.youtube.com/cgvvietnam" target="_blank" class="footer-link-socials">
-                            <i class="footer-icon-socials fab fa-youtube-square" style="color: rgb(161, 31, 31);"></i>
-                        </a>
-                        <a href="https://twitter.com/CGV_ID" target="_blank" class="footer-link-socials">
-                            <i class="footer-icon-socials fab fa-twitter-square" style="color: rgb(42, 146, 187);"></i>
-                        </a>
-                        <a href="http://online.gov.vn/Home/WebDetails/30270" target="_blank" class="bo-cong-thuong"></a>
-                    </div>
-
-                    <div class="grid__column-fourth-home">
-                        <h3 class="footer-title">Chăm sóc khách hàng</h3>
-                        <ul class="footer-list">
-                            <h4 href="" class="footer-link">Hotline: 1900 6017</h4>
-                            <h4 href="" class="footer-link">Giờ làm việc: 8:00 - 22:00 (Tất cả các ngày bao gồm cả Lễ Tết)</h4>
-                            <h4 href="" class="footer-link">Email hỗ trợ: hoidap@cinesv.vn</h4>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="footer__about">
-                    <div class="footer-logo" style="background-image: url(/assets/img/Slider/common_sprite_area.png);"></div>
-                    <div class="footer__contact">
-                    <h3 class="footer-name">CÔNG TY TNHH MTV CineSV</h3>
-                        <h4 class="footer-sub">Giấy CNĐKDN: 0303675393, đăng ký lần đầu ngày 31/7/2008, đăng ký thay đổi lần thứ 5 ngày 14/10/2015, cấp bởi Sở KHĐT thành phố Hồ Chí Minh.</h4>
-                        <h4 class="footer-sub">Địa Chỉ: Khu phố 6, Phường Linh Trung, Thành Phố Thủ Đức, TPHCM.</h4>
-                        <h4 class="footer-sub">COPYRIGHT 2021 CINESV. All RIGHTS RESERVED</h4>
-                    </div>
-
-                </div>
-            </div>
-        </footer>
-
-
-        <!-- MODAL-LOGIN -->
-        <div class="modal js-modal">
-            <div class="modal__overlay"></div>
-    
-            <div class="modal__body js-modal__body--login">
-                <div class="auth-form">
-                    <div class="auth-form__container">
-                        <div class="auth-form__header">
-                                <h3 class="auth-form__heading">Đăng nhập</h3>
-                                <span class="auth-form__switch--btn js-register">Đăng ký</span>   
-                        </div>
-    
-                        <div class="auth-form__form">
-                                <div class="auth-form__group">
-                                    <input type="text" class="auth-form__input" required placeholder="Tài khoản">
-                                </div>
-    
-                                <div class="auth-form__group">
-                                    <input type="password" class="auth-form__input" required placeholder="Mật khẩu">
-                                </div>
-                        </div>
-    
-                        <div class="auth-form__controls">
-                                <button class="btn btn--primary">ĐĂNG NHẬP</button>
-                        </div>
-    
-                            <div class="auth-form__help">
-                                <a href="#" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu?</a>
-                            </div>
-                    </div>
-                </div>   
-            </div>
-            
-            <div class="modal__body js-modal__body--register">
-                <!-- Auth-form register -->
-    
-                <div class="auth-form">
-                    <div class="auth-form__container">
-                        <div class="auth-form__header">
-                            <span class="auth-form__switch--btn js-login">Đăng nhập</span>
-                            <h3 class="auth-form__heading">Đăng ký</h3>        
-                        </div>
-    
-                        <div class="auth-form__form">
-                                <div class="auth-form__group">
-                                    <input type="text" class="auth-form__input" required placeholder="Tài khoản">
-                                </div>
-    
-                                <div class="auth-form__group">
-                                    <input type="email" class="auth-form__input" required placeholder="Email">
-                                </div>
-    
-                                <div class="auth-form__group">
-                                    <input type="tel" class="auth-form__input" required placeholder="Số điện thoại">
-                                </div>
-    
-                                <div class="auth-form__group">
-                                    <input type="password" class="auth-form__input" required placeholder="Mật khẩu">
-                                </div>
-    
-                                <div class="auth-form__group">
-                                    <input type="password" class="auth-form__input" required placeholder="Nhập lại mật khẩu">
-                                </div>
-                        </div>
-    
-                        <div class="auth-form__controls">
-                                <button class="btn btn--primary">ĐĂNG KÝ</button>
-                        </div>
-    
-                        <div class="auth-form__aside">
-                            <p class="auth-form__policy-text">Bằng việc đăng ký, bạn đã đồng ý với LTT-Shop về
-                                <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> &
-                                <a href="" class="auth-form__text-link">Chính sách bảo mật</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>  
-            </div>
-        </div>
-        
-        
-            <!-- <div class="modal-ticket js-modal-ticket">
-              <div class="modal-content">
+                <div >
+              <div >
                 <i class="fa fa-times modal-close js-modal-close"></i>
                 <h1 class="premiere-title">CHỌN SUẤT CHIẾU</h1>
 
-                <form  class="premiere-form">
+                <form  class="premiere-form"z>
                     <div class="form-item">
                         <label for="diachi">Tỉnh thành:</label>
                         <select onchange="Rap()" name="diachi" id="diachi" class="form-control">
@@ -314,7 +130,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                         </select>
                         <div id="targetDiv"></div>
                     </div>
-                     -->
+                    
                     <!-- <div class="form-item">
                         <label for="theater">Danh Sách Rạp:</label>
                         <select name="theater" id="theater" class="form-control">
@@ -329,15 +145,14 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                             
                         </select>
                     </div> -->
-
-<!-- 
+        
                     <div class="btn btn-primary premiere-sub-btn" style="width: 30%; border-radius: 5px; font-weight: 600; text-align: center; padding-top: 10px;">Đăng ký</div>
-                </form> -->
+                </form>
 
                 <!-- <div class="noPremiere">Xin Lỗi Không Có Suất Chiếu!</div> -->
-              <!-- </div>
+              </div>
             </div>
-           -->
+          
             
         
             <div class="modal-ticket js-datghe-modal">
@@ -515,6 +330,168 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                 </div>
         
             </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- MODAL TRAILER -->
+        <!-- <div class="modal modal-trailer js-modal-trailer" id="myModal">
+                    <div class="modal__overlay"></div>
+                    <div class="modal__body js-modal__body">
+                        <iframe width="800" height="540" class="embed-responsive-item" src="<?=$view?>" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                    </div>
+                </div>
+        
+         -->
+
+       
+        <footer class="footer">
+            <div class="grid">
+                <div class="grid__row-home footer-row">
+                    <div class="grid__column-fourth-home">
+                        <h3 class="footer-title">CineSV</h3>
+                        <ul class="footer-list">
+                            <a href="" class="footer-link">Giới thiệu</a>
+                            <a href="" class="footer-link">Tiện ích Online</a>
+                            <a href="" class="footer-link">Thẻ quà tặng</a>
+                            <a href="" class="footer-link">Tuyển dụng</a>
+                            <a href="" class="footer-link">Liên hệ quảng cáo</a>
+                        </ul>
+                    </div>
+
+                    <div class="grid__column-fourth-home">
+                        <h3 class="footer-title">Điều khoản sử dụng</h3>
+                        <ul class="footer-list">
+                            <a href="" class="footer-link">Điều khoản chung</a>
+                            <a href="" class="footer-link">Điều khoản giao dịch</a>
+                            <a href="" class="footer-link">Chính sách thanh toán</a>
+                            <a href="" class="footer-link">Chính sách bảo mật</a>
+                            <a href="" class="footer-link">Câu hỏi thường gặp</a>
+                        </ul>
+                    </div>
+
+                    <div class="grid__column-fourth-home">
+                        <h3 class="footer-title">CineSV</h3>
+                        <a href="https://www.facebook.com/Tins.Grace.vl/" target="_blank" class="footer-link-socials">
+                            <i class="footer-icon-socials fab fa-facebook-square" style="color: rgb(12, 55, 150); padding-left: 0;"></i>
+                        </a>
+                        <a href="https://www.instagram.com/lethanhtin____/" target="_blank" class="footer-link-socials">
+                            <i class="footer-icon-socials fab fa-instagram-square"  style="color: rgb(219, 58, 152);"></i>
+                        </a>
+                        <a href="https://www.youtube.com/cgvvietnam" target="_blank" class="footer-link-socials">
+                            <i class="footer-icon-socials fab fa-youtube-square" style="color: rgb(161, 31, 31);"></i>
+                        </a>
+                        <a href="https://twitter.com/CGV_ID" target="_blank" class="footer-link-socials">
+                            <i class="footer-icon-socials fab fa-twitter-square" style="color: rgb(42, 146, 187);"></i>
+                        </a>
+                        <a href="http://online.gov.vn/Home/WebDetails/30270" target="_blank" class="bo-cong-thuong"></a>
+                    </div>
+
+                    <div class="grid__column-fourth-home">
+                        <h3 class="footer-title">Chăm sóc khách hàng</h3>
+                        <ul class="footer-list">
+                            <h4 href="" class="footer-link">Hotline: 1900 6017</h4>
+                            <h4 href="" class="footer-link">Giờ làm việc: 8:00 - 22:00 (Tất cả các ngày bao gồm cả Lễ Tết)</h4>
+                            <h4 href="" class="footer-link">Email hỗ trợ: hoidap@cinesv.vn</h4>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer__about">
+                    <div class="footer-logo" style="background-image: url(/assets/img/Slider/common_sprite_area.png);"></div>
+                    <div class="footer__contact">
+                    <h3 class="footer-name">CÔNG TY TNHH MTV CineSV</h3>
+                        <h4 class="footer-sub">Giấy CNĐKDN: 0303675393, đăng ký lần đầu ngày 31/7/2008, đăng ký thay đổi lần thứ 5 ngày 14/10/2015, cấp bởi Sở KHĐT thành phố Hồ Chí Minh.</h4>
+                        <h4 class="footer-sub">Địa Chỉ: Khu phố 6, Phường Linh Trung, Thành Phố Thủ Đức, TPHCM.</h4>
+                        <h4 class="footer-sub">COPYRIGHT 2021 CINESV. All RIGHTS RESERVED</h4>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- MODAL-LOGIN -->
+        <div class="modal js-modal">
+            <div class="modal__overlay"></div>
+    
+            <div class="modal__body js-modal__body--login">
+                <div class="auth-form">
+                    <div class="auth-form__container">
+                        <div class="auth-form__header">
+                                <h3 class="auth-form__heading">Đăng nhập</h3>
+                                <span class="auth-form__switch--btn js-register">Đăng ký</span>   
+                        </div>
+    
+                        <div class="auth-form__form">
+                                <div class="auth-form__group">
+                                    <input type="text" class="auth-form__input" required placeholder="Tài khoản">
+                                </div>
+    
+                                <div class="auth-form__group">
+                                    <input type="password" class="auth-form__input" required placeholder="Mật khẩu">
+                                </div>
+                        </div>
+    
+                        <div class="auth-form__controls">
+                                <button class="btn btn--primary">ĐĂNG NHẬP</button>
+                        </div>
+    
+                            <div class="auth-form__help">
+                                <a href="#" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu?</a>
+                            </div>
+                    </div>
+                </div>   
+            </div>
+            
+            <div class="modal__body js-modal__body--register">
+                <!-- Auth-form register -->
+    
+                <div class="auth-form">
+                    <div class="auth-form__container">
+                        <div class="auth-form__header">
+                            <span class="auth-form__switch--btn js-login">Đăng nhập</span>
+                            <h3 class="auth-form__heading">Đăng ký</h3>        
+                        </div>
+    
+                        <div class="auth-form__form">
+                                <div class="auth-form__group">
+                                    <input type="text" class="auth-form__input" required placeholder="Tài khoản">
+                                </div>
+    
+                                <div class="auth-form__group">
+                                    <input type="email" class="auth-form__input" required placeholder="Email">
+                                </div>
+    
+                                <div class="auth-form__group">
+                                    <input type="tel" class="auth-form__input" required placeholder="Số điện thoại">
+                                </div>
+    
+                                <div class="auth-form__group">
+                                    <input type="password" class="auth-form__input" required placeholder="Mật khẩu">
+                                </div>
+    
+                                <div class="auth-form__group">
+                                    <input type="password" class="auth-form__input" required placeholder="Nhập lại mật khẩu">
+                                </div>
+                        </div>
+    
+                        <div class="auth-form__controls">
+                                <button class="btn btn--primary">ĐĂNG KÝ</button>
+                        </div>
+    
+                        <div class="auth-form__aside">
+                            <p class="auth-form__policy-text">Bằng việc đăng ký, bạn đã đồng ý với LTT-Shop về
+                                <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                                <a href="" class="auth-form__text-link">Chính sách bảo mật</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        
+        
     
     <script>
         var loginForm = document.querySelector('.js-login-form');
@@ -582,8 +559,6 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
             }
             return "";
         }
-
-       
 
         function Rap() {
             var xmlHttp = new XMLHttpRequest();

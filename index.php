@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/img/title-icon.png">
+    <link rel="icon" href="./assets/img/header__logo.png">
     <title>CineSV Cinema</title>
     <link rel="stylesheet" href="https://pagecdn.io/lib/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/fontawesome-free-5.15.4-web/css/all.min.css">
@@ -44,21 +44,7 @@
                     <li class="navbar-item noHover">
                         <a href="./assets/pages/tintuc/tinTuc.php" class="navbar-link">Tin tức</a>
                     </li>
-                    <li class="navbar-item noHover">
-                        <label for="subnav-cultural-checkbox" class="navbar-link">Cultureplex</label>
-                        <input type="checkbox" hidden id="subnav-cultural-checkbox" class="suvnav-checkbox">
-                        <ul class="subnav-list">
-                            <li class="subnav-item">
-                                <a href="" class="subnav-link">Quầy Online</a>
-                            </li>
-                            <li class="subnav-item">
-                                <a href="/assets/pages/Gift/suKienVaVeNhom.html" class="subnav-link">Sự kiện và vé nhóm</a>
-                            </li>
-                            <li class="subnav-item">
-                                <a href="./assets/pages/Gift/theQuaTang.html" class="subnav-link">Thẻ quà tặng</a>
-                            </li>
-                        </ul>
-                    </li>
+                    
                 </ul>
             </nav>
             <div class="header__user" id="block_info_user">
@@ -90,6 +76,7 @@
                     </li>
                 </ul>
             </div>
+
         </header>
         <!-- SLIDER -->
         <div class="slider">
@@ -104,7 +91,7 @@
                 <!-- MOVE SELECTION -->
                 <div class="home-movie-selection">
                     <div class="movie-selection-title">
-                        <h2>Movie Seletion</h2>
+                        <h2>Movie Selection</h2>
                     </div>
                 </div>
                 <div class="grid__row-home home-film-item">
@@ -168,7 +155,7 @@
                             <a href="" class="footer-link">Tiện ích Online</a>
                             <a href="" class="footer-link">Thẻ quà tặng</a>
                             <a href="" class="footer-link">Tuyển dụng</a>
-                            <a href="" class="footer-link">Liên hệ quảng cáo CGV</a>
+                            <a href="" class="footer-link">Liên hệ quảng cáo</a>
                         </ul>
                     </div>
                     <div class="col l-3 m-4 c-6">
@@ -200,19 +187,20 @@
                     <div class="col l-3 m-4 c-6 hide-on-tablet">
                         <h3 class="footer-title">Chăm sóc khách hàng</h3>
                         <ul class="footer-list">
-                            <h4 href="" class="footer-link">Hotline: 0978827442</h4>
+                            <h4 href="" class="footer-link">Hotline: 1900 6017</h4>
                             <h4 href="" class="footer-link">Giờ làm việc: 8:00 - 22:00 (Tất cả các ngày bao gồm cả Lễ Tết)</h4>
-                            <h4 href="" class="footer-link">Email hỗ trợ: thanlonglua97@gmail.com</h4>
+                            <h4 href="" class="footer-link">Email hỗ trợ: hoidap@cinesv.vn</h4>
                         </ul>
                     </div>
                 </div>
+
                 <div class="footer__about">
-                    <div class="footer-logo" style="background-image: url(./assets/img/Slider/common_sprite_area.png);"></div>
+                    <div class="footer-logo" style="background-image: url(/assets/img/Slider/common_sprite_area.png);"></div>
                     <div class="footer__contact">
-                        <h3 class="footer-name">CÔNG TY TNHH MTV LTT</h3>
+                        <h3 class="footer-name">CÔNG TY TNHH MTV CineSV</h3>
                         <h4 class="footer-sub">Giấy CNĐKDN: 0303675393, đăng ký lần đầu ngày 31/7/2008, đăng ký thay đổi lần thứ 5 ngày 14/10/2015, cấp bởi Sở KHĐT thành phố Hồ Chí Minh.</h4>
-                        <h4 class="footer-sub">Địa Chỉ: Tầng 2, Rivera Park Saigon - Số 7/28 Thành Thái, P.14, Q.10, TPHCM.</h4>
-                        <h4 class="footer-sub">COPYRIGHT 2017 CJ CGV. All RIGHTS RESERVED</h4>
+                        <h4 class="footer-sub">Địa Chỉ: Khu phố 6, Phường Linh Trung, Thành Phố Thủ Đức, TPHCM.</h4>
+                        <h4 class="footer-sub">COPYRIGHT 2021 CJ CINESV. All RIGHTS RESERVED</h4>
                     </div>
                 </div>
             </div>
