@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../img/header__logo.png">
-    <title>CGV Cinemas VietNam</title>
+    <title>CineSV Cinema</title>
     <link rel="stylesheet" href="https://pagecdn.io/lib/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="../../fontawesome-free-5.15.4-web/css/all.min.css">
     <link rel="stylesheet" href="../../css/base.css">
@@ -20,7 +20,6 @@
             <a href="../../../index.php" class="header__logo hide-on-tablet-mobile">
                 <img src="../../img/logo-sv" alt="" class="header__logo-img">
             </a>
-            
             <label for="tablet-mobile-bars-checkbox" class="header__bars">
                 <i class="header__bars-icon fas fa-bars"></i>
             </label>
@@ -37,7 +36,7 @@
                                     <a href="../../pages/Phim/phimDangChieu.php" class="subnav-link">Phim đang chiếu</a>
                                 </li>
                                 <li class="subnav-item">
-                                    <a href="../../pages/Phim/phimSapChieu.html" class="subnav-link">Phim sắp chiếu</a>
+                                    <a href="../../pages/Phim/phimSapChieu.php" class="subnav-link">Phim sắp chiếu</a>
                                 </li>
                             </ul>
                         
@@ -53,10 +52,10 @@
                 </ul>
                 
             </nav>
-            <div class="header__user">
+            <div class="header__user" id="block_info_user">
                 <div class="header__user-info">
                     <i class="header__user-icon fas fa-user-circle"></i>
-                    <span class="header__user-name">Le Thanh Tin</span>
+                    <span id="usernameCineSV" class="header__user-name"></span>
                 </div>
                 <div class="header__user-options">
                     <ul class="user-options-list">
@@ -67,7 +66,7 @@
                             <a href="" class="user-option-link">Cài đặt</a>
                         </li>
                         <li class="user-options-item">
-                            <a href="" class="user-option-link">Đăng xuất</a>
+                            <a href="./logout.php" class="user-option-link">Đăng xuất</a>
                         </li>
                     </ul>
                 </div>
@@ -75,13 +74,12 @@
             <div class="login" id="block_login_register">
                 <ul class="login-list">
                     <li class="login-item login-item-sign-in">
-                        <label href="" class="login-link js-login-form">Đăng nhập</label>
+                        <label class="login-link js-login-form">Đăng nhập</label>
                     </li>
                     <li class="login-item login-item-register">
-                        <label href="" class="login-link js-register-form">Đăng ký</label>
+                        <label class="login-link js-register-form">Đăng ký</label>
                     </li>
                 </ul>
             </div>
-    
+
         </header>
-        

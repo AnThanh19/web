@@ -62,3 +62,61 @@
                 </div>
             </div>
         </footer>
+        <div>
+                            <p id="notificationLogin"></p>
+                        </div>
+                    </div>
+                    <div class="auth-form__controls">
+                        <!-- <input type="submit" value="Login" name="Login"> -->
+                        <button class="btn btn--primary" onclick="Login()">ĐĂNG NHẬP</button>
+                    </div>
+                    <div class="auth-form__help">
+                        <a href="#" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal__body js-modal__body--register">
+            <!-- Auth-form register -->
+            <div class="auth-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <span class="auth-form__switch--btn js-login">Đăng nhập</span>
+                        <h3 class="auth-form__heading">Đăng ký</h3>
+                    </div>
+                    <div class="auth-form__form">
+                        <form>
+                            <div class="auth-form__group">
+                                <input type="text" class="auth-form__input" required placeholder="Họ và tên" id="reg_fullname">
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="email" class="auth-form__input" required placeholder="Email" id="reg_email">
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="tel" class="auth-form__input" required placeholder="Số điện thoại" id="reg_telephone">
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="password" class="auth-form__input" required placeholder="Mật khẩu" id="reg_password">
+                            </div>
+                            <div class="auth-form__group">
+                                <input type="password" class="auth-form__input" required placeholder="Nhập lại mật khẩu" id="reg_password_confirm">
+                            </div>
+                            <div>
+                                <p id="notificationRegister"></p>
+                            </div>
+                        </form>
+                        <div class="auth-form__controls">
+                            <button class="btn btn--primary" onclick="Register()">ĐĂNG KÝ</button>
+                        </div>
+                    </div>
+                    <div class="auth-form__aside">
+                        <p class="auth-form__policy-text">Bằng việc đăng ký, bạn đã đồng ý với LTT-Shop về
+                            <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                            <a href="" class="auth-form__text-link">Chính sách bảo mật</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
