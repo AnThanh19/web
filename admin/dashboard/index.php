@@ -1,5 +1,6 @@
 <?php
-require_once ('../../db/dbhelper.php');
+require_once('../../db/dbhelper.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,23 +43,48 @@ require_once ('../../db/dbhelper.php');
 							<a class="nav-link " href="./index.php"><font color="#9C8CDB"><b>ADMIN</b> </font></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="phim/"><font color="9C8CDB"><b>Quản lý Phim</b> </font></a>
+							<a class="nav-link " href="../phim/"><font color="9C8CDB"><b>Phim</b> </font></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="lichchieu/"><font color="9C8CDB"><b>Quản lý Lịch Chiếu</b> </font></a>
+							<a class="nav-link " href="../lichchieu/"><font color="9C8CDB"><b>Lịch Chiếu</b> </font></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="sanpham/"><font color="9C8CDB"><b>Quản lý Sản Phẩm</b> </font></a>
+							<a class="nav-link" href="../sanpham/"><font color="9C8CDB"><b>Sản Phẩm</b> </font></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="khuyenmai/"><font color="9C8CDB"><b>Quản lý Khuyến Mãi</b> </font></a>
+							<a class="nav-link" href="../khuyenmai/"><font color="9C8CDB"><b>Khuyến Mãi</b> </font></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="nhanvien/"><font color="9C8CDB"><b>Quản lý Nhân Viên</b> </font></a>
+							<a class="nav-link " href="../nhanvien/"><font color="9C8CDB"><b>Nhân Viên</b> </font></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="thanhvien/"><font color="9C8CDB"><b>Quản lý Thành Viên</b> </font></a>
+							<a class="nav-link" href="../thanhvien/"><font color="9C8CDB"><b>Thành Viên</b> </font></a>
 						</li>
+                        
+                                <!-- <div class="header__user-info">
+                                     <i class="header__user-icon fas fa-user-circle"></i> 
+                                    <span  class="header__user-name"> <h5 id="usernameCineSV">  </h5></span>
+                                </div> -->
+                                <div class="header__user-options">
+                                <li class="nav-item" >
+                                <a href="../dashboard/logout.php" class="nav-link"><font color="9C8CDB"><b>Đăng xuất</b> </font></a>
+                                </li>
+                                </div>
+                                <!-- <div class="header__user" id="block_info_user">
+                                <div class="header__user-info">
+                                     <i class="header__user-icon fas fa-user-circle"></i> 
+                                    <span  class="header__user-name"> <p id="usernameCineSV">  </p></span>
+                                </div>
+                                <div class="header__user-options">
+                                <li class="nav-item" >
+                                <a href="../dashboard/logout.php" class="nav-link"><font color="9C8CDB"><b></b>Đăng xuất </font></a>
+                                </li>
+                                </div>
+                            </div> -->
+
+                    </ul>
+                </div>
+            </div>
 					</ul>
 				</div>
             </div>
@@ -136,6 +162,50 @@ require_once ('../../db/dbhelper.php');
             </div> 
         </div>
     </div>
+
+    <script >
+       
+        if (getCookie("abc") != "") {
+            usernameCineSV.innerHTML = getCookie("abc");
+        } else {
+            location.replace("./login.php");
+        }
+        
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function Login() {
+            var xmlHttp = new XMLHttpRequest();
+            var obj = document.getElementById("notificationLogin");
+            var url = "login.php";
+            var param = "username=" + username.value + "&password=" + password.value;
+            xmlHttp.open("POST", url, true);
+            xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlHttp.send(param);
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    if (xmlHttp.responseText == "ok") {
+                        location.replace("./");
+                    } else {
+                        obj.innerHTML = xmlHttp.responseText;
+                    }
+                }
+            }
+        }
+        
+    </script>
 
 </body>
 </html>
