@@ -14,7 +14,7 @@ if (isset($_POST['fullname']) && isset($_POST['email']) && isset($_POST['telepho
         $connect->autocommit(false);
 
         // Thêm thông tin thành viên vào bảng THANHVIEN
-        $sqlcmd = "INSERT INTO THANHVIEN(`TENTV`,`SDT`,`EMAIL`) VALUES(?,?,?)";
+        $sqlcmd = "INSERT INTO THANHVIEN(`TENTV`,`SDT`,`EMAIL`,`NGAYDK`) VALUES(?,?,?,now())";
         $stmt = $connect->prepare($sqlcmd);
         $stmt->bind_param('sss', $fullname, $telephone, $email);
 

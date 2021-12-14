@@ -1,3 +1,25 @@
+<?php
+require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
+    $sdt=$_COOKIE['fullName'];
+	$sql          = "SELECT MATV, TENTV, GIOITINH, DATE_FORMAT(NGAYSINH,'%d-%m-%Y') as NGAYSINH, DIACHI, 
+                    SDT, CCCD, DATE_FORMAT(NGAYDK,'%d-%m-%Y') as NGAYDK, DIEMTICHLUY, LOAITK, EMAIL 
+                        FROM thanhvien where sdt='$sdt'";
+	$result = executeSingleResult($sql);
+	if ($result != null) {
+		$tentv = $result[1];
+        if ($result[2]==1)
+            $gioitinh="Nữ";
+        else
+		    $gioitinh= "Nam";
+		$ngaysinh=$result[3];
+		$diachi=$result[4];
+		$cccd=$result[6];
+		$ngaydk=$result[7];
+		$diemtichluy=$result[8];
+		$loaitk=$result[9];
+		$email=$result[10];
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +69,6 @@
                     </li>
                     <li class="navbar-item noHover">
                         <a href="../pages/tintuc/tinTuc.php" class="navbar-link">Tin tức</a>
-                        
                     </li>
                 
             </ul>
@@ -63,11 +84,11 @@
                     <li class="user-options-item">
                         <a href="" class="user-option-link">Tài khoản</a>
                     </li>
-                    <li class="user-options-item">
+                    <!-- <li class="user-options-item">
                         <a href="" class="user-option-link">Cài đặt</a>
-                    </li>
+                    </li> -->
                     <li class="user-options-item">
-                        <a href="" class="user-option-link">Đăng xuất</a>
+                        <a href="../../logout.php" class="user-option-link">Đăng xuất</a>
                     </li>
                 </ul>
             </div>
@@ -93,8 +114,9 @@
                 <div class="row">
                     <div class="col l-4 m-4 c-12">
                         <ul class="user-option-list">
+                            
                             <li class="user-option-item js-info">
-                                <span>Thông tin tài khoản</span>
+                                <span >Thông tin tài khoản</span>
                             </li>
                             <li class="user-option-item js-his">
                                 <span>Lịch sử đặt vé</span>
@@ -106,19 +128,20 @@
                     </div>
                     <div class="col l-8 m-8 c-12">
                         <div class="user-info">
+              
                             <h1 class="user-title">Thông tin tài khoản</h1>
                             <ul class="user-info-list">
-                                <li>Họ tên: <span>Le Thanh Tin</span></li>
-                                <li>Giới tính: <span></span></li>
-                                <li>Ngày sinh: <span></span></li>
-                                <li>Địa chỉ: <span></span></li>
-                                <li>SDT: <span></span></li>
-                                <li>CCCD: <span></span></li>
-                                <li>Ngày đăng ký: <span></span></li>
-                                <li>Điểm tích lũy: <span></span></li>
-                                <li>Loại tài khoản: <span></span></li>
-                                <li>Email: <span></span></li>
-                            </ul>
+                                <li>Họ tên : <span><?=$tentv?></span></li>
+                                <li>Giới tính : <span><?=$gioitinh?></span></li>
+                                <li>Ngày sinh : <span><?=$ngaysinh?></span></li>
+                                <li>Địa chỉ : <span><?=$diachi?></span></li>
+                                <li>SDT : <span><?=$sdt?></span></li>
+                                <li>CCCD : <span><?=$cccd?></span></li>
+                                <li>Ngày đăng ký : <span><?=$ngaydk?></span></li>
+                                <li>Điểm tích lũy : <span><?=$diemtichluy?></span></li>
+                                <li>Loại tài khoản : <span><?=$loaitk?></span></li>
+                                <li>Email : <span><?=$email?></span></li>
+                            </ul> 
                         </div>
                         <div class="user-info-history">
                             <h1 class="user-title">Lịch sử đặt vé</h1>
@@ -126,26 +149,36 @@
                         </div>
 
                         <div class="user-info-update">
-                            <form action="" class="update-form">
-                                <div class="form-item">
-                                    <label for="city">Họ và tên:
-                                        <input type="text" placeholder>
-                                    </label>
-                                    
-                                </div>
-                                <div class="form-item">
-                                    <label for="theater">SDT:
-                                        <input type="text">
-                                    </label>
-                                    
-                                </div>
-                                <div class="form-item">
-                                    <label for="premiere">Email
-                                        <input type="text" name="" id="">
-                                    </label>
-                                    
-                                </div>
-                                <div class="btn btn-primary" style="width: 30%; border-radius: 5px; font-weight: 600; text-align: center; padding-top: 10px; margin-top: 20px; float: right;">Cập nhật</div>
+                            <form method="post" >
+                            <div class="form-item">
+                                <label for="tentv">Tên thành viên:
+                                <input  type="text"  id="tentv" name="tentv" value="<?=$tentv?>"></label>
+					        </div>
+					        <div class="form-item">
+                                <label for="gioitinh">Giới tính (nam=0, nữ=1):
+                                <input  type="text" id="gioitinh" name="gioitinh" value="<?=$gioitinh?>"></label>
+                            </div>
+                            <div class="form-item">
+                                <label for="ngaysinh">Ngày sinh:
+                                <input  type="text" id="ngaysinh" name="ngaysinh" value="<?=$ngaysinh?>"></label>
+                            </div>
+                            <div class="form-item">
+                                <label for="diachi">Địa chỉ:
+                                <input  type="text" id="diachi" name="diachi" value="<?=$diachi?>"></label>
+                            </div>
+                            <div class="form-item">
+                                <label for="sdt">Số điện thoại:
+                                <input disabled type="number"  id="sdt" name="sdt" value="<?=$sdt?>"></label>
+					        </div>
+                            <div class="form-item">
+                                <label for="cccd">Căn cước công dân:
+                                <input  type="number"  id="cccd" name="cccd" value="<?=$cccd?>"></label>
+                            </div>
+                            <div class="form-item">
+                                <label for="email">Email:
+                                <input  type="email" id="email" name="email" value="<?=$email?>"></label>
+                            </div>
+                            <div class="btn btn-success" style="width: 30%; border-radius: 5px; font-weight: 600; text-align: center; padding-top: 10px; margin-top: 20px; float: right;">Cập nhật</div>
                             </form>
                         </div>
                     </div>
@@ -349,7 +382,45 @@
   </div>
 
 <script>
-       
+    
+       if (getCookie("fullName") != "") {
+        usernameCineSV.innerHTML = getCookie("fullName");
+        }
+    
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function TV() {
+            var xmlHttp = new XMLHttpRequest();
+            var obj = document.getElementById("tv");
+            var url = "thanhvien.php";
+            var param = "usernameCineSV=" + usernameCineSV.value ;
+            xmlHttp.open("POST", url, true);
+            xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlHttp.send(param);
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    if (xmlHttp.responseText == "ok") {
+                        location.replace("./");
+                    } else {
+                        obj.innerHTML = xmlHttp.responseText;
+                    }
+                }
+            }
+        }
 
     var loginForm = document.querySelector('.js-login-form');
     var registerForm = document.querySelector('.js-register-form');
@@ -411,3 +482,37 @@
 <script src="../js/userInfo.js"></script>
 </body>
 </html>
+
+<?php
+require_once ('../../db/dbhelper.php');
+$matv = $tentv = '';
+
+if (!empty($_POST)) {
+	if (isset($_POST['tentv'])) {
+		$tentv = $_POST['tentv'];
+        if ($_POST['gioitinh']=="Nữ")
+        $gioitinh=1;
+    else
+        $gioitinh=0;
+
+		$ngaysinh= $_POST['ngaysinh'];
+		$diachi = $_POST['diachi'];
+		$sdt = $_POST['sdt'];
+		$cccd = $_POST['cccd'];
+		$email = $_POST['email'];
+	}
+	if (isset($_POST['matv'])) {
+		$matv = $_POST['matv'];
+	}
+
+	if (!empty($tentv)) {
+		$sql = "UPDATE `thanhvien` SET `tentv`='$tentv',`gioitinh`='$gioitinh',`ngaysinh`='$ngaysinh',
+		`diachi`='$diachi',`sdt`='$sdt',`cccd`='$cccd',`email`='$email' WHERE `sdt`='$sdt' ";
+		
+        execute($sql);
+
+		header('Location: userInfo.php');
+		die();
+	}
+}
+?>

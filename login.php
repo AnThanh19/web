@@ -51,8 +51,7 @@ if (isset($_POST['username'])) {
             $_SESSION['password'] = $password;
 
             // Tạo cookie để lưu tên thành viên
-            setcookie("fullName", $fullName, 0, "/");
-
+            setcookie("fullName", $username, 0, "/");
             // Thông báo thành công
             echo "ok";
         } else {
