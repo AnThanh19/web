@@ -1,0 +1,86 @@
+
+.seat {
+    display: inline-block;
+    border: 1 px solid transparent;
+    width: 45px;
+    height: 45px;
+    vertical-align: middle;
+    font-size: 7pt;
+    margin: 2px 1px;
+    padding: 1px 0;
+    line-height: 4.4;
+}
+
+.disabled{
+    pointer-events: none;
+}
+
+.seat.empty{
+    text-indent: -999999999px;
+    border: none;
+}
+
+.seat.checked{
+    background: rgb(236, 99, 99);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.seat-standard {
+    border: 1px solid #01c73c;
+}
+
+.seat.active{
+    cursor: pointer;
+}
+
+.seat-couple {
+    background: #a02b8c;
+    color: #fff;
+    border-color: #cc33b2;
+}
+
+.seat.seat-unavailable {
+    background: rgb(71, 71, 71);
+    color: #fff;
+    border: none;
+}
+
+
+.seat-row{
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.seat-select{
+    align-items: center;
+    margin-top: 36px;
+}
+
+/* MODAL SEAT SELECT CSS */
+
+.film-infomation{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.screen{
+    display: block;
+    font-size: 1.6rem;
+    text-align: center;
+    background-color: #ccc;
+    padding: 4px;
+}
+
+.door-arrow-icon{
+    font-size: 2rem;
+}
+
+.couple{
+    margin: 0 4px;
+}
+

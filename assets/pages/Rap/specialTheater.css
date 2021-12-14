@@ -1,0 +1,40 @@
+.content{
+    position: relative;
+    top: calc(var(--header-height) + 20px);
+    padding-bottom: calc(var(--header-height) + 40px);
+    text-align: center;
+}
+
+.content-title-name{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 5rem;
+    font-weight: 500;
+}
+
+.content-body{
+    margin-top: 32px;
+}
+
+.content-body p,
+.content-body span{
+    font-size: 1.6rem;
+    line-height: 1.6;
+    text-align: justify;;
+}
+
+.content-body-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.content-list{
+    list-style: none;
+}
+
+.content-item{
+    font-size: 1.4rem;
+    line-height: 1.6;
+    padding: 16px 8px;
+}

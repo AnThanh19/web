@@ -55,11 +55,11 @@
                 <div class="header__user-options">
                     <ul class="user-options-list">
                         <li class="user-options-item">
-                            <a href="" class="user-option-link">Tài khoản</a>
+                            <a href="./assets/users/userInfo.php" class="user-option-link">Tài khoản</a>
                         </li>
-                        <li class="user-options-item">
+                        <!-- <li class="user-options-item">
                             <a href="" class="user-option-link">Cài đặt</a>
-                        </li>
+                        </li> -->
                         <li class="user-options-item">
                             <a href="./logout.php" class="user-option-link">Đăng xuất</a>
                         </li>
@@ -230,9 +230,9 @@
                         <!-- <input type="submit" value="Login" name="Login"> -->
                         <button class="btn btn--primary" onclick="Login()">ĐĂNG NHẬP</button>
                     </div>
-                    <div class="auth-form__help">
+                    <!-- <div class="auth-form__help">
                         <a href="#" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu?</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

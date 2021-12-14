@@ -1,0 +1,38 @@
+
+.content{
+    position: relative;
+    top: calc(var(--header-height) + 20px);
+    padding-bottom: calc(var(--header-height) + 40px);
+    text-align: center;
+    height: 90vh;
+}
+
+.content-body{
+    margin-top: 80px;
+}
+
+.content-title-header{
+    color: var(--primary-color);
+    text-align: left;
+    text-decoration: underline;
+}
+
+.content-img{
+    width: 94%;
+    margin-top: 8px;
+}
+
+
+.content-info{
+    font-size: 1.4rem;
+    line-height: 1.6;
+    text-align: justify;;
+}
+
+.content-info-name{
+    margin-top: 0;
+}
+
+.content-info ul{
+    padding-left: 16px;
+}

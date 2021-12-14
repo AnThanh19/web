@@ -1,0 +1,63 @@
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+.content{
+    position: relative;
+    top: calc(var(--header-height) - 10px);
+    padding-bottom: calc(var(--header-height) + 40px);
+    text-align: center;
+}
+
+.content-film{
+    margin-top: 100px;
+}
+
+.film-img{
+    width: 100%;
+}
+
+/* FILM INFO  CSS*/
+
+.film-name{
+    font-size: 3rem;
+    padding-bottom: 10px;
+    text-align: left;
+    margin-left: 16px;
+    margin-top: 4px;
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+.film-title{
+    font-weight: 600;
+}
+
+.film-value{
+
+}
+
+.film-btn{
+    float:left;
+    width: 150px;
+    height: 36px;
+    margin: 20px 8px 0;
+}
+
+.film-about{
+    padding-top: 32px;
+    text-align: justify;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.8;
+    border-top: 1px solid #ccc;
+}
+
+.film-trailer{
+    margin-top: 60px;
+}
