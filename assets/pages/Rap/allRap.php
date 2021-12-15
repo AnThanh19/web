@@ -233,9 +233,7 @@ if(isset($_GET['diachi'])&&($_GET['Submit']=="Chi tiết"))
                         <!-- <input type="submit" value="Login" name="Login"> -->
                         <button class="btn btn--primary" onclick="Login()">ĐĂNG NHẬP</button>
                     </div>
-                    <div class="auth-form__help">
-                        <a href="#" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu?</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -351,7 +349,7 @@ if(isset($_GET['diachi'])&&($_GET['Submit']=="Chi tiết"))
         function Login() {
             var xmlHttp = new XMLHttpRequest();
             var obj = document.getElementById("notificationLogin");
-            var url = "../../login.php";
+            var url = "../../../login.php";
             var param = "username=" + username.value + "&password=" + password.value;
             xmlHttp.open("POST", url, true);
             xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -359,7 +357,7 @@ if(isset($_GET['diachi'])&&($_GET['Submit']=="Chi tiết"))
             xmlHttp.onreadystatechange = function() {
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                     if (xmlHttp.responseText == "ok") {
-                        location.replace("./");
+                        location.replace("./allRap.php");
                     } else {
                         obj.innerHTML = xmlHttp.responseText;
                     }
@@ -373,7 +371,7 @@ if(isset($_GET['diachi'])&&($_GET['Submit']=="Chi tiết"))
                 obj.innerHTML = "Mật khẩu không khớp";
                 // location.replace("https://www.fb.com");
             } else {
-                var url = "../../register.php";
+                var url = "../../../register.php";
                 var param = "fullname=" + reg_fullname.value + "&email=" + reg_email.value + "&telephone=" + reg_telephone.value + "&password=" + reg_password.value;
                 xmlHttp.open("POST", url, true);
                 xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -382,7 +380,7 @@ if(isset($_GET['diachi'])&&($_GET['Submit']=="Chi tiết"))
                     if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                         if (xmlHttp.responseText == "ok") {                        
                             window.alert("Đăng kí thành công");
-                            location.replace("./");
+                            location.replace("./allRap.php");
                         } else {
                             obj.innerHTML = xmlHttp.responseText;
                         }

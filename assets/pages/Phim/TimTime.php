@@ -4,7 +4,7 @@ if (isset($_POST['marap'])) {
     $maphim = $_POST['maphim'];
     $marap = $_POST['marap'];
     $sql = "SELECT MASC,DATE_FORMAT(NGAYCHIEU,'%d-%m-%Y %H:%i:%S') as NGAYCHIEU FROM `suatchieu` 
-            WHERE marap='$marap' and MAPHIM='$maphim' and MAGHE='0'";
+            WHERE marap='$marap' and MAPHIM='$maphim' and MAGHE='0' and ngaychieu>=now() ";
     $result = executeResult($sql);
  
 ?>

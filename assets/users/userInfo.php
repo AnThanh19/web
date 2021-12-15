@@ -20,6 +20,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
 		$email=$result[10];
 	}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +36,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
     <link rel="stylesheet" href="../css/grid.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="./userInfo.css">
+    
 </head>
 <body>
   <div class="app">
@@ -143,19 +145,16 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                                 <li>Email : <span><?=$email?></span></li>
                             </ul> 
                         </div>
-                        <div class="user-info-history">
-                            <h1 class="user-title">Lịch sử đặt vé</h1>
-                            <input type="search" class="form-control" placeholder = "Search">
-                        </div>
+                       
 
                         <div class="user-info-update">
-                            <form method="post" >
+                            <form method="post"  >
                             <div class="form-item">
                                 <label for="tentv">Tên thành viên:
                                 <input  type="text"  id="tentv" name="tentv" value="<?=$tentv?>"></label>
 					        </div>
 					        <div class="form-item">
-                                <label for="gioitinh">Giới tính (nam=0, nữ=1):
+                                <label for="gioitinh">Giới tính (Nam/Nữ):
                                 <input  type="text" id="gioitinh" name="gioitinh" value="<?=$gioitinh?>"></label>
                             </div>
                             <div class="form-item">
@@ -175,41 +174,109 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                                 <input  type="number"  id="cccd" name="cccd" value="<?=$cccd?>"></label>
                             </div>
                             <div class="form-item">
-                                <label for="email">Email:
+                                <label for="email" >Email:
                                 <input  type="email" id="email" name="email" value="<?=$email?>"></label>
                             </div>
-                            <div class="btn btn-success" style="width: 30%; border-radius: 5px; font-weight: 600; text-align: center; padding-top: 10px; margin-top: 20px; float: right;">Cập nhật</div>
-                            </form>
+                            <!-- <div class="btn btn-success" style="width: 30%; border-radius: 5px; font-weight: 600; text-align: center; padding-top: 10px; margin-top: 20px; float: right;">Cập nhật</div> -->
+                              <br>
+					        <button class="btn btn-success"  style="width: 30%; border-radius: 5px; font-weight: 600; float: right;">Cập nhật</button>
+                             
+                        </form>
                         </div>
                     </div>
                 </div>
+                <div class="user-info-history">
+                            <h1 class="user-title">Lịch sử đặt vé</h1>
+                        </div>
                 <div class="row user-info-history" style="margin-top: 36px;">
                     <div class="col l-12 m-12 c-12">
-                        <table class="table table-history dataTable">
+                        
+                            <?php
+require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
+    $sdt=$_COOKIE['fullName'];
+    
+    $sq="SELECT hd.SOHD
+        FROM phim p JOIN suatchieu sc on p.MAPHIM=sc.MAPHIM JOIN hoadon hd ON hd.SOHD=sc.SOHD 
+        join rapchieu r ON r.MARAP=sc.MARAP JOIN thanhvien tv ON tv.MATV=hd.MATV 
+        JOIN ghe on ghe.MAGHE=sc.MAGHE where tv.SDT='0988888888' and ghe.PHONG=sc.PHONG
+        GROUP by hd.SOHD";
+    $chuoi = executeResult($sq);
+    foreach ($chuoi as $dong) 
+    {
+?>
+<table class="table table-history dataTable">
                             <thead>
                                 <tr>
-                                    <th>STT</th>
                                     <th>Tên Phim</th>
                                     <th>Ghế</th>
-                                    <th>Rạp</th>
-                                    <th>Loại vé</th>
-                                    <th>Thời gian đặt</th>
+                                    <th>Phòng</th>
+                                    <th>Tên rạp</th>
+                                    <th>Thời gian</th>
+                                    <th>Giá</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th>1</th>
-                                    <td>Đại chiến Thái Bình Dương</td>
-                                    <td></td>
-                                    <td>CGV blABLA</td>
-                                    <td>Vé phim 2D</td>
-                                    <td>06-02-2001 21:00</td>
-                                </tr>
-                            </tbody>
+
+<?php
+
+	$sql     = "SELECT p.TENPHIM,sc.MAGHE,sc.PHONG,r.TENRAP,sc.NGAYCHIEU,ghe.GIA,hd.TONG,hd.SOHD
+                FROM phim p JOIN suatchieu sc on p.MAPHIM=sc.MAPHIM JOIN hoadon hd ON hd.SOHD=sc.SOHD 
+                join rapchieu r ON r.MARAP=sc.MARAP JOIN thanhvien tv ON tv.MATV=hd.MATV 
+                JOIN ghe on ghe.MAGHE=sc.MAGHE where tv.SDT='$sdt' and ghe.PHONG=sc.PHONG and sc.sohd='$dong[0]'";
+	$result = executeResult($sql);
+    foreach ($result as $row) 
+    {
+        echo "
+            <tr>
+                <td>$row[0]</td>
+                <td>$row[1]</td>
+                <td>$row[2]</td>
+                <td>$row[3]</td>
+                <td>$row[4]</td>
+                <td>$row[5]</td>
+            </tr>
+        ";
+    }
+    $tonghd=$row[6];
+
+    $sql1    = "SELECT sanpham.TENSP,cthd.SOLUONG,cthd.THANHTIEN 
+            FROM `cthd` JOIN sanpham ON cthd.MASP=sanpham.MASP WHERE SOHD='$dong[0]'";
+	$result1 = executeResult($sql1);
+    if ($result1 != null)
+    {
+        echo"
+        <tr>
+            <th colspan='2'>Tên sản phẩm</th>
+            <th colspan='2'>Số lượng</th>
+            <th colspan='2'>Giá</th>
+        </tr>   ";
+    }
+    foreach ($result1 as $row1) 
+    {
+        echo "
+            <tr>
+             
+                <td colspan='2'>$row1[0]</td>
+                <td colspan='2'>$row1[1]</td>
+                <td colspan='2'>$row1[2]</td>
+            </tr>
+        ";
+    }
+    echo "
+    <tr>
+        <td colspan='5' align='right'><b>Tổng:</b></td>
+        <td >$tonghd</td>
+    </tr>
+    </tbody>
                         </table>
+    ";
+}
+?>
+                                
+                            
                     </div>
                 </div>
-                <div class="row user-info-history">
+                <!-- <div class="row user-info-history">
                     <div class="col l-6 m-6 c-12 dataTables_info" role="status" aria-live="polite">
                         Showing 1 to 1 of 1 entries
                     </div>
@@ -227,7 +294,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
             
         </div>
@@ -382,7 +449,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
   </div>
 
 <script>
-    
+   
        if (getCookie("fullName") != "") {
         usernameCineSV.innerHTML = getCookie("fullName");
         }
@@ -485,33 +552,28 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
 
 <?php
 require_once ('../../db/dbhelper.php');
-$matv = $tentv = '';
-
+$tentv = '';
 if (!empty($_POST)) {
 	if (isset($_POST['tentv'])) {
 		$tentv = $_POST['tentv'];
-        if ($_POST['gioitinh']=="Nữ")
-        $gioitinh=1;
-    else
-        $gioitinh=0;
-
+        if ($_POST['gioitinh']=="Nữ" || $_POST['gioitinh']=="nữ" || $_POST['gioitinh']=="nu" || $_POST['gioitinh']=="Nu")
+            $gioitinh=1;
+        else
+            $gioitinh=0;
 		$ngaysinh= $_POST['ngaysinh'];
 		$diachi = $_POST['diachi'];
-		$sdt = $_POST['sdt'];
 		$cccd = $_POST['cccd'];
 		$email = $_POST['email'];
 	}
-	if (isset($_POST['matv'])) {
-		$matv = $_POST['matv'];
-	}
 
 	if (!empty($tentv)) {
-		$sql = "UPDATE `thanhvien` SET `tentv`='$tentv',`gioitinh`='$gioitinh',`ngaysinh`='$ngaysinh',
-		`diachi`='$diachi',`sdt`='$sdt',`cccd`='$cccd',`email`='$email' WHERE `sdt`='$sdt' ";
+		$sql = "UPDATE `thanhvien` SET `tentv`='$tentv',`gioitinh`='$gioitinh',`ngaysinh`=str_to_date('$ngaysinh','%d-%m-%Y'),
+		`diachi`='$diachi',`cccd`='$cccd',`email`='$email' WHERE `sdt`='$sdt' ";
 		
         execute($sql);
 
-		header('Location: userInfo.php');
+        echo "<meta http-equiv=\"refresh\" content=\"0;URL=userInfo.php\">";
+        header('Location: .');
 		die();
 	}
 }

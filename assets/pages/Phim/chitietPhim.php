@@ -250,24 +250,21 @@ if (isset($_GET['masc'])) {
                             <h3 class="auth-form__heading">Đăng nhập</h3>
                             <span class="auth-form__switch--btn js-register">Đăng ký</span>   
                     </div>
-
                     <div class="auth-form__form">
-                            <div class="auth-form__group">
-                                <input type="text" class="auth-form__input" required placeholder="Tài khoản">
-                            </div>
-
-                            <div class="auth-form__group">
-                                <input type="password" class="auth-form__input" required placeholder="Mật khẩu">
-                            </div>
-                    </div>
-
-                    <div class="auth-form__controls">
-                            <button class="btn btn--primary">ĐĂNG NHẬP</button>
-                    </div>
-
-                        <div class="auth-form__help">
-                            <a href="#" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu?</a>
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" required placeholder="Số điện thoại" name="username" id="username">
                         </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" required placeholder="Mật khẩu" name="password" id="password">
+                        </div>
+                        <div>
+                            <p id="notificationLogin"></p>
+                        </div>
+                    </div>
+                    <div class="auth-form__controls">
+                        <!-- <input type="submit" value="Login" name="Login"> -->
+                        <button class="btn btn--primary" onclick="Login()">ĐĂNG NHẬP</button>
+                    </div>
                 </div>
             </div>   
         </div>
@@ -283,29 +280,29 @@ if (isset($_GET['masc'])) {
                     </div>
 
                     <div class="auth-form__form">
+                        <form>
                             <div class="auth-form__group">
-                                <input type="text" class="auth-form__input" required placeholder="Tài khoản">
+                                <input type="text" class="auth-form__input" required placeholder="Họ và tên" id="reg_fullname">
                             </div>
-
                             <div class="auth-form__group">
-                                <input type="email" class="auth-form__input" required placeholder="Email">
+                                <input type="email" class="auth-form__input" required placeholder="Email" id="reg_email">
                             </div>
-
                             <div class="auth-form__group">
-                                <input type="tel" class="auth-form__input" required placeholder="Số điện thoại">
+                                <input type="tel" class="auth-form__input" required placeholder="Số điện thoại" id="reg_telephone">
                             </div>
-
                             <div class="auth-form__group">
-                                <input type="password" class="auth-form__input" required placeholder="Mật khẩu">
+                                <input type="password" class="auth-form__input" required placeholder="Mật khẩu" id="reg_password">
                             </div>
-
                             <div class="auth-form__group">
-                                <input type="password" class="auth-form__input" required placeholder="Nhập lại mật khẩu">
+                                <input type="password" class="auth-form__input" required placeholder="Nhập lại mật khẩu" id="reg_password_confirm">
                             </div>
-                    </div>
-
-                    <div class="auth-form__controls">
-                            <button class="btn btn--primary">ĐĂNG KÝ</button>
+                            <div>
+                                <p id="notificationRegister"></p>
+                            </div>
+                        </form>
+                        <div class="auth-form__controls">
+                            <button class="btn btn--primary" onclick="Register()">ĐĂNG KÝ</button>
+                        </div>
                     </div>
 
                     <div class="auth-form__aside">
@@ -607,7 +604,7 @@ if (isset($_GET['masc'])) {
         function Login() {
             var xmlHttp = new XMLHttpRequest();
             var obj = document.getElementById("notificationLogin");
-            var url = "../../login.php";
+            var url = "../../../login.php";
             var param = "username=" + username.value + "&password=" + password.value;
             xmlHttp.open("POST", url, true);
             xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -615,7 +612,7 @@ if (isset($_GET['masc'])) {
             xmlHttp.onreadystatechange = function() {
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                     if (xmlHttp.responseText == "ok") {
-                        location.replace("./");
+                        location.replace("./phimDangChieu.php");
                     } else {
                         obj.innerHTML = xmlHttp.responseText;
                     }
@@ -629,7 +626,7 @@ if (isset($_GET['masc'])) {
                 obj.innerHTML = "Mật khẩu không khớp";
                 // location.replace("https://www.fb.com");
             } else {
-                var url = "../../register.php";
+                var url = "../../../register.php";
                 var param = "fullname=" + reg_fullname.value + "&email=" + reg_email.value + "&telephone=" + reg_telephone.value + "&password=" + reg_password.value;
                 xmlHttp.open("POST", url, true);
                 xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -638,7 +635,7 @@ if (isset($_GET['masc'])) {
                     if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                         if (xmlHttp.responseText == "ok") {                        
                             window.alert("Đăng kí thành công");
-                            location.replace("./");
+                            location.replace("./phimDangChieu.php");
                         } else {
                             obj.innerHTML = xmlHttp.responseText;
                         }
