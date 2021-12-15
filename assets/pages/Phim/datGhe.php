@@ -1,8 +1,8 @@
 <?php
 require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
-$maphim='';
-if (isset($_GET['maphim'])) {
-    $maphim = $_GET['maphim'];
+$masc='';
+if (isset($_GET['masc'])) {
+    $masc = $_GET['masc'];
 }
 ?>
 <!DOCTYPE html>
@@ -96,6 +96,8 @@ if (isset($_GET['maphim'])) {
             </div>
 
         </header>
+  
+  
         <!-- CONTENT -->
         <div class="content">
             <div class="content__header">
@@ -115,44 +117,7 @@ if (isset($_GET['maphim'])) {
                 <div class="content-title">
                     <h1 class="content-title-name">Đặt vé</h1>
                 </div>
-                <div class="grid__row">
-
-
-                <div >
-              <div >
-                <i class="fa fa-times modal-close js-modal-close"></i>
-                <h1 class="premiere-title">CHỌN SUẤT CHIẾU</h1>
-           
-                <form  class="premiere-form" method="post">
-                    <div class="form-item">
-                        <label for="diachi">Tỉnh thành:</label>
-                        <select onchange="Rap()" name="diachi" id="diachi" class="form-control">
-                            <option hidden disabled selected>---Chọn Tỉnh Thành---</option>
-                            <option value="TP HCM">Hồ Chí Minh</option>
-                            <option value="Bình Dương">Bình Dương</option>
-                            <option value="Lâm Đồng">Lâm Đồng</option>
-                        </select>
-                    </div>
-                    <input type="text" value="<?=$maphim?>" id="maphim" name="maphim" hidden>
-                    <div id="targetDiv"></div>
-                    <div id="time"></div>
-                    <?php
-                    $masc='';
-	if (isset($_POST['masc'])) {
-		$masc = $_POST['masc'];
-        echo "<script> location.replace('./datGhe.php?masc=$masc'); </script>";
-		die();
-    } 
-    ?>
-                    <!-- <a href="datGhe.php?masc=<?=$masc?>"><input type="button" class="btn btn-primary premiere-sub-btn" style="border-radius: 5px;" value="Đặt vé"></a> -->
-                    
-                    <!-- <div class="btn btn-primary premiere-sub-btn" style="width: 30%; border-radius: 5px; font-weight: 600; text-align: center; padding-top: 10px;">Đăng ký</div> -->
-                </form>
-
-              </div>
-            </div>
-          
-            
+                <input type="text" value="<?=$masc?>">
         
             <div class="modal-ticket js-datghe-modal">
                 <div class="modal-content">
@@ -558,7 +523,6 @@ if (isset($_GET['maphim'])) {
             }
             return "";
         }
-        
         function Phim() {
             var xmlHttp = new XMLHttpRequest();
             var obj = document.getElementById("time");
