@@ -227,7 +227,7 @@ html {
 .btn{
     width: 80%;
     height: 36px;
-    margin: 0;
+    margin: 0 auto;
     font-size: 1.4rem;
     font-weight: 500;
     color: var(--white-color);
@@ -410,7 +410,7 @@ html {
     width: 100%;
     padding: 25px;
     position: relative;
-    display: none;
+    /* display: none; */
     animation: hideOn ease 1s;
 }
 

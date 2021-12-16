@@ -102,12 +102,12 @@ if (isset($_GET['maphim'])) {
         <div class="content">
             
             <div class="grid wide">
-                <h1 class="content-title">Đặt vé</h1>
+                <h1 class="content-title" style="float: center">CHỌN RẠP</h1>
                 <div class="">
-                    <div class="modal-content ticket-form open__block">
+                    <!-- <div class="modal-content ticket-form open__block"> -->
                       
                 <!-- <i class="fa fa-times modal-close js-modal-close"></i> -->
-                <h1 class="premiere-title">CHỌN SUẤT CHIẾU</h1>
+                <!-- <h1 class="premiere-title">CHỌN RẠP</h1> -->
            
                 <form  class="premiere-form" method="post">
                     <div class="form-item">
@@ -137,7 +137,7 @@ if (isset($_GET['maphim'])) {
 
               </div>
             </div>
-          
+<!--           
             <div class="modal-content dat-ghe">
                         <div class="btn btn-primary back-btn" style="width: 15%; border-radius: 5px;font-size: 1.6rem; font-weight: 600; text-align: center; padding-top: 4px; float: right; margin-bottom: 200px;">
                             <i class="fas fa-arrow-circle-left" style="margin-right: 4px;"></i>
@@ -325,7 +325,7 @@ if (isset($_GET['maphim'])) {
                             </li>
                             </ul>
                         </div>
-                </div>
+                </div> -->
             </div>
             
         </div>

@@ -102,215 +102,199 @@ if (isset($_GET['masc'])) {
   
         <!-- CONTENT -->
         <div class="content">
-            <div class="content__header">
-                <div class="grid content__header-nav">
-                    <div class="home__logo">
-                        <a href="../../../index.php" class="home__logo-link"><i class="fas fa-home home-icon"></i></a>
-                    </div>
-                    <i class="fas fa-angle-right angle-right-icon"></i>
-                    <div class="content__header-title">Phim</div>
-                    <i class="fas fa-angle-right angle-right-icon"></i>
-                    <div class="content__header-title">Phim đang chiếu</div>
-
+            <div class="grid wide">
+                <h1 class="content-title">Dat Ve</h1>
+               
+            
+                <div>
+                    
+                    <div class="modal-content dat-ghe">
+                        <!-- <div class="btn btn-primary back-btn" style="width: 15%; border-radius: 5px;font-size: 1.6rem; font-weight: 600; text-align: center; padding-top: 4px; float: right; margin-bottom: 200px;">
+                            <i class="fas fa-arrow-circle-left" style="margin-right: 4px;"></i>
+                            Trở lại
+                        </div> -->
+                      
+                        <div class="modal-content-main">
+                            
+                            <div class="grid seat-select">
+                            <span class="screen">SCREEN</span>
+                                <div class="seat-row">
+                                    <div class="seat seat-standard empty"></div>
+                                    <div class="seat seat-standard empty">A10</div>
+                                    <div class="seat seat-standard empty">A9</div>
+                                    <div class="seat seat-standard empty">A8</div>
+                                    <div class="seat seat-standard empty">A7</div>
+                                    <div class="seat seat-standard empty">A6</div>
+                                    <div class="seat seat-standard empty">A5</div>
+                                    <div class="seat seat-standard empty">A4</div>
+                                    <div class="seat seat-standard empty">A3</div>
+                                    <div class="seat seat-standard empty">A2</div>
+                                    <div class="seat">
+                                        <i class="fas fa-angle-double-right door-arrow-icon"></i>
+                                    </div>
+                                    <div class="seat" style="font-size: 1.2rem; font-weight: 600; line-height: 3.4;">Exit</div>
+                                </div>
+                                <div class="seat-row">
+                                    
+                                    <div class="seat seat-standard empty"></div>
+                                    <div class="seat seat-standard active seat-unavailable disabled">A10</div>
+                                    <div class="seat seat-standard active">A9</div>
+                                    <div class="seat seat-standard active">A8</div>
+                                    <div class="seat seat-standard active">A7</div>
+                                    <div class="seat seat-standard active">A6</div>
+                                    <div class="seat seat-standard active">A5</div>
+                                    <div class="seat seat-standard active">A4</div>
+                                    <div class="seat seat-standard active">A3</div>
+                                    <div class="seat seat-standard active">A2</div>
+                                    <div class="seat seat-standard active">A1</div>
+                                    <div class="seat seat-standard empty"></div>
+                                </div>
+                                <div class="seat-row">
+                                    
+                                    <div class="seat seat-standard empty"></div>
+                                    <div class="seat seat-standard active">B10</div>
+                                    <div class="seat seat-standard active">B9</div>
+                                    <div class="seat seat-standard active">B8</div>
+                                    <div class="seat seat-standard active">B7</div>
+                                    <div class="seat seat-standard active">B6</div>
+                                    <div class="seat seat-standard active">B5</div>
+                                    <div class="seat seat-standard active">B4</div>
+                                    <div class="seat seat-standard active">B3</div>
+                                    <div class="seat seat-standard active">B2</div>
+                                    <div class="seat seat-standard active">B1</div>
+                                    <div class="seat seat-standard empty"></div>
+                                </div>
+                                <div class="seat-row">
+                                    
+                                    <div class="seat seat-standard empty"></div>
+                                    <div class="seat seat-standard active">C10</div>
+                                    <div class="seat seat-standard active">C9</div>
+                                    <div class="seat seat-standard active">C8</div>
+                                    <div class="seat seat-standard active">C7</div>
+                                    <div class="seat seat-standard active">C6</div>
+                                    <div class="seat seat-standard active">C5</div>
+                                    <div class="seat seat-standard active">C4</div>
+                                    <div class="seat seat-standard active">C3</div>
+                                    <div class="seat seat-standard active">C2</div>
+                                    <div class="seat seat-standard active">C1</div>
+                                    <div class="seat seat-standard empty"></div>
+                                </div>
+                                <div class="seat-row">
+                                    
+                                    <div class="seat seat-standard empty"></div>
+                                    <div class="seat seat-standard active">D10</div>
+                                    <div class="seat seat-standard active">D9</div>
+                                    <div class="seat seat-standard active">D8</div>
+                                    <div class="seat seat-standard active">D7</div>
+                                    <div class="seat seat-standard active">D6</div>
+                                    <div class="seat seat-standard active">D5</div>
+                                    <div class="seat seat-standard active">D4</div>
+                                    <div class="seat seat-standard active">D3</div>
+                                    <div class="seat seat-standard active">D2</div>
+                                    <div class="seat seat-standard active">D1</div>
+                                    <div class="seat seat-standard empty"></div>
+                                </div>
+                                <div class="seat-row">
+                                    
+                                    <div class="seat seat-standard empty"></div>
+                                    <div class="seat seat-standard active">E10</div>
+                                    <div class="seat seat-standard active">E9</div>
+                                    <div class="seat seat-standard active">E8</div>
+                                    <div class="seat seat-standard active">E7</div>
+                                    <div class="seat seat-standard active">E6</div>
+                                    <div class="seat seat-standard active">E5</div>
+                                    <div class="seat seat-standard active">E4</div>
+                                    <div class="seat seat-standard active">E3</div>
+                                    <div class="seat seat-standard active">E2</div>
+                                    <div class="seat seat-standard active">E1</div>
+                                    <div class="seat seat-standard empty"></div>
+                                </div>
+                                <div class="seat-row">
+                                    
+                                    <div class="seat seat-standard empty"></div>
+                                    <div class="seat seat-standard active">F10</div>
+                                    <div class="seat seat-standard active">F9</div>
+                                    <div class="seat seat-standard active">F8</div>
+                                    <div class="seat seat-standard active">F7</div>
+                                    <div class="seat seat-standard active">F6</div>
+                                    <div class="seat seat-standard active">F5</div>
+                                    <div class="seat seat-standard active">F4</div>
+                                    <div class="seat seat-standard active">F3</div>
+                                    <div class="seat seat-standard active">F2</div>
+                                    <div class="seat seat-standard active">F1</div>
+                                    <div class="seat seat-standard empty"></div>
+                                </div>
+                                <div class="seat-row">
+                                    
+                                    <div class="seat seat-standard empty"></div>
+                                    <div class="seat seat-standard active">G10</div>
+                                    <div class="seat seat-standard active">G9</div>
+                                    <div class="seat seat-standard active">G8</div>
+                                    <div class="seat seat-standard active">G7</div>
+                                    <div class="seat seat-standard active">G6</div>
+                                    <div class="seat seat-standard active">G5</div>
+                                    <div class="seat seat-standard active">G4</div>
+                                    <div class="seat seat-standard active">G3</div>
+                                    <div class="seat seat-standard active">G2</div>
+                                    <div class="seat seat-standard active">G1</div>
+                                    <div class="seat seat-standard empty"></div>
+                                </div>
+                                <div class="seat-row">
+                                
+                                    <div class="seat">
+                                        <i class="fas fa-angle-double-up door-arrow-icon"></i>
+                                    </div>
+                                    <div class="seat seat-standard active">H10</div>
+                                    <div class="seat seat-standard active">H9</div>
+                                    <div class="seat seat-standard active">H8</div>
+                                    <div class="seat seat-standard active">H7</div>
+                                    <div class="seat seat-standard active">H6</div>
+                                    <div class="seat seat-standard active">H5</div>
+                                    <div class="seat seat-standard active">H4</div>
+                                    <div class="seat seat-standard active">H3</div>
+                                    <div class="seat seat-standard active">H2</div>
+                                    <div class="seat seat-standard active">H1</div>
+                                    <div class="seat seat-standard empty"></div>
+                                </div>
+                                <div class="seat-row">
+                                    
+                                    
+                                    <div class="seat" style="font-size: 1.2rem;font-weight: 600;">Lối vào</div>
+                                    <div class="seat active seat-couple">I5</div>
+                                    <div class="seat active seat-couple">I4</div>
+                                    <div class="seat active seat-couple">I3</div>
+                                    <div class="seat active seat-couple">I2</div>
+                                    <div class="seat active seat-couple">I1</div>
+                                    <div class="seat seat-standard empty"></div>
+                                </div>
+                        </div>
+                        
+                        <input type="submit" class="btn primary-btn js-datghe-btn" value="Tiếp tục" style="float: right; width: 200px; margin-top: 24px;"></input>
+                        </div>
+            
+                        <div class="note" style="margin-top: 80px;">
+                            <ul style="list-style: none;">
+                            <li class="note-list">
+                                <div class="note-item" style="background-color: #505050;"> </div>
+                                <span>Đã đặt</span>
+                            </li> 
+                            <li class="note-list">
+                                <div class="note-item" style="border: 1px solid #01c73c;"></div>
+                                Ghế trống
+                            </li> 
+                            <li class="note-list">
+                                <div class="note-item" style="background-color: #a02b8c;"></div>
+                                Ghế đôi
+                            </li>
+                            </ul>
+                        </div>
                 </div>
             </div>
-
-            <div class="grid">
-                <div class="content-title">
-                    <h1 class="content-title-name">Đặt vé</h1>
-                </div>
-                <input type="text" value="<?=$masc?>">
-        
-            <div class="modal-ticket js-datghe-modal">
-                <div class="modal-content">
-                  <i class="fa fa-times modal-close js-modal-close"></i>
-                  <div class="film-infomation film-info">
-                        <div>Phim: <span>Bo Gia</span></div>
-                        <div>Suat chieu: <span>2020-05-12 19:00:00</span></div>
-                        <div>Rap: <span>CGV Parkson Đồng Khởi</span></div>
-                        <div>Phong: <span>1</span></div>
-                        <div>Ghe: <span></span></div>
-                  </div>
-                  
-                  <div class="modal-content-main">
-                      <span class="screen">SCREEN</span>
-                      <div class="grid seat-select">
-                        <div class="seat-row">
-                              
-                            <div class="seat seat-standard empty"></div>
-                            <div class="seat seat-standard empty">A10</div>
-                            <div class="seat seat-standard empty">A9</div>
-                            <div class="seat seat-standard empty">A8</div>
-                            <div class="seat seat-standard empty">A7</div>
-                            <div class="seat seat-standard empty">A6</div>
-                            <div class="seat seat-standard empty">A5</div>
-                            <div class="seat seat-standard empty">A4</div>
-                            <div class="seat seat-standard empty">A3</div>
-                            <div class="seat seat-standard empty">A2</div>
-                            <div class="seat">
-                                <i class="fas fa-angle-double-right door-arrow-icon"></i>
-                            </div>
-                            <div class="seat" style="font-size: 1.2rem; font-weight: 600; line-height: 3.4;">Exit</div>
-                        </div>
-                          <div class="seat-row">
-                              
-                              <div class="seat seat-standard empty"></div>
-                              <div class="seat seat-standard active seat-unavailable disabled">A10</div>
-                              <div class="seat seat-standard active">A9</div>
-                              <div class="seat seat-standard active">A8</div>
-                              <div class="seat seat-standard active">A7</div>
-                              <div class="seat seat-standard active">A6</div>
-                              <div class="seat seat-standard active">A5</div>
-                              <div class="seat seat-standard active">A4</div>
-                              <div class="seat seat-standard active">A3</div>
-                              <div class="seat seat-standard active">A2</div>
-                              <div class="seat seat-standard active">A1</div>
-                              <div class="seat seat-standard empty"></div>
-                          </div>
-                          <div class="seat-row">
-                            
-                            <div class="seat seat-standard empty"></div>
-                            <div class="seat seat-standard active">B10</div>
-                            <div class="seat seat-standard active">B9</div>
-                            <div class="seat seat-standard active">B8</div>
-                            <div class="seat seat-standard active">B7</div>
-                            <div class="seat seat-standard active">B6</div>
-                            <div class="seat seat-standard active">B5</div>
-                            <div class="seat seat-standard active">B4</div>
-                            <div class="seat seat-standard active">B3</div>
-                            <div class="seat seat-standard active">B2</div>
-                            <div class="seat seat-standard active">B1</div>
-                            <div class="seat seat-standard empty"></div>
-                        </div>
-                        <div class="seat-row">
-                            
-                            <div class="seat seat-standard empty"></div>
-                            <div class="seat seat-standard active">C10</div>
-                            <div class="seat seat-standard active">C9</div>
-                            <div class="seat seat-standard active">C8</div>
-                            <div class="seat seat-standard active">C7</div>
-                            <div class="seat seat-standard active">C6</div>
-                            <div class="seat seat-standard active">C5</div>
-                            <div class="seat seat-standard active">C4</div>
-                            <div class="seat seat-standard active">C3</div>
-                            <div class="seat seat-standard active">C2</div>
-                            <div class="seat seat-standard active">C1</div>
-                            <div class="seat seat-standard empty"></div>
-                        </div>
-                        <div class="seat-row">
-                            
-                            <div class="seat seat-standard empty"></div>
-                            <div class="seat seat-standard active">D10</div>
-                            <div class="seat seat-standard active">D9</div>
-                            <div class="seat seat-standard active">D8</div>
-                            <div class="seat seat-standard active">D7</div>
-                            <div class="seat seat-standard active">D6</div>
-                            <div class="seat seat-standard active">D5</div>
-                            <div class="seat seat-standard active">D4</div>
-                            <div class="seat seat-standard active">D3</div>
-                            <div class="seat seat-standard active">D2</div>
-                            <div class="seat seat-standard active">D1</div>
-                            <div class="seat seat-standard empty"></div>
-                        </div>
-                        <div class="seat-row">
-                            
-                            <div class="seat seat-standard empty"></div>
-                            <div class="seat seat-standard active">E10</div>
-                            <div class="seat seat-standard active">E9</div>
-                            <div class="seat seat-standard active">E8</div>
-                            <div class="seat seat-standard active">E7</div>
-                            <div class="seat seat-standard active">E6</div>
-                            <div class="seat seat-standard active">E5</div>
-                            <div class="seat seat-standard active">E4</div>
-                            <div class="seat seat-standard active">E3</div>
-                            <div class="seat seat-standard active">E2</div>
-                            <div class="seat seat-standard active">E1</div>
-                            <div class="seat seat-standard empty"></div>
-                        </div>
-                        <div class="seat-row">
-                            
-                            <div class="seat seat-standard empty"></div>
-                            <div class="seat seat-standard active">F10</div>
-                            <div class="seat seat-standard active">F9</div>
-                            <div class="seat seat-standard active">F8</div>
-                            <div class="seat seat-standard active">F7</div>
-                            <div class="seat seat-standard active">F6</div>
-                            <div class="seat seat-standard active">F5</div>
-                            <div class="seat seat-standard active">F4</div>
-                            <div class="seat seat-standard active">F3</div>
-                            <div class="seat seat-standard active">F2</div>
-                            <div class="seat seat-standard active">F1</div>
-                            <div class="seat seat-standard empty"></div>
-                        </div>
-                        <div class="seat-row">
-                            
-                            <div class="seat seat-standard empty"></div>
-                            <div class="seat seat-standard active">G10</div>
-                            <div class="seat seat-standard active">G9</div>
-                            <div class="seat seat-standard active">G8</div>
-                            <div class="seat seat-standard active">G7</div>
-                            <div class="seat seat-standard active">G6</div>
-                            <div class="seat seat-standard active">G5</div>
-                            <div class="seat seat-standard active">G4</div>
-                            <div class="seat seat-standard active">G3</div>
-                            <div class="seat seat-standard active">G2</div>
-                            <div class="seat seat-standard active">G1</div>
-                            <div class="seat seat-standard empty"></div>
-                        </div>
-                        <div class="seat-row">
-                           
-                            <div class="seat">
-                                <i class="fas fa-angle-double-up door-arrow-icon"></i>
-                            </div>
-                            <div class="seat seat-standard active">H10</div>
-                            <div class="seat seat-standard active">H9</div>
-                            <div class="seat seat-standard active">H8</div>
-                            <div class="seat seat-standard active">H7</div>
-                            <div class="seat seat-standard active">H6</div>
-                            <div class="seat seat-standard active">H5</div>
-                            <div class="seat seat-standard active">H4</div>
-                            <div class="seat seat-standard active">H3</div>
-                            <div class="seat seat-standard active">H2</div>
-                            <div class="seat seat-standard active">H1</div>
-                            <div class="seat seat-standard empty"></div>
-                        </div>
-                        <div class="seat-row">
-                            
-                            
-                            <div class="seat" style="font-size: 1.2rem;font-weight: 600;">Lối vào</div>
-                            <div class="seat active seat-couple">I10</div>
-                            <div class="seat active seat-couple">I9</div>
-                            <div class="seat active seat-couple">I8</div>
-                            <div class="seat active seat-couple">I7</div>
-                            <div class="seat active seat-couple">I6</div>
-                            <div class="seat active seat-couple">I5</div>
-                            <div class="seat active seat-couple">I4</div>
-                            <div class="seat active seat-couple">I3</div>
-                            <div class="seat active seat-couple">I2</div>
-                            <div class="seat active seat-couple">I1</div>
-                            <div class="seat seat-standard empty"></div>
-                        </div>
-                  </div>
-                  
-                  <input type="submit" class="btn primary-btn" value="Đặt vé" style="float: right; width: 200px; margin-top: 24px;"></input>
-                </div>
-        
-            </div>
-                </div>
-            </div>
+            
         </div>
-        
-        <!-- MODAL TRAILER -->
-        <!-- <div class="modal modal-trailer js-modal-trailer" id="myModal">
-                    <div class="modal__overlay"></div>
-                    <div class="modal__body js-modal__body">
-                        <iframe width="800" height="540" class="embed-responsive-item" src="<?=$view?>" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
-                    </div>
-                </div>
-        
-         -->
-
-       
+    
+        </div>
+ 
         <footer class="footer">
             <div class="grid">
                 <div class="grid__row-home footer-row">
@@ -402,10 +386,6 @@ if (isset($_GET['masc'])) {
                         <div class="auth-form__controls">
                                 <button class="btn btn--primary">ĐĂNG NHẬP</button>
                         </div>
-    
-                            <div class="auth-form__help">
-                                <a href="#" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu?</a>
-                            </div>
                     </div>
                 </div>   
             </div>
@@ -460,13 +440,16 @@ if (isset($_GET['masc'])) {
         
     
     <script>
+        
         var loginForm = document.querySelector('.js-login-form');
         var registerForm = document.querySelector('.js-register-form');
         var modal = document.querySelector('.js-modal');
         var modalBodyLogin = document.querySelector('.js-modal__body--login');
         var modalBodyRegister = document.querySelector('.js-modal__body--register');
+
         var switchFormLogin = document.querySelector('.js-login');
         var switchFormRegister = document.querySelector('.js-register');
+
         if (getCookie("fullName") != "") {
             block_login_register.innerHTML = "";
             usernameCineSV.innerHTML = getCookie("fullName");
@@ -474,42 +457,49 @@ if (isset($_GET['masc'])) {
             block_info_user.innerHTML = "";
         }
         // Hàm mở gogin Form
-        function openLoginForm() {
+        function openLoginForm(){
             modal.classList.add('open__modal');
             modalBodyRegister.classList.remove('modal-body__open');
             modalBodyLogin.classList.add('modal-body__open');
         }
         // Hàm mở register Form
-        function openRegisterForm() {
+        function openRegisterForm(){
             modal.classList.add('open__modal');
             modalBodyLogin.classList.remove('modal-body__open');
             modalBodyRegister.classList.add('modal-body__open');
         }
         // Hàm ẩn modal 
-        function closeModal() {
+        function closeModal(){
             modal.classList.remove('open__modal');
         }
+
         // Hàm chuyển form login-regisrer
-        function switchToLogin() {
+        function switchToLogin(){
             modalBodyRegister.classList.remove('modal-body__open');
             modalBodyLogin.classList.add('modal-body__open');
         }
-        function switchToRegister() {
+
+        function switchToRegister(){
             modalBodyLogin.classList.remove('modal-body__open');
             modalBodyRegister.classList.add('modal-body__open');
         }
+
         loginForm.addEventListener('click', openLoginForm);
+
         registerForm.addEventListener('click', openRegisterForm);
+
         switchFormRegister.addEventListener('click', switchToRegister);
         switchFormLogin.addEventListener('click', switchToLogin);
         //Đóng modal
         modal.addEventListener('click', closeModal);
-        modalBodyLogin.addEventListener('click', function(event) {
+        modalBodyLogin.addEventListener('click', function(event){
             event.stopPropagation();
         })
-        modalBodyRegister.addEventListener('click', function(event) {
+
+        modalBodyRegister.addEventListener('click', function(event){
             event.stopPropagation();
         })
+
         function getCookie(cname) {
             let name = cname + "=";
             let decodedCookie = decodeURIComponent(document.cookie);
@@ -605,37 +595,9 @@ if (isset($_GET['masc'])) {
                 }
             }  
         }
-
-
-            // // TRAILER
-            // var modalTrailer = document.querySelector('.js-modal-trailer');
-            // var trailerBtns = document.querySelectorAll('.js-trailer-btn');
-            // var modalBodyTrailer = document.querySelector('.js-modal__body');
-            
-            
-            // function openTrailerForm(){
-            //     modalTrailer.classList.add('open');
-            //     modalBodyTrailer.classList.add('open');
-                
-            // }
-            
-
-            // function closeModalTrailer(){
-            //     modalBodyTrailer.classList.remove('open');
-            //     modalTrailer.classList.remove('open');
-            // }
-            
-            // for(const trailerBtn of trailerBtns){
-            //     trailerBtn.addEventListener('click', openTrailerForm);
-            // }
-            // modalTrailer.addEventListener('click', closeModalTrailer);
-    
-
-
             
         </script>
         <script src="../../js/modalTickets.js"></script>
-        <script src="../../js/modalTrailer.js"></script>
     </div>
 </body>
 </html>

@@ -319,7 +319,7 @@ if (isset($_GET['masc'])) {
 
     
     <!-- MODAL TiCKET -->
-    <div class="modal-ticket js-modal-ticket">
+    <!-- <div class="modal-ticket js-modal-ticket">
         <div class="modal-content">
           <i class="fa fa-times modal-close js-modal-close"></i>
           <h1 class="premiere-title">CHỌN SUẤT CHIẾU</h1>
@@ -532,7 +532,7 @@ if (isset($_GET['masc'])) {
           <input type="submit" class="btn primary-btn" value="Đặt vé" style="float: right; width: 200px; margin-top: 24px;"></input>
         </div>
 
-    </div>
+    </div> -->
 
 
     <script>

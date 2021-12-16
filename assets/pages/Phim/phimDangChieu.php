@@ -334,7 +334,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
               <!-- </div>
             </div>
            -->
-            
+<!--             
         
             <div class="modal-ticket js-datghe-modal">
                 <div class="modal-content">
@@ -510,7 +510,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                   <input type="submit" class="btn primary-btn" value="Đặt vé" style="float: right; width: 200px; margin-top: 24px;"></input>
                 </div>
         
-            </div>
+            </div> -->
     
     <script>
         var loginForm = document.querySelector('.js-login-form');
