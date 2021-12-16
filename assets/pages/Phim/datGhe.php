@@ -12,13 +12,15 @@ if (isset($_GET['masc'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../img/header__logo.png">
-    <title>Phim đang chiếu</title>
+    <title>CineSV</title>
     <link rel="stylesheet" href="https://pagecdn.io/lib/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="../../fontawesome-free-5.15.4-web/css/all.min.css">
-    <link rel="stylesheet" href="./phimDangChieu.css">
+    <link rel="stylesheet" href="../../css/grid.css">
     <link rel="stylesheet" href="../../css/base.css">
     <link rel="stylesheet" href="../../css/main.css">
-    <!-- <link rel="stylesheet" href="../../css/datGhe.css"> -->
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="./datVe.css">
+    <link rel="stylesheet" href="../../css/datGhe.css">
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <!-- <script src="ajax.js"></script> -->

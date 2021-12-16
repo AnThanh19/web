@@ -9,6 +9,7 @@
     margin: 2px 1px;
     padding: 1px 0;
     line-height: 4.4;
+    border-radius: 5px;
 }
 
 .disabled{
@@ -38,6 +39,8 @@
     background: #a02b8c;
     color: #fff;
     border-color: #cc33b2;
+    width: 92px;
+    font-weight: 600;
 }
 
 .seat.seat-unavailable {
@@ -76,11 +79,8 @@
     padding: 4px;
 }
 
+
 .door-arrow-icon{
     font-size: 2rem;
+    
 }
-
-.couple{
-    margin: 0 4px;
-}
-

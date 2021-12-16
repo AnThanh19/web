@@ -1,58 +1,34 @@
 
-var modalTicket = document.querySelector('.js-modal-ticket');
-var bookTicketBtns = document.querySelectorAll('.js-btn-book-tickets');
-var closeModalTicket = document.querySelector('.js-modal-close');
-var modalContent = document.querySelector('.modal-content');
-function showModalTicket(){
-    modalTicket.classList.add('open');
-    datGheModal.classList.remove('open');
-}
+var ticketForm = document.querySelector('.ticket-form'),
+ticketFormBtn = document.querySelector('.premiere-sub-btn'),
+datGhe = document.querySelector('.dat-ghe');
+datGheBtn = document.querySelector('.js-datghe-btn');
 
-function hideModalTicket(){
-    modalTicket.classList.remove('open');
-}
-
-for (const bookTicketBtn of bookTicketBtns){
-    bookTicketBtn.addEventListener('click', showModalTicket);
-}
-closeModalTicket.addEventListener('click', hideModalTicket);
-modalTicket.addEventListener('click', hideModalTicket);
-modalContent.addEventListener('click', function(event){
-    event.stopPropagation();
+ticketFormBtn.addEventListener('click', function(){
+    ticketForm.classList.remove('open__block');
+    datGhe.classList.add('open__block');
 })
 
 
-// Dat Ghe CSS
-var datGheModal = document.querySelector('.modal-ticket.js-datghe-modal');
-var premiereBtn = document.querySelector('.premiere-sub-btn');
-var closeModalTicket2 = document.querySelector('.js-datghe-modal .js-modal-close');
-var modalContent2 = document.querySelector('.js-datghe-modal .modal-content');
+// DAT GHE 
 
-function hideDatGheModal(){
-    modalTicket.classList.remove('open');
-    datGheModal.classList.remove('open');
-}
-datGheModal.addEventListener('click', hideDatGheModal);
-
-closeModalTicket2.addEventListener('click', function(){
-    modalTicket.classList.remove('open');
-    datGheModal.classList.remove('open');
-})
-
-premiereBtn.addEventListener('click', function(){
-    modalTicket.classList.remove('open');
-    datGheModal.classList.add('open');
-})
-
-seatSelects = document.querySelectorAll('.seat.active');
-seatSelectCps = document.querySelectorAll('.seat.seat-couple');
+var seatSelects = document.querySelectorAll('.seat.seat-standard.active'),
+seatCoupleSelects = document.querySelectorAll('.seat.seat-couple'),
+backBtn = document.querySelector('.back-btn');
 
 for(const seatSelect of seatSelects){
-    seatSelect.addEventListener('click', function(){
+    seatSelect.addEventListener('click',function(){
         seatSelect.classList.toggle('checked');
     })
 }
 
-modalContent2.addEventListener('click', function(event){
-    event.stopPropagation();
+for(const seatCoupleSelect of seatCoupleSelects){
+    seatCoupleSelect.addEventListener('click',function(){
+        seatCoupleSelect.classList.toggle('checked');
+    })
+}
+
+backBtn.addEventListener('click', function(){
+    ticketForm.classList.add('open__block');
+    datGhe.classList.remove('open__block');
 })

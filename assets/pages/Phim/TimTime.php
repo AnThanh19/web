@@ -23,7 +23,7 @@ if (isset($_POST['marap'])) {
                     ?>
             </select>
     </div>
-    <button class="btn btn-success" >Đặt vé</button>
+    <button class="btn btn-success" style="width: 25%; border-radius: 5px; font-weight: 600; text-align: center; padding-top: 4px; float: right;">Tiếp tục</button>
     <!-- <input type="button" class="btn btn-primary premiere-sub-btn" style="border-radius: 5px;" value="Đặt vé"> -->
     </form>
    
