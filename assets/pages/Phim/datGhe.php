@@ -135,7 +135,9 @@ if (isset($_GET['masc'])) {
                                                 WHERE suat=$masc ORDER BY ghe.stt";
                                         $re = executeResult($sdat);
 
-                                    foreach ($result as $i) 
+                                foreach ($result as $i) 
+                                {
+                                    if ($re !=null)
                                     {
                                         foreach ($re as $j) 
                                         {
@@ -288,6 +290,52 @@ if (isset($_GET['masc'])) {
                                             
                                         }
                                     }
+                                    else
+                                    {
+                                        if (($i[4]-1) %10 == 0 )
+                                        {
+                                            if (($i[4]<81))
+                                            {
+                                                echo "</div>
+                                                        <div class='seat-row'>";
+                                                        if (($i[4]==71))
+                                                        { 
+                                                            echo "<div class='seat'>
+                                                                            <i class='fas fa-angle-double-up door-arrow-icon'></i>
+                                                                        </div>
+                                                                        <div class='seat seat-standard active'>$i[0]</div>";
+                                                            
+                                                        }
+                                                        else
+                                                        {
+                                                            echo" <div class='seat seat-standard empty'></div>
+                                                            <div class='seat seat-standard active'>$i[0]</div>";
+                                                            
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        echo "</div>
+                                                            <div class='seat-row'>
+                                                            <div class='seat' style='font-size: 1.2rem;font-weight: 600;'>Lối vào</div>
+                                                        <div class='seat active seat-couple'>$i[0]</div>";
+                                                        
+                                                    }
+                                                
+                                                }
+                                                else
+                                                    if (($i[4]<81))
+                                                    {
+                                                        echo "<div class='seat seat-standard active'>$i[0]</div>";
+                                                        
+                                                    }
+                                                    else 
+                                                    {
+                                                        echo "<div class='seat active seat-couple'>$i[0]</div>";
+                                                        
+                                                    }
+                                    }
+                                }
                                         // echo "</div>";
                                     ?>
                                 
