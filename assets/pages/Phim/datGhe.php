@@ -113,28 +113,185 @@ if (isset($_GET['masc'])) {
                             <i class="fas fa-arrow-circle-left" style="margin-right: 4px;"></i>
                             Trở lại
                         </div> -->
-                      
+                        
+
                         <div class="modal-content-main">
                             
                             <div class="grid seat-select">
                             <span class="screen">SCREEN</span>
-                                <div class="seat-row">
-                                    <div class="seat seat-standard empty"></div>
-                                    <div class="seat seat-standard empty">A10</div>
-                                    <div class="seat seat-standard empty">A9</div>
-                                    <div class="seat seat-standard empty">A8</div>
-                                    <div class="seat seat-standard empty">A7</div>
-                                    <div class="seat seat-standard empty">A6</div>
-                                    <div class="seat seat-standard empty">A5</div>
-                                    <div class="seat seat-standard empty">A4</div>
-                                    <div class="seat seat-standard empty">A3</div>
-                                    <div class="seat seat-standard empty">A2</div>
                                     <div class="seat">
                                         <i class="fas fa-angle-double-right door-arrow-icon"></i>
                                     </div>
                                     <div class="seat" style="font-size: 1.2rem; font-weight: 600; line-height: 3.4;">Exit</div>
-                                </div>
-                                <div class="seat-row">
+                                    
+                                    <?php
+                                        $sql          = "SELECT phong FROM suatchieu WHERE masc='$masc'";
+                                        $phong = executeSingleResult($sql);
+
+                                        $sghe          = "SELECT * from ghe WHERE phong='$phong[0]' and maghe!='0' ORDER by stt";
+                                        $result = executeResult($sghe);
+
+                                        $sdat= "SELECT DISTINCT suatchieu.MAGHE, ghe.stt FROM suatchieu JOIN ghe ON suatchieu.MAGHE=ghe.MAGHE  
+                                                WHERE suat=$masc ORDER BY ghe.stt";
+                                        $re = executeResult($sdat);
+
+                                    foreach ($result as $i) 
+                                    {
+                                        foreach ($re as $j) 
+                                        {
+                                            if ($j[1] == $i[4])
+                                            {
+                                                {
+                                                    if (($i[4]-1) %10 == 0 )
+                                                    {
+                                                    
+                                                        if (($i[4]<81))
+                                                        {
+                                                            echo "</div>
+                                                            <div class='seat-row'>";
+                                                            if (($i[4]==71))
+                                                            { 
+                                                                echo "<div class='seat'>
+                                                                                <i class='fas fa-angle-double-up door-arrow-icon'></i>
+                                                                            </div>
+                                                                            <div class='seat seat-standard active seat-unavailable disabled'>$i[0]</div>";
+                                                                break;
+                                                            }
+                                                            else
+                                                            {
+                                                                echo" <div class='seat seat-standard empty'></div>
+                                                                <div class='seat seat-standard active seat-unavailable disabled'>$i[0]</div>";
+                                                                break;
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            echo "</div>
+                                                                <div class='seat-row'>
+                                                                <div class='seat' style='font-size: 1.2rem;font-weight: 600;'>Lối vào</div>
+                                                            <div class='seat active seat-couple seat-unavailable disabled'>$i[0]</div>";
+                                                            break;
+                                                        }
+                                                       
+                                                    }
+                                                    else
+                                                        if (($i[4]<81))
+                                                        {
+                                                            echo "<div class='seat seat-standard active seat-unavailable disabled'>$i[0]</div>";
+                                                            break;
+                                                        }
+                                                        else 
+                                                        {
+                                                            echo "<div class='seat active seat-couple seat-unavailable disabled'>$i[0]</div>";
+                                                            break;
+                                                        }
+                                                    }
+                                            }
+                                            else 
+                                            {
+                                                if ($j[1] >= $i[4])
+                                                {
+                                                    if (($i[4]-1) %10 == 0 )
+                                                    {
+                                                    
+                                                        if (($i[4]<81))
+                                                        {
+                                                            echo "</div>
+                                                            <div class='seat-row'>";
+                                                            if (($i[4]==71))
+                                                            { 
+                                                                echo "<div class='seat'>
+                                                                                <i class='fas fa-angle-double-up door-arrow-icon'></i>
+                                                                            </div>
+                                                                            <div class='seat seat-standard active'>$i[0]</div>";
+                                                                break;
+                                                            }
+                                                            else
+                                                            {
+                                                                echo" <div class='seat seat-standard empty'></div>
+                                                                <div class='seat seat-standard active'>$i[0]</div>";
+                                                                break;
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            echo "</div>
+                                                                <div class='seat-row'>
+                                                                <div class='seat' style='font-size: 1.2rem;font-weight: 600;'>Lối vào</div>
+                                                            <div class='seat active seat-couple'>$i[0]</div>";
+                                                            break;
+                                                        }
+                                                    
+                                                    }
+                                                    else
+                                                        if (($i[4]<81))
+                                                        {
+                                                            echo "<div class='seat seat-standard active'>$i[0]</div>";
+                                                            break;
+                                                        }
+                                                        else 
+                                                        {
+                                                            echo "<div class='seat active seat-couple'>$i[0]</div>";
+                                                            break;
+                                                        }
+                                                }
+                                            }
+                                        }
+                                        if ($i[4]>$j[1])
+                                        {
+                                            if (($i[4]-1) %10 == 0 )
+                                            {
+                                            
+                                                if (($i[4]<81))
+                                                {
+                                                    echo "</div>
+                                                    <div class='seat-row'>";
+                                                    if (($i[4]==71))
+                                                    { 
+                                                        echo "<div class='seat'>
+                                                                        <i class='fas fa-angle-double-up door-arrow-icon'></i>
+                                                                    </div>
+                                                                    <div class='seat seat-standard active'>$i[0]</div>";
+                                                        
+                                                    }
+                                                    else
+                                                    {
+                                                        echo" <div class='seat seat-standard empty'></div>
+                                                        <div class='seat seat-standard active'>$i[0]</div>";
+                                                       
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    echo "</div>
+                                                        <div class='seat-row'>
+                                                        <div class='seat' style='font-size: 1.2rem;font-weight: 600;'>Lối vào</div>
+                                                    <div class='seat active seat-couple'>$i[0]</div>";
+                                                    
+                                                }
+                                            
+                                            }
+                                            else
+                                            {
+                                                if (($i[4]<81))
+                                                {
+                                                    echo "<div class='seat seat-standard active'>$i[0]</div>";
+                                                    
+                                                }
+                                                else 
+                                                {
+                                                    echo "<div class='seat active seat-couple'>$i[0]</div>";
+                                                    
+                                                }
+                                            }
+
+                                            
+                                        }
+                                    }
+                                        // echo "</div>";
+                                    ?>
+                                
+                                <!-- <div class="seat-row">
                                     
                                     <div class="seat seat-standard empty"></div>
                                     <div class="seat seat-standard active seat-unavailable disabled">A10</div>
@@ -148,125 +305,8 @@ if (isset($_GET['masc'])) {
                                     <div class="seat seat-standard active">A2</div>
                                     <div class="seat seat-standard active">A1</div>
                                     <div class="seat seat-standard empty"></div>
-                                </div>
-                                <div class="seat-row">
-                                    
-                                    <div class="seat seat-standard empty"></div>
-                                    <div class="seat seat-standard active">B10</div>
-                                    <div class="seat seat-standard active">B9</div>
-                                    <div class="seat seat-standard active">B8</div>
-                                    <div class="seat seat-standard active">B7</div>
-                                    <div class="seat seat-standard active">B6</div>
-                                    <div class="seat seat-standard active">B5</div>
-                                    <div class="seat seat-standard active">B4</div>
-                                    <div class="seat seat-standard active">B3</div>
-                                    <div class="seat seat-standard active">B2</div>
-                                    <div class="seat seat-standard active">B1</div>
-                                    <div class="seat seat-standard empty"></div>
-                                </div>
-                                <div class="seat-row">
-                                    
-                                    <div class="seat seat-standard empty"></div>
-                                    <div class="seat seat-standard active">C10</div>
-                                    <div class="seat seat-standard active">C9</div>
-                                    <div class="seat seat-standard active">C8</div>
-                                    <div class="seat seat-standard active">C7</div>
-                                    <div class="seat seat-standard active">C6</div>
-                                    <div class="seat seat-standard active">C5</div>
-                                    <div class="seat seat-standard active">C4</div>
-                                    <div class="seat seat-standard active">C3</div>
-                                    <div class="seat seat-standard active">C2</div>
-                                    <div class="seat seat-standard active">C1</div>
-                                    <div class="seat seat-standard empty"></div>
-                                </div>
-                                <div class="seat-row">
-                                    
-                                    <div class="seat seat-standard empty"></div>
-                                    <div class="seat seat-standard active">D10</div>
-                                    <div class="seat seat-standard active">D9</div>
-                                    <div class="seat seat-standard active">D8</div>
-                                    <div class="seat seat-standard active">D7</div>
-                                    <div class="seat seat-standard active">D6</div>
-                                    <div class="seat seat-standard active">D5</div>
-                                    <div class="seat seat-standard active">D4</div>
-                                    <div class="seat seat-standard active">D3</div>
-                                    <div class="seat seat-standard active">D2</div>
-                                    <div class="seat seat-standard active">D1</div>
-                                    <div class="seat seat-standard empty"></div>
-                                </div>
-                                <div class="seat-row">
-                                    
-                                    <div class="seat seat-standard empty"></div>
-                                    <div class="seat seat-standard active">E10</div>
-                                    <div class="seat seat-standard active">E9</div>
-                                    <div class="seat seat-standard active">E8</div>
-                                    <div class="seat seat-standard active">E7</div>
-                                    <div class="seat seat-standard active">E6</div>
-                                    <div class="seat seat-standard active">E5</div>
-                                    <div class="seat seat-standard active">E4</div>
-                                    <div class="seat seat-standard active">E3</div>
-                                    <div class="seat seat-standard active">E2</div>
-                                    <div class="seat seat-standard active">E1</div>
-                                    <div class="seat seat-standard empty"></div>
-                                </div>
-                                <div class="seat-row">
-                                    
-                                    <div class="seat seat-standard empty"></div>
-                                    <div class="seat seat-standard active">F10</div>
-                                    <div class="seat seat-standard active">F9</div>
-                                    <div class="seat seat-standard active">F8</div>
-                                    <div class="seat seat-standard active">F7</div>
-                                    <div class="seat seat-standard active">F6</div>
-                                    <div class="seat seat-standard active">F5</div>
-                                    <div class="seat seat-standard active">F4</div>
-                                    <div class="seat seat-standard active">F3</div>
-                                    <div class="seat seat-standard active">F2</div>
-                                    <div class="seat seat-standard active">F1</div>
-                                    <div class="seat seat-standard empty"></div>
-                                </div>
-                                <div class="seat-row">
-                                    
-                                    <div class="seat seat-standard empty"></div>
-                                    <div class="seat seat-standard active">G10</div>
-                                    <div class="seat seat-standard active">G9</div>
-                                    <div class="seat seat-standard active">G8</div>
-                                    <div class="seat seat-standard active">G7</div>
-                                    <div class="seat seat-standard active">G6</div>
-                                    <div class="seat seat-standard active">G5</div>
-                                    <div class="seat seat-standard active">G4</div>
-                                    <div class="seat seat-standard active">G3</div>
-                                    <div class="seat seat-standard active">G2</div>
-                                    <div class="seat seat-standard active">G1</div>
-                                    <div class="seat seat-standard empty"></div>
-                                </div>
-                                <div class="seat-row">
-                                
-                                    <div class="seat">
-                                        <i class="fas fa-angle-double-up door-arrow-icon"></i>
-                                    </div>
-                                    <div class="seat seat-standard active">H10</div>
-                                    <div class="seat seat-standard active">H9</div>
-                                    <div class="seat seat-standard active">H8</div>
-                                    <div class="seat seat-standard active">H7</div>
-                                    <div class="seat seat-standard active">H6</div>
-                                    <div class="seat seat-standard active">H5</div>
-                                    <div class="seat seat-standard active">H4</div>
-                                    <div class="seat seat-standard active">H3</div>
-                                    <div class="seat seat-standard active">H2</div>
-                                    <div class="seat seat-standard active">H1</div>
-                                    <div class="seat seat-standard empty"></div>
-                                </div>
-                                <div class="seat-row">
-                                    
-                                    
-                                    <div class="seat" style="font-size: 1.2rem;font-weight: 600;">Lối vào</div>
-                                    <div class="seat active seat-couple">I5</div>
-                                    <div class="seat active seat-couple">I4</div>
-                                    <div class="seat active seat-couple">I3</div>
-                                    <div class="seat active seat-couple">I2</div>
-                                    <div class="seat active seat-couple">I1</div>
-                                    <div class="seat seat-standard empty"></div>
-                                </div>
+                                </div> -->
+                               
                         </div>
                         
                         <input type="submit" class="btn primary-btn js-datghe-btn" value="Tiếp tục" style="float: right; width: 200px; margin-top: 24px;"></input>
