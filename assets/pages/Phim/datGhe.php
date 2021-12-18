@@ -5,6 +5,40 @@ if (isset($_GET['masc'])) {
     $masc = $_GET['masc'];
 }
 ?>
+<?php
+require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
+    $sdt=$_COOKIE['fullName'];
+	$sql          = "SELECT * FROM thanhvien where sdt='$sdt'";
+	$result = executeSingleResult($sql);
+	if ($result != null) {
+        $matv=  $result[0];
+		$tentv = $result[1];
+        $gioitinh=  $result[2];
+		$ngaysinh=$result[3];
+		$diachi=$result[4];
+		$cccd=$result[6];
+		$ngaydk=$result[7];
+		$diemtichluy=$result[8];
+		$loaitk=$result[9];
+		$email=$result[10];
+	}
+    $tim ="SELECT * FROM `hoadon` WHERE MATV=$matv and MANV=$masc";
+    $kq = executeSingleResult($tim);
+    if ($kq==null)
+    {
+        $sql1="INSERT INTO `hoadon`(`SOHD`, `MATV`, `MAKM`, `MANV`, `NGAYHD`, `TONG`) 
+        VALUES ('','$matv','','$masc',now(),'')";
+        execute($sql1);
+
+        $sql2= "SELECT * FROM hoadon WHERE hoadon.MATV='$matv' AND hoadon.MANV='$masc'";
+        $result2 = executeSingleResult($sql2);
+        $sohd= $result2[0];
+    }
+    else
+        $sohd=$kq[0];
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,7 +138,9 @@ if (isset($_GET['masc'])) {
         <div class="content">
             <div class="grid wide">
                 <h1 class="content-title">Dat Ve</h1>
-               
+                <input type="text" id="masc" value="<?=$masc?>">
+                <input type="text" id="sohd" value="<?=$sohd?>">
+                <input type="text" id="matv" value="<?=$matv?>">
             
                 <div>
                     
@@ -339,25 +375,8 @@ if (isset($_GET['masc'])) {
                                         // echo "</div>";
                                     ?>
                                 
-                                <!-- <div class="seat-row">
-                                    
-                                    <div class="seat seat-standard empty"></div>
-                                    <div class="seat seat-standard active seat-unavailable disabled">A10</div>
-                                    <div class="seat seat-standard active">A9</div>
-                                    <div class="seat seat-standard active">A8</div>
-                                    <div class="seat seat-standard active">A7</div>
-                                    <div class="seat seat-standard active">A6</div>
-                                    <div class="seat seat-standard active">A5</div>
-                                    <div class="seat seat-standard active">A4</div>
-                                    <div class="seat seat-standard active">A3</div>
-                                    <div class="seat seat-standard active">A2</div>
-                                    <div class="seat seat-standard active">A1</div>
-                                    <div class="seat seat-standard empty"></div>
-                                </div> -->
-                               
                         </div>
-                        
-                        <input type="submit" class="btn primary-btn js-datghe-btn" value="Tiếp tục" style="float: right; width: 200px; margin-top: 24px;"></input>
+                        <button  type="submit" class="btn primary-btn js-datghe-btn" style="float: right; width: 200px; margin-top: 24px;">Tiếp Tục</button>
                         </div>
             
                         <div class="note" style="margin-top: 80px;">
@@ -529,6 +548,34 @@ if (isset($_GET['masc'])) {
     
     <script>
         
+var array = new Array();
+var datGheBtn = document.querySelector('.js-datghe-btn');
+
+datGheBtn.addEventListener('click', function(){
+    for(const seatSelect of seatSelects){
+        if(seatSelect.classList.contains('checked')){
+            array.push(seatSelect.innerHTML);
+        }
+    }
+    for (var i = 0; i < array.length; i++){
+            var xmlHttp = new XMLHttpRequest();
+            var obj = document.querySelector('.js-datghe-btn');
+            var url = "Luu.php";
+            var param = "ghe=" + array[i]+ "&masc=" + masc.value+ "&sohd=" + sohd.value+ "&matv=" + matv.value;
+            xmlHttp.open("POST", url, true);
+            xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlHttp.send(param);
+    }
+    var xmlHttp1 = new XMLHttpRequest();
+    var url1 = "update.php";
+    var param1 =  "masc=" + masc.value+ "&sohd=" + sohd.value+ "&matv=" + matv.value;
+    xmlHttp1.open("POST", url1, true);
+    xmlHttp1.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xmlHttp1.send(param1);
+    location.replace("./thanhToan.php");
+    
+})
+
         var loginForm = document.querySelector('.js-login-form');
         var registerForm = document.querySelector('.js-register-form');
         var modal = document.querySelector('.js-modal');

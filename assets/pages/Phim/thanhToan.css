@@ -1,0 +1,103 @@
+
+.content{
+    position: relative;
+    top: calc(var(--header-height) - 10px);
+    padding-bottom: calc(var(--header-height) + 40px);
+    text-align: center;
+    min-height: 20vh;
+}
+
+.title-content{
+    margin: 40px 0;
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    background-color: #ccc;
+    padding: 8px 0;
+}
+.bill-film-info,
+.content-item{
+    text-align: left;
+    font-size: 1.4rem;
+}
+
+.title{
+    margin: 16px 0;
+}
+
+.content-item img{
+    width: 100%;
+}
+
+.product-title{
+    font-weight: 600;
+    font-family: 1.6rem;
+    padding: 8px 0;
+}
+
+.product-desc{
+    line-height: 1.6;
+}
+
+.product-price{
+    padding: 8px 0;
+}
+
+.product-price .price{
+    font-weight: 600;
+}
+
+.product-num{
+    margin-top: 4px;
+}
+
+.content-row{
+    margin-top: 40px;
+}
+
+.content-bill {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-top: 48px;
+    padding: 14px 0 8px;
+}
+
+.content-bill img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.content-bill{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bill-film-info table{
+    font-size: 1.6rem;
+    width: 100%;
+    text-align: justify;
+}
+
+tbody tr{
+    height: 36px;
+}
+tr th{
+    padding-left: 48px;
+}
+tr td{
+    text-align: right;
+    padding-right: 48px;
+}
+
+.bill-film-header{
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding-bottom: 12px;
+    text-decoration: underline;
+}
+
+.bill-btn{
+    margin-top: 12px;
+}
