@@ -1,10 +1,19 @@
 <?php
 require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
+
+if (!isset($_COOKIE['fullName'])) {
+    echo "<script>
+            alert('Vui long dang nhap');
+            location.replace('./phimDangChieu.php');
+        </script>";
+}
+
 $maphim='';
 if (isset($_GET['maphim'])) {
     $maphim = $_GET['maphim'];
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,15 +32,7 @@ if (isset($_GET['maphim'])) {
     <link rel="stylesheet" href="../../css/datGhe.css">
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <!-- <script src="ajax.js"></script> -->
-    <!-- <script src="text/javascript">
-        $(document).ready(function(){
-            $("#city").change(function(){
-                var selValue= $(this).val();
-                load_ajax_xml(selValue);
-            });
-        });
-    </script> -->
+  
     
 </head>
 <body>

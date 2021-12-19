@@ -57,15 +57,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
     <link rel="stylesheet" href="../../css/datGhe.css">
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <!-- <script src="ajax.js"></script> -->
-    <!-- <script src="text/javascript">
-        $(document).ready(function(){
-            $("#city").change(function(){
-                var selValue= $(this).val();
-                load_ajax_xml(selValue);
-            });
-        });
-    </script> -->
+
     
 </head>
 <body>
@@ -137,10 +129,10 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
         <!-- CONTENT -->
         <div class="content">
             <div class="grid wide">
-                <h1 class="content-title">Dat Ve</h1>
-                <input type="text" id="masc" value="<?=$masc?>">
-                <input type="text" id="sohd" value="<?=$sohd?>">
-                <input type="text" id="matv" value="<?=$matv?>">
+                <h1 class="content-title">Đặt Vé</h1>
+                <input hidden type="text" id="masc" value="<?=$masc?>">
+                <input hidden type="text" id="sohd" value="<?=$sohd?>">
+                <input hidden type="text" id="matv" value="<?=$matv?>">
             
                 <div>
                     
@@ -557,6 +549,14 @@ datGheBtn.addEventListener('click', function(){
             array.push(seatSelect.innerHTML);
         }
     }
+
+    var seatCoupleSelects = document.querySelectorAll('.seat.seat-couple');
+    for(const seatCoupleSelect of seatCoupleSelects){
+        if(seatCoupleSelect.classList.contains('checked')){
+            array.push(seatCoupleSelect.innerHTML);
+        }
+    }
+
     for (var i = 0; i < array.length; i++){
             var xmlHttp = new XMLHttpRequest();
             var obj = document.querySelector('.js-datghe-btn');

@@ -165,9 +165,9 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                                 <label for="diachi">Địa chỉ:
                                 <input  type="text" id="diachi" name="diachi" value="<?=$diachi?>"></label>
                             </div>
-                            <div class="form-item">
-                                <label for="sdt">Số điện thoại:
-                                <input disabled type="number"  id="sdt" name="sdt" value="<?=$sdt?>"></label>
+                            <div hidden class="form-item">
+                                <label hidden for="sdt">Số điện thoại:
+                                <input hidden disabled type="number"  id="sdt" name="sdt" value="<?=$sdt?>"></label>
 					        </div>
                             <div class="form-item">
                                 <label for="cccd">Căn cước công dân:
@@ -186,7 +186,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                     </div>
                 </div>
                 <div class="user-info-history">
-                            <h1 class="user-title">Lịch sử đặt vé</h1>
+                    <h1 class="user-title">Lịch sử đặt vé</h1> 
                         </div>
                 <div class="row user-info-history" style="margin-top: 36px;">
                     <div class="col l-12 m-12 c-12">
@@ -198,7 +198,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
     $sq="SELECT hd.SOHD
         FROM phim p JOIN suatchieu sc on p.MAPHIM=sc.MAPHIM JOIN hoadon hd ON hd.SOHD=sc.SOHD 
         join rapchieu r ON r.MARAP=sc.MARAP JOIN thanhvien tv ON tv.MATV=hd.MATV 
-        JOIN ghe on ghe.MAGHE=sc.MAGHE where tv.SDT='0988888888' and ghe.PHONG=sc.PHONG
+        JOIN ghe on ghe.MAGHE=sc.MAGHE where tv.SDT='$sdt' and ghe.PHONG=sc.PHONG
         GROUP by hd.SOHD";
     $chuoi = executeResult($sq);
     foreach ($chuoi as $dong) 
@@ -219,11 +219,14 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
 
 <?php
 
-	$sql     = "SELECT p.TENPHIM,sc.MAGHE,sc.PHONG,r.TENRAP,sc.NGAYCHIEU,ghe.GIA,hd.TONG,hd.SOHD
+	$sql     = "SELECT p.TENPHIM,sc.MAGHE,sc.PHONG,r.TENRAP,sc.NGAYCHIEU,ghe.GIA,hd.TONG,hd.SOHD,hd.makm
                 FROM phim p JOIN suatchieu sc on p.MAPHIM=sc.MAPHIM JOIN hoadon hd ON hd.SOHD=sc.SOHD 
                 join rapchieu r ON r.MARAP=sc.MARAP JOIN thanhvien tv ON tv.MATV=hd.MATV 
                 JOIN ghe on ghe.MAGHE=sc.MAGHE where tv.SDT='$sdt' and ghe.PHONG=sc.PHONG and sc.sohd='$dong[0]'";
 	$result = executeResult($sql);
+    $tonghd=0;
+    if ($result!=null)
+    {
     foreach ($result as $row) 
     {
         echo "
@@ -236,8 +239,20 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                 <td>$row[5]</td>
             </tr>
         ";
+        $tonghd+=$row[5];
     }
-    $tonghd=$row[6];
+
+    $makm=$row[8];
+    $phantram=0;
+    $sql5    = "SELECT * FROM `khuyenmai` WHERE makm=$makm";
+    $khm = executeSingleResult($sql5);
+    if ($khm!=null)
+        $phantram=$khm[3];
+    $tonghd= $tonghd*(1-$phantram/100);
+
+    $sql10 = "UPDATE `hoadon` SET `TONG`='$tonghd' WHERE `SOHD`='$row[7]'";
+		
+    execute($sql10);
 
     $sql1    = "SELECT sanpham.TENSP,cthd.SOLUONG,cthd.THANHTIEN 
             FROM `cthd` JOIN sanpham ON cthd.MASP=sanpham.MASP WHERE SOHD='$dong[0]'";
@@ -264,13 +279,16 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
     }
     echo "
     <tr>
-        <td colspan='5' align='right'><b>Tổng:</b></td>
+        <td >Khuyến mãi</td>
+        <td >$phantram %</td>
+        <td colspan='3' align='right'><b>Tổng:</b></td>
         <td >$tonghd</td>
     </tr>
     </tbody>
                         </table>
     ";
 }
+    }
 ?>
                                 
                             
