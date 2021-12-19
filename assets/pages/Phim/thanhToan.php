@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/assets/img/title-icon.png">
-    <title>Thong tin tai khoan</title>
+    <link rel="icon" href="../../img/header__logo.png">
+    <title>Bắp nước</title>
     <link rel="stylesheet" href="https://pagecdn.io/lib/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="../../fontawesome-free-5.15.4-web/css/all.min.css">
     <link rel="stylesheet" href="../../css/base.css">
@@ -89,161 +89,55 @@
 
     <div class="content">
         <div class="grid wide">
-            <label class="title-content">Bắp nước</label>
-            <div class="row content-row">
-                <div class="col l-2 m-2 c-4 content-item">
-                    <img src="../../img/events/cgv-crm-team-chi-1-duoc-2-240x201_1.jpg" alt="">
-                </div>
-                <div class="col l-4 m-4 c-8 content-item">
-                    <div class="product-title">Infuser Bottle My Combo</div>
-                    <div class="product-desc">
-                        1 bình ủ trà + 1 bắp ngọt lớn + 1 nước 32Oz <br>
-                        * Miễn phí đổi vị bắp Phô mai, Caramel * <br>
-                        **Nhận trong ngày xem phim**
-                    </div>
-                    <div class="product-num-price">
-                        <div class="product-price">
-                            <span>Giá:</span>
-                            <span class="price">159.000 &nbsp;đ</span>
-                        </div>
-                        <div class="product-num">
-                            <input onclick="var result = document.getElementById('quantity'); var qty = result.value; 
-                            if( !isNaN(qty) && qty > 0 ) result.value--;return false;" type='button' value='-' />
-                            <input style="text-align: center; width: 50px;" id='quantity' min='0' name='quantity' type='text' value='0' />
-                            <input onclick="var result = document.getElementById('quantity'); var qty = result.value; if( !isNaN(qty)) result.value++;return false;" type='button' value='+' />
-                        </div>
-                    </div>
-                </div>
-                <div class="col l-2 m-2 c-4 content-item">
-                    <img src="../../img/events/cgv-crm-team-chi-1-duoc-2-240x201_1.jpg" alt="">
-                </div>
-                <div class="col l-4 m-4 c-8 content-item">
-                    <div class="product-title">FAST 9 SINGLE COMBO</div>
-                    <div class="product-desc">
-                        1 ly Fast 9 (kèm nước) + 1 bắp ngọt lớn<br>
-                        * Miễn phí đổi vị bắp Phô mai, Caramel * <br>
-                        **Nhận trong ngày xem phim**
-                    </div>
-                    <div class="product-num-price">
-                        <div class="product-price">
-                            <span>Giá:</span>
-                            <span class="price">159.000 &nbsp;đ</span>
-                        </div>
-                        <div class="product-num">
-                            <input onclick="var results = document.getElementById('quantity2'); var qty2 = results.value; 
-                            if( !isNaN(qty2) && qty2 > 0 ) results.value--;return false;" type='button' value='-' />
-                            <input style="text-align: center; width: 50px;" id='quantity2' min='0' name='quantity2' type='text' value='0' />
-                            <input onclick="var results = document.getElementById('quantity2'); var qty2 = results.value; if( !isNaN(qty2)) results.value++;return false;" type='button' value='+' />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row content-row">
-                <div class="col l-2 m-2 c-4 content-item">
-                    <img src="../../img/events/cgv-crm-team-chi-1-duoc-2-240x201_1.jpg" alt="">
-                </div>
-                <div class="col l-4 m-4 c-8 content-item">
-                    <div class="product-title">MY COMBO</div>
-                    <div class="product-desc">
-                        1 bắp vừa + 1 nước siêu lớn. Nhận trong ngày xem phim <br>
-                        * Miễn phí đổi vị bắp Caramel * <br>
-                        **Đổi vị phô mai phụ thu tiền**
-                    </div>
-                    <div class="product-num-price">
-                        <div class="product-price">
-                            <span>Giá:</span>
-                            <span class="price">79.000 &nbsp;đ</span>
-                        </div>
-                        <div class="product-num">
-                            <input onclick="var result3 = document.getElementById('quantity3'); var qty3 = result3.value; 
-                            if( !isNaN(qty3) && qty3 > 0 ) result3.value--;return false;" type='button' value='-' />
-                            <input style="text-align: center; width: 50px;" id='quantity3' min='0' name='quantity3' type='text' value='0' />
-                            <input onclick="var result3 = document.getElementById('quantity3'); var qty3 = result3.value; if( !isNaN(qty3)) result3.value++;return false;" type='button' value='+' />
-                        </div>
-                    </div>
-                </div>
-                <div class="col l-2 m-2 c-4 content-item">
-                    <img src="../../img/events/cgv-crm-team-chi-1-duoc-2-240x201_1.jpg" alt="">
-                </div>
-                <div class="col l-4 m-4 c-8 content-item">
-                    <div class="product-title">CINESV COMBO</div>
-                    <div class="product-desc">
-                        1 bắp lớn + 2 nước lớn. Nhận trong ngày xem phim <br>
-                        * Miễn phí đổi vị bắp Caramel * <br>
-                        **Đổi vị phô mai phụ thu tiền**
-                    </div>
-                    <div class="product-num-price">
-                        <div class="product-price">
-                            <span>Giá:</span>
-                            <span class="price">99.000 &nbsp;đ</span>
-                        </div>
-                        <div class="product-num">
-                            <input onclick="var result4 = document.getElementById('quantity4'); var qty4 = result4.value; 
-                            if( !isNaN(qty4) && qty4 > 0 ) result4.value--;return false;" type='button' value='-' />
-                            <input style="text-align: center; width: 50px;" id='quantity4' min='0' name='quantity4' type='text' value='0' />
-                            <input onclick="var result4 = document.getElementById('quantity4'); var qty4 = result4.value; if( !isNaN(qty4)) result4.value++;return false;" type='button' value='+' />
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <label class="title-content" >Bạn đã đặt vé thành công!!!</label>
+            <h2>Tiếp tục đặt bắp nước hoặc bỏ qua!</h2>
+            <a href="../../users/userInfo.php">
+                <button class="btn btn-success" style="max-width: 80px;border-radius: 5px;">Bỏ qua</button>
+            </a>
 
-            <div class="content-bill">
-                <div class="col l-2 m-2 c-12">
-                    <img src="../../img/events/cgv-crm-team-chi-1-duoc-2-240x201_1.jpg" alt="" class="bill-film img">
-                    
-                    
-                </div>
-                <div class="col l-6 m-6 c-8">
-                    <div class="bill-film-info">
-                        <span class="bill-film-header">Kong vs Godzilla</span>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th>Rạp:</th>
-                                    <td>CGV Blabla</td>
-                                </tr>
-                                <tr>
-                                    <th>Suất chiếu:</th>
-                                    <td>14:15, 17/12/2021</td>
-                                </tr>
-                                <tr>
-                                    <th>Phòng:</th>
-                                    <td>Cinema 6</td>
-                                </tr>
-                                <tr>
-                                    <th>Ghế:</th>
-                                    <td>D10</td>
-                                </tr>    
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="col l-4 m-4 c-4">
-                    <div class="bill-film-info">
-                        <div class="bill-price">
-                            <div class="bill-film-header">Hóa đơn thanh toán</div>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <th>Phim:</th>
-                                        <td>100.000 &nbsp;đ</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Combo:</th>
-                                        <td>129.000 &nbsp;đ</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Tổng:</th>
-                                        <td>229.000 &nbsp;đ</td>
-                                    </tr>
-                                     
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <button style="width: 120px;" class="btn primary-btn bill-btn">Thanh Toán</button>
-                </div>
+            <?php
+                require_once('../../../db/dbhelper.php');
+                $sql          = "SELECT * FROM `sanpham` ";
+                $result = executeResult($sql);
+                $i=0;
+                foreach ($result as $row) 
+                {
+                    $i++;
+                    if( $i %2 != 0 )
+                    {
+                        if( $i ==1 ) echo "<div class='row content-row'>";
+                        else
+                            echo"</div> <div class='row content-row'>";
+                    }
+                    echo"   <div class='col l-2 m-2 c-4 content-item'>
+                                <img src='../../img/bapnuoc/$row[3]' >
+                            </div>
+                            <div class='col l-4 m-4 c-8 content-item'>
+                                <div class='product-title'>$row[1]</div>
+                                <div class='product-desc'>
+                                    **Nhận trong ngày xem phim**
+                                </div>
+                                <div class='product-num-price'>
+                                    <div class='product-price'>
+                                        <span>Giá:</span>
+                                        <span class='price'>$row[2] &nbsp;VNĐ</span>
+                                    </div>";?>
+                                <div class='product-num'>
+                                    
+                                    <input onclick="var resultss = document.getElementById('quantityyy<?=$i?>'); var qty = resultss.value; 
+                                    if(!isNaN(qty)) resultss.value--;" type='button' value='-' />
+                                    <input id='quantityyy<?=$i?>' style="text-align: center; width: 50px;" min='0' name='quantityyy<?=$i?>' type='text' value='0' />
+                                    <input onclick="var resultss = document.getElementById('quantityyy<?=$i?>'); var qty = resultss.value; 
+                                    if(!isNaN(qty)) resultss.value++;" type='button' value='+' />
+<?php
+                            echo"    </div>
+                                </div>
+                            </div>";
+                }
+                echo "</div>"
+            ?>
+            
+            <button style="width: 120px;float: right;" class="btn primary-btn bill-btn">Đặt</button>
             </div>
         </div>
     </div>
@@ -259,7 +153,7 @@
                         <a href="" class="footer-link">Tiện ích Online</a>
                         <a href="" class="footer-link">Thẻ quà tặng</a>
                         <a href="" class="footer-link">Tuyển dụng</a>
-                        <a href="" class="footer-link">Liên hệ quảng cáo CGV</a>
+                        <a href="" class="footer-link">Liên hệ quảng cáo</a>
                     </ul>
                 </div>
 
@@ -294,9 +188,9 @@
                 <div class="col l-3 m-4 c-6 hide-on-tablet">
                     <h3 class="footer-title">Chăm sóc khách hàng</h3>
                     <ul class="footer-list">
-                        <h4 href="" class="footer-link">Hotline: 0978827442</h4>
-                        <h4 href="" class="footer-link">Giờ làm việc: 8:00 - 22:00 (Tất cả các ngày bao gồm cả Lễ Tết)</h4>
-                        <h4 href="" class="footer-link">Email hỗ trợ: thanlonglua97@gmail.com</h4>
+                            <h4 href="" class="footer-link">Hotline: 1900 6017</h4>
+                            <h4 href="" class="footer-link">Giờ làm việc: 8:00 - 22:00 (Tất cả các ngày bao gồm cả Lễ Tết)</h4>
+                            <h4 href="" class="footer-link">Email hỗ trợ: hoidap@cinesv.vn</h4>
                     </ul>
                 </div>
             </div>
@@ -304,11 +198,11 @@
             <div class="footer__about">
                 <div class="footer-logo" style="background-image: url(/assets/img/Slider/common_sprite_area.png);"></div>
                 <div class="footer__contact">
-                    <h3 class="footer-name">CÔNG TY TNHH MTV LTT</h3>
-                    <h4 class="footer-sub">Giấy CNĐKDN: 0303675393, đăng ký lần đầu ngày 31/7/2008, đăng ký thay đổi lần thứ 5 ngày 14/10/2015, cấp bởi Sở KHĐT thành phố Hồ Chí Minh.</h4>
-                    <h4 class="footer-sub">Địa Chỉ: Tầng 2, Rivera Park Saigon - Số 7/28 Thành Thái, P.14, Q.10, TPHCM.</h4>
-                    <h4 class="footer-sub">COPYRIGHT 2017 CJ CGV. All RIGHTS RESERVED</h4>
-                </div>
+                <h3 class="footer-name">CÔNG TY TNHH MTV CineSV</h3>
+                        <h4 class="footer-sub">Giấy CNĐKDN: 0303675393, đăng ký lần đầu ngày 31/7/2008, đăng ký thay đổi lần thứ 5 ngày 14/10/2015, cấp bởi Sở KHĐT thành phố Hồ Chí Minh.</h4>
+                        <h4 class="footer-sub">Địa Chỉ: Khu phố 6, Phường Linh Trung, Thành Phố Thủ Đức, TPHCM.</h4>
+                        <h4 class="footer-sub">COPYRIGHT 2021 CINESV. All RIGHTS RESERVED</h4>
+                    </div>
 
             </div>
         </div>
@@ -392,7 +286,7 @@
 
 <script>
        
-             var loginForm = document.querySelector('.js-login-form');
+        var loginForm = document.querySelector('.js-login-form');
         var registerForm = document.querySelector('.js-register-form');
         var modal = document.querySelector('.js-modal');
         var modalBodyLogin = document.querySelector('.js-modal__body--login');
@@ -442,6 +336,20 @@
         modalBodyRegister.addEventListener('click', function(event) {
             event.stopPropagation();
         })
+        function Tru(){
+            var result = document.getElementById('quantity');
+            var qty = result.value; 
+            if( !isNaN(qty) && qty > 0 ) 
+                result.value--;
+            return false;
+        }
+        function Cong(){
+            var result4 = document.getElementById('quantity4'); 
+            var qty4 = result4.value; 
+            if( !isNaN(qty4)) 
+                result4.value++;
+            return false;
+        }
         function getCookie(cname) {
             let name = cname + "=";
             let decodedCookie = decodeURIComponent(document.cookie);

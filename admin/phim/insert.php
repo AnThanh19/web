@@ -86,7 +86,6 @@ require('../../all/header.php')
 					<div class="form-group">
 					  <label for="poster">Poster:</label><br>
 					  <input type="file" name="poster" id="poster"><br>
-					  <!-- <input  type="text" class="form-control" id="poster" name="poster"><br> -->
                     </div>
 					<div class="form-group">
 					  <label for="khoichieu">Khởi chiếu:</label>

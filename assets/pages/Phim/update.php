@@ -16,8 +16,9 @@ if (isset($_POST['masc'])) {
     $tonghd += $gia[0] * (1-$giam/100);   
 
     $sql = "UPDATE `hoadon` SET `TONG`='$tonghd',`MAKM`='$km[0]' WHERE `SOHD`='$sohd'";
-		
-        execute($sql);
+	execute($sql);
+
+    
      
 }
 ?>

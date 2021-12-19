@@ -368,8 +368,9 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                                     ?>
                                 
                         </div>
-                        <button  type="submit" class="btn primary-btn js-datghe-btn" style="float: right; width: 200px; margin-top: 24px;">Tiếp Tục</button>
-                        </div>
+                        <a href="thanhToan.php?sohd=<?=$sohd?>"><button  type="submit" class="btn primary-btn js-datghe-btn" style="float: right; width: 200px; margin-top: 24px;">Đặt vé</button>
+                        </a>    
+                    </div>
             
                         <div class="note" style="margin-top: 80px;">
                             <ul style="list-style: none;">
@@ -379,11 +380,11 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                             </li> 
                             <li class="note-list">
                                 <div class="note-item" style="border: 1px solid #01c73c;"></div>
-                                Ghế trống
+                                Ghế đơn (Giá vé: 45.000 VNĐ)
                             </li> 
                             <li class="note-list">
                                 <div class="note-item" style="background-color: #a02b8c;"></div>
-                                Ghế đôi
+                                Ghế đôi (Giá vé: 120.000 VNĐ)
                             </li>
                             </ul>
                         </div>
@@ -572,7 +573,6 @@ datGheBtn.addEventListener('click', function(){
     xmlHttp1.open("POST", url1, true);
     xmlHttp1.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xmlHttp1.send(param1);
-    location.replace("./thanhToan.php");
     
 })
 

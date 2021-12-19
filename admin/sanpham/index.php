@@ -30,6 +30,7 @@ require('../../all/header.php')
 							<th width="50px">Mã sản phẩm</th>
 							<th>Tên sản phẩm</th>
 							<th>Giá</th>
+							<th>Ảnh</th>
 							<th width="125px">Tác vụ</th>
 						</tr>
 					</thead>
@@ -69,7 +70,7 @@ foreach ($result as $row)
 				<td>$row[0]</td>
 				<td>$row[1]</td>
 				<td>$row[2]</td>
-				
+				<td><img src='../../assets/img/bapnuoc/$row[3]' style='max-width: 100px;' ></td>
 				<td>
 					<a href='update.php?masp=$row[0]'><button style='background-color: #FFE4E1;' class='btn btn-warning'><img src='../img/edit.png'></button></a>
 					<button style='background-color: pink;' class='btn btn-danger' onclick='deleteCategory($row[0])'><img src='../img/garbage.png'></button>

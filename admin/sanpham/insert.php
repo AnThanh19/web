@@ -6,7 +6,7 @@ if (!empty($_POST)) {
 	if (isset($_POST['tensp'])) {
 		$tensp = $_POST['tensp'];
 		$gia = $_POST['gia'];
-	
+		$anh = $_POST['anh'];
 	}
 	if (isset($_POST['masp'])) {
 		$masp = $_POST['masp'];
@@ -15,7 +15,7 @@ if (!empty($_POST)) {
 	if (!empty($tensp)) {
 		//Luu vao database
 		if ($masp == '') {
-			$sql = 'INSERT INTO sanpham( `TENSP`, `GIA`) values ("'.$tensp.'","'.$gia.'")';
+			$sql = 'INSERT INTO sanpham( `TENSP`, `GIA`,`anh`) values ("'.$tensp.'","'.$gia.'","'.$anh.'")';
 		} 
         execute($sql);
 
@@ -24,14 +24,6 @@ if (!empty($_POST)) {
 	}
 }
 
-if (isset($_GET['masp'])) {
-	$masp       = $_GET['masp'];
-	$sql      = 'select * from sanpham where masp = '.$masp;
-	$category = executeSingleResult($sql);
-	if ($category != null) {
-		$tensp = $category['tensp'];
-	}
-}
 require('../../all/header.php')
 ?>
 
@@ -51,7 +43,10 @@ require('../../all/header.php')
 					  <label for="thoiluong">Giá:</label>
 					  <input required="true" type="number" class="form-control" id="gia" name="gia" >
 					</div>
-					
+					<div class="form-group">
+					  <label for="anh">Hình ảnh:</label><br>
+					  <input type="file" name="anh" id="anh"><br>
+                    </div>
 					<button class="btn btn-success">Lưu</button>
 				</form>
 			</div>
