@@ -1,3 +1,33 @@
+<?php
+require "../../../db/dbhelper.php";
+if (isset($_GET['sohd'])) {
+    $sohd = $_GET['sohd'];
+}
+
+$sql1    = "SELECT * FROM `sanpham` ";
+$result1 = executeResult($sql1);
+
+if (!empty($_POST)) {
+    
+    foreach ($result1 as $row1) 
+    {
+        if (isset($_POST["sl$row1[0]"])) 
+        {
+            $sl=0;
+            $sl = $_POST["sl$row1[0]"];
+            $thanhtien= $sl * $row1[2];
+            if ($sl>0) {
+                $sql4 = "INSERT INTO `cthd`(`MASP`, `SOHD`, `SOLUONG`, `THANHTIEN`) 
+                        VALUES ('$row1[0]','$sohd','$sl','$thanhtien') ";
+                execute($sql4);
+            }
+        }   
+    }
+    
+    header('Location: ../../users/userInfo.php');
+    die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,7 +124,7 @@
             <a href="../../users/userInfo.php">
                 <button class="btn btn-success" style="max-width: 80px;border-radius: 5px;">Bỏ qua</button>
             </a>
-
+            <form method="post">
             <?php
                 require_once('../../../db/dbhelper.php');
                 $sql          = "SELECT * FROM `sanpham` ";
@@ -124,13 +154,13 @@
                                     </div>";?>
                                 <div class='product-num'>
                                     
-                                    <input onclick="var resultss = document.getElementById('quantityyy<?=$i?>'); var qty = resultss.value; 
-                                    if(!isNaN(qty)) resultss.value--;" type='button' value='-' />
-                                    <input id='quantityyy<?=$i?>' style="text-align: center; width: 50px;" min='0' name='quantityyy<?=$i?>' type='text' value='0' />
-                                    <input onclick="var resultss = document.getElementById('quantityyy<?=$i?>'); var qty = resultss.value; 
+                                    <input onclick="var resultss = document.getElementById('sl<?=$row[0]?>'); var qty = resultss.value; 
+                                    if(!isNaN(qty) && (qty>0)) resultss.value--;" type='button' value='-' />
+                                    <input id='sl<?=$row[0]?>' style="text-align: center; width: 50px;" min='0' name='sl<?=$row[0]?>' type='number' value='0' />
+                                    <input onclick="var resultss = document.getElementById('sl<?=$row[0]?>'); var qty = resultss.value; 
                                     if(!isNaN(qty)) resultss.value++;" type='button' value='+' />
 <?php
-                            echo"    </div>
+                            echo"    </div> 
                                 </div>
                             </div>";
                 }
@@ -139,6 +169,7 @@
             
             <button style="width: 120px;float: right;" class="btn primary-btn bill-btn">Đặt</button>
             </div>
+            </form>
         </div>
     </div>
 

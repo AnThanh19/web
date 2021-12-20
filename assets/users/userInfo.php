@@ -250,6 +250,12 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
         $phantram=$khm[3];
     $tonghd= $tonghd*(1-$phantram/100);
 
+    $sql6="SELECT SUM(THANHTIEN) from cthd WHERE SOHD='$row[7]'";
+    $tiensp=executeSingleResult($sql6);
+    if ($tiensp!=null)
+        $cthd=$tiensp[0];
+    $tonghd+= $cthd;
+
     $sql10 = "UPDATE `hoadon` SET `TONG`='$tonghd' WHERE `SOHD`='$row[7]'";
 		
     execute($sql10);
@@ -261,9 +267,9 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
     {
         echo"
         <tr>
-            <th colspan='2'>Tên sản phẩm</th>
-            <th colspan='2'>Số lượng</th>
-            <th colspan='2'>Giá</th>
+            <th colspan='4'>Tên sản phẩm</th>
+            <th >Số lượng</th>
+            <th >Giá</th>
         </tr>   ";
     }
     foreach ($result1 as $row1) 
@@ -271,17 +277,16 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
         echo "
             <tr>
              
-                <td colspan='2'>$row1[0]</td>
-                <td colspan='2'>$row1[1]</td>
-                <td colspan='2'>$row1[2]</td>
+                <td colspan='4'>$row1[0]</td>
+                <td >$row1[1]</td>
+                <td >$row1[2]</td>
             </tr>
         ";
     }
     echo "
     <tr>
-        <td >Khuyến mãi</td>
-        <td >$phantram %</td>
-        <td colspan='3' align='right'><b>Tổng:</b></td>
+        <td  colspan='4'>Khuyến mãi: $phantram % (Không khuyến mãi bắp nước.)</td>
+        <td  align='right'><b>Tổng:</b></td>
         <td >$tonghd</td>
     </tr>
     </tbody>
