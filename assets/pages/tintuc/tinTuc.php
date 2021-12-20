@@ -92,7 +92,8 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                 <div class="grid__row">
                     
                     <?php
-                        $sql          = "select MAKM,DATE_FORMAT(NGAYBATDAU,'%d-%m-%Y') as NGAYBATDAU ,DATE_FORMAT(NGAYKETTHUC,'%d-%m-%Y') as NGAYKETTHUC,PHANTRAM,POSTER from khuyenmai where ngaybatdau > now() ";
+                        $sql          = "select MAKM,DATE_FORMAT(NGAYBATDAU,'%d-%m-%Y') as NGAYBATDAU ,DATE_FORMAT(NGAYKETTHUC,'%d-%m-%Y') as NGAYKETTHUC,PHANTRAM,POSTER 
+                                        from khuyenmai where ngayketthuc >= now() ORDER by ngaybatdau ";
                         $result = executeResult($sql);
                         foreach ($result as $row) 
                         {
