@@ -15,8 +15,8 @@ if (!empty($_POST)) {
 
 	if (!empty($phong)) {
 		if ($masc == '') {
-			$sql = ' insert into `suatchieu`(`MAGHE`, `PHONG`, `MAPHIM`, `MARAP`, `SOHD`, `NGAYCHIEU`, `THOIGIAN`)
-				values ("'.$ma. '","'.$phong.'","'.$maphim.'","'.$marap.'","'.$ma. '","'.$ngaychieu.'","'.$ngaychieu.'")';
+			$sql = ' insert into `suatchieu`(`MAGHE`, `PHONG`, `MAPHIM`, `MARAP`, `SOHD`, `NGAYCHIEU`, `suat`)
+				values ("'.$ma. '","'.$phong.'","'.$maphim.'","'.$marap.'","'.$ma. '","'.$ngaychieu.'","0")';
 		} 
         execute($sql);
 
