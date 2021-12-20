@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 20, 2021 lúc 04:01 AM
+-- Thời gian đã tạo: Th12 20, 2021 lúc 04:28 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.12
 
@@ -794,9 +794,9 @@ CREATE TABLE `phim` (
 --
 
 INSERT INTO `phim` (`MAPHIM`, `TENPHIM`, `THOILUONG`, `NGONNGU`, `THELOAI`, `DAODIEN`, `DIENVIEN`, `MOTA`, `DOTUOI`, `TRAILER`, `POSTER`, `KHOICHIEU`) VALUES
-(1, 'Kẻ nguyền ta chết', 100, 'Tiếng Anh - Phụ đề Tiếng Việt', 'Hành Động, Hồi hộp, Tâm Lý', 'Taylor Sheridan', 'Angelina Jolie, Jon Bernthal, Nicholas Hoult', '\"Those Who Wish Me Dead\" xoay quanh câu chuyện về cậu bé Connor (Finn Little) trốn chạy sự truy lùng của hai sát thủ (do Nicholas Hoult và Aidan Gillen thủ vai). Owen, cha của Connor là một kế toán nắm giữ bí mật có thể ảnh hưởng đến giới có chức có quyền. Vì thế, hai bố con bị đuổi cùng giết tận.', 18, 'https://www.youtube.com/embed/s9boPsyrehg', 'kenguyen.jpg', '2021-12-14'),
-(2, 'The Conjuring: Ma xui quỷ khiến', 112, 'Tiếng Anh - Phụ đề Tiếng Việt', 'Kinh dị', 'Michael Chaves', 'Vera Farmiga, Patrick Wilson, Sterling Jerins, Julian Hilliard', 'The Conjuring​: Ma xui quỷ khiến là một bộ phim kinh dị siêu nhiên năm 2021 của Mỹ, được đạo diễn bởi Michael Chaves từ một kịch bản của David Leslie Johnson-McGoldrick. Bộ phim sẽ đóng vai trò là phần tiếp theo của Ám ảnh kinh hoàng và Ám ảnh kinh hoàng 2, và là phần thứ tám trong Vũ trụ The Conjuring.', 16, 'https://www.youtube.com/embed/tbs3XRt0hhI', 'conju.jpg', '2021-12-14'),
-(3, 'Hiện thân tà ác', 111, 'Tiếng Anh - Phụ đề Tiếng Việt', 'Kinh dị', 'James Wan', 'Annabelle Wallis, Maddie Hasson, George Young', 'Hiện Thân Tà Ác kể về Madison như tê dại khi sống trong ảo ảnh điên cuồng về những vụ giết người tàn ác. Tình trạng của cô trở nên tồi tệ hơn khi Madison nhận ra, những giấc mơ đó lại chính là hiện thực ghê rợn mà mình phải đối mặt.', 18, 'https://www.youtube.com/embed/2pQ8QpdyMaI', 'hienthantaac.jpg', '2021-12-14'),
+(1, 'Kẻ nguyền ta chết', 100, 'Tiếng Anh - Phụ đề Tiếng Việt', 'Hành Động, Hồi hộp, Tâm Lý', 'Taylor Sheridan', 'Angelina Jolie, Jon Bernthal, Nicholas Hoult', '\"Those Who Wish Me Dead\" xoay quanh câu chuyện về cậu bé Connor (Finn Little) trốn chạy sự truy lùng của hai sát thủ (do Nicholas Hoult và Aidan Gillen thủ vai). Owen, cha của Connor là một kế toán nắm giữ bí mật có thể ảnh hưởng đến giới có chức có quyền. Vì thế, hai bố con bị đuổi cùng giết tận.', 18, 'https://www.youtube.com/embed/s9boPsyrehg', 'kenguyen.jpg', '2021-12-19'),
+(2, 'The Conjuring: Ma xui quỷ khiến', 112, 'Tiếng Anh - Phụ đề Tiếng Việt', 'Kinh dị', 'Michael Chaves', 'Vera Farmiga, Patrick Wilson, Sterling Jerins, Julian Hilliard', 'The Conjuring​: Ma xui quỷ khiến là một bộ phim kinh dị siêu nhiên năm 2021 của Mỹ, được đạo diễn bởi Michael Chaves từ một kịch bản của David Leslie Johnson-McGoldrick. Bộ phim sẽ đóng vai trò là phần tiếp theo của Ám ảnh kinh hoàng và Ám ảnh kinh hoàng 2, và là phần thứ tám trong Vũ trụ The Conjuring.', 16, 'https://www.youtube.com/embed/tbs3XRt0hhI', 'conju.jpg', '2021-12-19'),
+(3, 'Hiện thân tà ác', 111, 'Tiếng Anh - Phụ đề Tiếng Việt', 'Kinh dị', 'James Wan', 'Annabelle Wallis, Maddie Hasson, George Young', 'Hiện Thân Tà Ác kể về Madison như tê dại khi sống trong ảo ảnh điên cuồng về những vụ giết người tàn ác. Tình trạng của cô trở nên tồi tệ hơn khi Madison nhận ra, những giấc mơ đó lại chính là hiện thực ghê rợn mà mình phải đối mặt.', 18, 'https://www.youtube.com/embed/2pQ8QpdyMaI', 'hienthantaac.jpg', '2021-12-19'),
 (4, 'Án tử trên xe', 94, 'Tiếng Hàn - Phụ đề Tiếng Việt', 'Hồi hộp', 'Kim Changju', 'Jo Woo Jin, Lee Jae-in, Jin Kyung và Ji Changwook', 'Sung-gyu (JO Woo Jin), một giám đốc ngân hàng đang trên đường đi làm với 2 đứa con thì bất ngờ nhận được một cuộc gọi bí ẩn. Người gọi đe doạ đã gài bom trong xe, và cảnh báo bom sẽ phát nổ nếu bất cứ ai rời khỏi ghế ngồi… Sung-gyu lúc đầu cho rằng đó là một cuộc gọi lừa đảo, nhưng khi xe đồng nghiệp của anh phát nổ, anh nhận ra điều này là thật. Như thể vẫn chưa đủ, cảnh sát truy đuổi Sung-gyu vì nghi ngờ anh là kẻ chủ mưu của vụ nổ bom. Sung-gyu gần như tuyệt vọng trước tình thế nghìn cân treo sợi tóc vì không thể ngắt cuộc gọi của kẻ bí ẩn và phải tìm cách giữ an toàn cho những đứa con của mình…', 16, 'https://www.youtube.com/embed/OGCaSDHIkIU', 'antutrenxe.jpg', '2021-12-17'),
 (5, 'Tộc săn người', 105, 'Tiếng Anh - Phụ đề Tiếng Việt', 'Kinh dị', 'Mike P. Nelson', 'Charlotte Vega, Adain Bradley, Emma Dumont, Dylan McTee, Daisy Head, Bill Sage, Matthew Modine', 'Tộc Săn Người (Tựa tiếng Anh: Wrong Turn: The Foundation) là phần 7 của series phim kinh dị nổi tiếng Wrong Turn, kể về hành trình trekking đến vùng núi hoang sơ Virginia của một nhóm bạn thân. Dù đã được cảnh báo nhiều lần rằng không được đi ra khỏi con đường mòn được đánh dấu, nhóm bạn vẫn để sự tò mò dẫn dắt và quyết định thử tìm một lối đi khác. Từ đây, họ đã lạc lối vào lãnh địa của Tộc Săn Người và phải đối mặt với muôn vàn cái bẫy chết chóc trong khu rừng. Liệu họ có thể an toàn thoát khỏi thiên la địa võng ghê rợn và tàn bạo của Tộc Săn Người?', 18, 'https://www.youtube.com/embed/muHsZdRTCds', 'tocsannguoi.jpg', '2021-12-17'),
 (6, 'Hung thần trắng', 91, 'Tiếng Anh - Phụ đề Tiếng Việt', 'Hồi hộp', 'Martin Wilson', 'Katrina Bowden, Aaron Jakubenko, Tim Kano, Kimie Tsukakoshi, Te Kohe Tuhaka', '', 18, 'https://www.youtube.com/embed/A7eqA3Z96kk', 'hungthantrang.jpg', '2021-12-15'),
@@ -805,10 +805,10 @@ INSERT INTO `phim` (`MAPHIM`, `TENPHIM`, `THOILUONG`, `NGONNGU`, `THELOAI`, `DAO
 (9, 'Godzilla VS Kong', 113, 'Tiếng Anh - Phụ đề Tiếng Việt', 'Hành động, Thần thoại', 'Adam Wingard', 'Millie Bobby Brown, Alexander Skarsgård, Rebecca Hall, Eiza González, Kyle Chandler', 'Khi hai kẻ thù truyền kiếp gặp nhau trong một trận chiến ngoạn mục, số phận của cả thế giới vẫn còn bị bỏ ngỏ… Bị đưa khỏi Đảo Đầu Lâu, Kong cùng Jia, một cô bé mồ côi có mối liên kết mạnh mẽ với mình và đội bảo vệ đặc biệt hướng về mái nhà mới. Bất ngờ, nhóm đụng độ phải Godzilla hùng mạnh, tạo ra một làn sóng hủy diệt trên toàn cầu. Thực chất, cuộc chiến giữa hai kẻ khổng lồ dưới sự thao túng của các thế lực vô hình mới chỉ là điểm khởi đầu để khám phá những bí ẩn nằm sâu trong tâm Trái đất.', 13, 'https://www.youtube.com/embed/odM92ap8_c0', 'gozilla.webp', '2021-12-31'),
 (10, 'Ong nhí phiêu lưu ký', 88, 'Tiếng Anh - Phụ đề Tiếng Việt', 'Hoạt hình', 'Noel Cleary', 'Coco Jack Gillies, Evie Gillies, Benson Jack Anthony, Justine Clarke, Shane Dundas; David Collins', '\"Ong nhí phiêu lưu ký: Giải cứu công chúa kiến\" (Tựa tiếng Anh: Maya The Bee 3: The Golden Orb) là hành trình tiếp theo của bộ đôi Maya và Willi sau phần phim \"Ong nhí phiêu lưu ký: Đại chiến cúp ong mật ăn khách tại Việt Nam.', 0, 'https://www.youtube.com/embed/RVzlfJ2vWLY', 'ongnhi.jpg', '2021-12-31'),
 (11, 'Kẻ vô danh', 92, 'Tiếng Anh - Phụ đề Tiếng Việt', 'Hành Động, Hồi hộp, Tâm Lý', 'Ilya Naishuller', 'Bob Odenkirk, Connie Nielsen, RZA, Aleksey Serebryakov', 'Đôi khi người đàn ông mà bạn không để ý lại là người nguy hiểm nhất. Hutch Mansell, một người cha và người chồng bị đánh giá thấp và bị coi thường, luôn coi thường sự phẫn nộ của cuộc đời và không bao giờ lùi bước. Một kẻ vô danh.\r\n', 18, 'https://www.youtube.com/embed/_qVn8CswIB0', 'kevodanh.jpg', '2021-12-31'),
-(12, 'Thiên thần hộ mệnh', 124, 'Tiếng Việt', 'Hồi hộp, Tâm lý', 'Victor Vũ', 'Trúc Anh, Amee, Salim, Samuel An', 'Cái chết của một cô ca sĩ nổi tiếng dẫn đến sự thành công của một cô ca sĩ trẻ khác. Câu chuyện này có liên quan như thế nào đến sự giúp đỡ của một \"thiên thần hộ mệnh\"?', 18, 'https://www.youtube.com/embed/1H-2FeFOM08', 'thienthan.jpg', '2021-12-16'),
+(12, 'Thiên thần hộ mệnh', 124, 'Tiếng Việt', 'Hồi hộp, Tâm lý', 'Victor Vũ', 'Trúc Anh, Amee, Salim, Samuel An', 'Cái chết của một cô ca sĩ nổi tiếng dẫn đến sự thành công của một cô ca sĩ trẻ khác. Câu chuyện này có liên quan như thế nào đến sự giúp đỡ của một \"thiên thần hộ mệnh\"?', 18, 'https://www.youtube.com/embed/1H-2FeFOM08', 'thienthan.jpg', '2021-12-31'),
 (13, 'Vùng đất câm lặng II', 97, 'Tiếng Anh - Phụ đề Tiếng Việt', 'Kinh dị', 'John Krasinski', 'Cillian Murphy, Emily Blunt, Noah Jupe', 'Gia đình Abbot gồm người mẹ Evelyn cùng ba con chạy trốn đến một thành phố tưởng như an toàn. Tuy nhiên, cả gia đình không ngờ rằng ở thế giới bên ngoài cũng đã bị những sinh vật ngoài hành tinh thâu tóm. \"Vùng đất câm lặng” lúc này đã trở thành “thế giới câm lặng” khi những người sống sót tiếp tục phải lẩn trốn, không được tạo ra tiếng động mỗi khi di chuyển hay giao tiếp với nhau.', 16, 'https://www.youtube.com/embed/BpdDN9d9Jio', 'vungdat.jpg', '2021-12-15'),
 (14, 'Điệp vụ cảm tử', 132, 'Tiếng Anh - Phụ đề Tiếng Việt', 'Hành động', 'James Gunn', 'Margot Robbie, Idris Elba, John Cena', 'The Suicide Squad - Điệp Vụ Cảm Tử kể về nhóm Task Force X bao gồm các thành viên là những phần tử nguy hiểm và có siêu năng lực đặc biệt được chỉ huy bởi Amanda Waller, họ có nhiệm vụ đột kích lên 1 hòn đảo có tên là Corto Maltese, nơi diễn ra cuộc đảo chính và thành lập chính phủ chống Mỹ. Tại hòn đảo này, các nhà chức trách đang kiểm soát một con quái vật tên là Starro - có năng lực biến con người thành cái xác không hồn, điều này khiến cho an ninh thế giới bị đe dọa một cách nghiêm trọng. Nhóm bọn Task Force X buộc phải đối mặt với vô số kẻ thù trên hòn đảo, nếu xảy ra bất cứ sai lầm bọn họ sẽ phải trả giá bằng mạng sống.', 18, 'https://www.youtube.com/embed/QTg5K0XDiaE', 'diepvu.jpg', '2021-12-16'),
-(16, 'Tiệc trăng máu', 100, 'Tiếng Việt', 'Hài', 'Nguyễn Quang Dũng', 'Thu Trang, Thái Hòa,...', 'Tiệc trăng máu là một bộ phim điện ảnh Việt Nam do đạo diễn Nguyễn Quang Dũng thực hiện, khởi chiếu vào ngày 20 tháng 10, 2020. Phim được làm lại từ bản gốc Perfect Strangers của Italy, ngoài ra còn nổi tiếng với bản remake Intimate Strangers của Hàn Quốc.', 16, 'https://youtu.be/s9boPsyrehg', 'tiectrang.jpg', '2021-12-16');
+(16, 'Tiệc trăng máu', 100, 'Tiếng Việt', 'Hài', 'Nguyễn Quang Dũng', 'Thu Trang, Thái Hòa,...', 'Tiệc trăng máu là một bộ phim điện ảnh Việt Nam do đạo diễn Nguyễn Quang Dũng thực hiện, khởi chiếu vào ngày 20 tháng 10, 2020. Phim được làm lại từ bản gốc Perfect Strangers của Italy, ngoài ra còn nổi tiếng với bản remake Intimate Strangers của Hàn Quốc.', 16, 'https://youtu.be/s9boPsyrehg', 'tiectrang.jpg', '2021-12-31');
 
 -- --------------------------------------------------------
 
@@ -927,12 +927,12 @@ INSERT INTO `suatchieu` (`MASC`, `MAGHE`, `PHONG`, `MAPHIM`, `MARAP`, `SOHD`, `N
 (38, 'G5', '5', 11, 9, 39, '2021-08-01 00:00:00', 0),
 (39, '0', '1', 1, 2, 0, '2021-12-21 12:00:00', 0),
 (40, '0', '1', 1, 2, 0, '2021-12-20 00:00:00', 2147483647),
-(41, '0', '1', 2, 2, 0, '2021-12-14 09:10:00', 2147483647),
-(42, '0', '1', 2, 2, 0, '2021-12-15 11:30:00', 0),
+(41, '0', '2', 2, 2, 0, '2021-12-24 09:10:00', 2147483647),
+(42, '0', '2', 2, 2, 0, '2021-12-25 11:30:00', 0),
 (43, '0', '1', 5, 5, 0, '2021-12-23 19:30:00', 2147483647),
-(44, '0', '1', 6, 1, 0, '2021-12-27 00:00:00', 0),
+(44, '0', '1', 6, 1, 0, '2021-12-24 18:00:00', 0),
 (45, '0', '1', 2, 2, 0, '2021-12-21 00:00:00', 2147483647),
-(46, '0', '1', 13, 1, 0, '2022-01-08 12:00:00', 2147483647),
+(46, '0', '1', 13, 1, 0, '2021-12-18 12:00:00', 2147483647),
 (47, '0', '1', 14, 2, 0, '2021-12-20 09:00:00', 2147483647),
 (48, '0', '1', 10, 10, 0, '2021-12-29 00:00:00', 0),
 (49, '0', '2', 11, 1, 0, '2021-12-11 00:00:00', 0),
@@ -972,7 +972,8 @@ INSERT INTO `suatchieu` (`MASC`, `MAGHE`, `PHONG`, `MAPHIM`, `MARAP`, `SOHD`, `N
 (148, 'I3', '1', 5, 5, 99, '2021-12-23 19:30:00', 43),
 (149, 'C6', '1', 14, 4, 100, '2021-12-22 09:00:00', 52),
 (150, 'C5', '1', 14, 4, 100, '2021-12-22 09:00:00', 52),
-(151, 'I4', '1', 1, 2, 101, '2021-12-21 12:00:00', 39);
+(151, 'I4', '1', 1, 2, 101, '2021-12-21 12:00:00', 39),
+(152, '0', '1', 6, 1, 0, '2021-12-24 12:20:00', 0);
 
 -- --------------------------------------------------------
 
@@ -1182,7 +1183,7 @@ ALTER TABLE `nhanvien`
 -- AUTO_INCREMENT cho bảng `phim`
 --
 ALTER TABLE `phim`
-  MODIFY `MAPHIM` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `MAPHIM` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `rapchieu`
@@ -1200,7 +1201,7 @@ ALTER TABLE `sanpham`
 -- AUTO_INCREMENT cho bảng `suatchieu`
 --
 ALTER TABLE `suatchieu`
-  MODIFY `MASC` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
+  MODIFY `MASC` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
 
 --
 -- AUTO_INCREMENT cho bảng `thanhvien`
