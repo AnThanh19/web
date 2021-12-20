@@ -299,25 +299,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                             
                     </div>
                 </div>
-                <!-- <div class="row user-info-history">
-                    <div class="col l-6 m-6 c-12 dataTables_info" role="status" aria-live="polite">
-                        Showing 1 to 1 of 1 entries
-                    </div>
-
-                    <div class="col l-6 m-6 c-12" style="margin-top: 1rem;">
-                        <ul class="pagination">
-                            <li class="btn pagination-btn">
-                                <i class="fas fa-chevron-left pagination-icon"></i>
-                            </li>
-                            <li class="btn pagination-btn">
-                                <a href="#" class="page-link" tabindex="0">1</a>
-                            </li>
-                            <li class="btn pagination-btn">
-                                <i class="fas fa-chevron-right pagination-icon"></i>
-                            </li>
-                        </ul>
-                    </div>
-                </div> -->
+               
             </div>
             
         </div>

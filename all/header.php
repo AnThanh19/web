@@ -4,14 +4,13 @@
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../assets/img/header__logo.png">
     <title>CineSV Cinema</title>
     <link rel="stylesheet" href="https://pagecdn.io/lib/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="./assets/fontawesome-free-5.15.4-web/css/all.min.css">
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="stylesheet" href="./assets/css/grid.css">
-    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/grid.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
@@ -23,63 +22,55 @@
 
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .nav-link:hover{
+            color:rgb(223, 50, 50);
+        }
+    </style>
 </head>
 <body style="background-image: url(../img/bg.jpg); width :100%">
 	<header>
+        
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <!-- <a class="navbar-brand" ><img src="../admin/img/bigfind.png" alt="Viblo" width="62" height="21"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button> -->
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+            <div  class="header-logo" style="display:flex;">
+               <a href="../dashboard/" style="font-size: 2.8rem; font-weight: 500; color: rgb(223, 50, 50);text-decoration:none;"> CineSV  </a>
+                <div class="nav-item">
+							<a class="nav-link " href="../dashboard/"><b>ADMIN</b> </a>
+                </div>  
+            </div>
+            
+            <div class="container" >
+                
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" style="margin-right :180px;">
 					<ul class="nav nav-tabs">
-                    <li class="nav-item">
-							<a class="nav-link " href="../dashboard/"><font color="#9C8CDB"><b>ADMIN</b> </font></a>
+                    
+						<li class="nav-item">
+							<a class="nav-link " href="../phim/"><b>Phim</b> </a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="../phim/"><font color="9C8CDB"><b>Phim</b> </font></a>
+							<a class="nav-link " href="../lichchieu/"><b>Lịch Chiếu</b> </a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="../lichchieu/"><font color="9C8CDB"><b>Lịch Chiếu</b> </font></a>
+							<a class="nav-link" href="../sanpham/"><b>Sản Phẩm</b> </a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="../sanpham/"><font color="9C8CDB"><b>Sản Phẩm</b> </font></a>
+							<a class="nav-link" href="../khuyenmai/"><b>Khuyến Mãi</b> </a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="../khuyenmai/"><font color="9C8CDB"><b>Khuyến Mãi</b> </font></a>
+							<a class="nav-link " href="../nhanvien/"><b>Nhân Viên</b> </a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " href="../nhanvien/"><font color="9C8CDB"><b>Nhân Viên</b> </font></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="../thanhvien/"><font color="9C8CDB"><b>Thành Viên</b> </font></a>
+							<a class="nav-link" href="../thanhvien/"><b>Thành Viên</b> </a>
 						</li>
                         
-                                <!-- <div class="header__user-info">
-                                     <i class="header__user-icon fas fa-user-circle"></i> 
-                                    <span  class="header__user-name"> <h5 id="usernameCineSV">  </h5></span>
-                                </div> -->
-                                <div class="header__user-options">
-                                <li class="nav-item" >
-                                <a href="../dashboard/logout.php" class="nav-link"><font color="9C8CDB"><b>Đăng xuất</b> </font></a>
-                                </li>
-                                </div>
-                                <!-- <div class="header__user" id="block_info_user">
-                                <div class="header__user-info">
-                                     <i class="header__user-icon fas fa-user-circle"></i> 
-                                    <span  class="header__user-name"> <p id="usernameCineSV">  </p></span>
-                                </div>
-                                <div class="header__user-options">
-                                <li class="nav-item" >
-                                <a href="../dashboard/logout.php" class="nav-link"><font color="9C8CDB"><b></b>Đăng xuất </font></a>
-                                </li>
-                                </div>
-                            </div> -->
-
                     </ul>
+
                 </div>
+                    <div class="header__user-options" >
+                                <div class="nav-item" >
+                                <a href="../dashboard/logout.php" class="nav-link" ><b>Đăng xuất</b></a>
+                    </div>
+                    </div>
             </div>
 					</ul>
 				</div>
