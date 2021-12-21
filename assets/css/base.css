@@ -478,3 +478,6 @@ html {
     font-size: 1.6rem;
     font-weight: bold;
 }
+.hidden{
+    display: none;
+}

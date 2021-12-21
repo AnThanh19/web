@@ -159,7 +159,7 @@ if (isset($_GET['masc'])) {
                             
                         </div>
                         <div class="">
-                            <button class="btn js-btn-book-tickets film-btn">Mua vé</button>
+                            <button class="btn js-btn-book-tickets film-btn hidden">Mua vé</button>
                         </div>
                     </div>
                 </div>
