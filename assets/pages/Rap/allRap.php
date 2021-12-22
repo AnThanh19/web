@@ -56,6 +56,7 @@
                 </ul>
                 
             </nav>
+            <div>
             <div class="header__user" id="block_info_user">
                 <div class="header__user-info">
                     <i class="header__user-icon fas fa-user-circle"></i>
@@ -85,7 +86,7 @@
                     </li>
                 </ul>
             </div>
-
+            </div>
         </header>
          
         <div class="content">

@@ -8,14 +8,14 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../img/header__logo.png">
-    <title>Phim đang chiếu</title>
+    <title>CineSV Cinema</title>
     <link rel="stylesheet" href="https://pagecdn.io/lib/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="../../fontawesome-free-5.15.4-web/css/all.min.css">
     <link rel="stylesheet" href="../../css/grid.css">
     <link rel="stylesheet" href="../../css/responsive.css">
-    <link rel="stylesheet" href="./phimDangChieu.css">
     <link rel="stylesheet" href="../../css/base.css">
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="./phimDangChieu.css">
     <link rel="stylesheet" href="../../css/datGhe.css">
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -54,6 +54,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                 </ul>
     
                 </nav>
+            <div>
             <div class="header__user" id="block_info_user">
                 <div class="header__user-info">
                     <i class="header__user-icon fas fa-user-circle"></i>
@@ -83,7 +84,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                     </li>
                 </ul>
             </div>
-
+            </div>
         </header>
         <!-- CONTENT -->
         <div class="content">
@@ -104,7 +105,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                 <div class="content-title">
                     <h1 class="content-title-name">Phim Đang Chiếu</h1>
                 </div>
-                <div class="grid__row">
+                <div class="row">
 
 
                 <?php
@@ -114,7 +115,7 @@ require_once('/xampp/htdocs/WebCinema/db/dbhelper.php');
                         foreach ($result as $row) 
                         {
                             echo"
-                                    <div class='grid__column-fourth film-items'>
+                                    <div class='col l-3 m-3 c-6 film-items'>
                                         <div class='film-item'>
                                             <a href='./chitietPhim.php?masc=$row[3]' class='film-item-link'>
                                                 <img src='../../../admin/img/phim/$row[1]' class='film-item-img'>

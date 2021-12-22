@@ -47,36 +47,37 @@
                     
                 </ul>
             </nav>
-            <div class="header__user" id="block_info_user">
-                <div class="header__user-info">
-                    <i class="header__user-icon fas fa-user-circle"></i>
-                    <span id="usernameCineSV" class="header__user-name"></span>
+            <div>
+                <div class="header__user" id="block_info_user">
+                    <div class="header__user-info">
+                        <i class="header__user-icon fas fa-user-circle"></i>
+                        <span id="usernameCineSV" class="header__user-name"></span>
+                    </div>
+                    <div class="header__user-options">
+                        <ul class="user-options-list">
+                            <li class="user-options-item">
+                                <a href="./assets/users/userInfo.php" class="user-option-link">Tài khoản</a>
+                            </li>
+                            <!-- <li class="user-options-item">
+                                <a href="" class="user-option-link">Cài đặt</a>
+                            </li> -->
+                            <li class="user-options-item">
+                                <a href="./logout.php" class="user-option-link">Đăng xuất</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="header__user-options">
-                    <ul class="user-options-list">
-                        <li class="user-options-item">
-                            <a href="./assets/users/userInfo.php" class="user-option-link">Tài khoản</a>
+                <div class="login" id="block_login_register">
+                    <ul class="login-list">
+                        <li class="login-item login-item-sign-in">
+                            <label class="login-link js-login-form">Đăng nhập</label>
                         </li>
-                        <!-- <li class="user-options-item">
-                            <a href="" class="user-option-link">Cài đặt</a>
-                        </li> -->
-                        <li class="user-options-item">
-                            <a href="./logout.php" class="user-option-link">Đăng xuất</a>
+                        <li class="login-item login-item-register">
+                            <label class="login-link js-register-form">Đăng ký</label>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="login" id="block_login_register">
-                <ul class="login-list">
-                    <li class="login-item login-item-sign-in">
-                        <label class="login-link js-login-form">Đăng nhập</label>
-                    </li>
-                    <li class="login-item login-item-register">
-                        <label class="login-link js-register-form">Đăng ký</label>
-                    </li>
-                </ul>
-            </div>
-
         </header>
         <!-- SLIDER -->
         <div class="slider">
@@ -123,22 +124,22 @@
                 <div class="grid__row-home events-item">
                     <div class="col l-3 m-4 c-6">
                         <a href="./assets/pages/tintuc/tinTuc.php" class="home-event-link">
-                            <img src="./admin/img/khuyenmai/big-sale-poster-vector-easy-to-edit-34462902.jpg" style="max-width: 200px; max-height: 240px;" alt="" class="home-event-img">
+                            <img src="./admin/img/khuyenmai/big-sale-poster-vector-easy-to-edit-34462902.jpg" style="width: 200px; height: 240px;" alt="" class="home-event-img">
                         </a>
                     </div>
                     <div class="col l-3 m-4 c-6">
                         <a href="./assets/pages/tintuc/tinTuc.php" class="home-event-link">
-                            <img src="./admin/img/khuyenmai/SP004130_1.jpg" style="max-width: 200px;max-height: 240px;" alt="" class="home-event-img">
+                            <img src="./admin/img/khuyenmai/SP004130_1.jpg" style="width: 200px;height: 240px;" alt="" class="home-event-img">
                         </a>
                     </div>
                     <div class="col l-3 m-4 c-6">
                         <a href="./assets/pages/tintuc/tinTuc.php" class="home-event-link">
-                            <img src="./admin/img/khuyenmai/lillyskids_f1.jpg" style="max-width: 200px;max-height: 240px;" alt="" class="home-event-img">
+                            <img src="./admin/img/khuyenmai/lillyskids_f1.jpg" style="width: 200px;height: 240px;" alt="" class="home-event-img">
                         </a>
                     </div>
                     <div class="col l-3 m-4 c-6">
                         <a href="./assets/pages/tintuc/tinTuc.php" class="home-event-link">
-                            <img src="./admin/img/khuyenmai/tải xuống.png" style="max-width: 200px; max-height: 240px;" alt="" class="home-event-img">
+                            <img src="./admin/img/khuyenmai/tải xuống.png" style="width: 200px; height: 240px;" alt="" class="home-event-img">
                         </a>
                     </div>
                    

@@ -49,6 +49,9 @@
     color: var(--white-color);
     background-color: var(--primary-color);
 }
+.user-info-list li span{
+    text-align: right;
+}
 
 .user-info-list li{
     padding: 12px 0 12px 36px;
@@ -56,6 +59,7 @@
     font-size: 1.6rem;
     line-height: 1.6;
     font-weight: 600;
+    width: 60%;
 }
 
 .user-info-list span{

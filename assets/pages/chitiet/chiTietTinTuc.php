@@ -70,6 +70,7 @@ if (isset($_GET['makm'])) {
                 </ul>
                 
             </nav>
+            <div>
             <div class="header__user" id="block_info_user">
                 <div class="header__user-info">
                     <i class="header__user-icon fas fa-user-circle"></i>
@@ -99,7 +100,7 @@ if (isset($_GET['makm'])) {
                     </li>
                 </ul>
             </div>
-
+            </div>
         </header> 
         <div class="content">
             <div class="grid wide">

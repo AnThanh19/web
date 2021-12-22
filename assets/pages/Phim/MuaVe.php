@@ -21,7 +21,7 @@ if (isset($_GET['maphim'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../img/header__logo.png">
-    <title>CineSV</title>
+    <title>CineSV Cinema</title>
     <link rel="stylesheet" href="https://pagecdn.io/lib/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="../../fontawesome-free-5.15.4-web/css/all.min.css">
     <link rel="stylesheet" href="../../css/grid.css">
@@ -68,6 +68,7 @@ if (isset($_GET['maphim'])) {
                 </ul>
     
                 </nav>
+                <div>
             <div class="header__user" id="block_info_user">
                 <div class="header__user-info">
                     <i class="header__user-icon fas fa-user-circle"></i>
@@ -97,7 +98,7 @@ if (isset($_GET['maphim'])) {
                     </li>
                 </ul>
             </div>
-
+            </div>
         </header>
         <!-- CONTENT -->
         <div class="content">
